@@ -12,6 +12,10 @@ public class AvoidVision : MonoBehaviour
         controller = GetComponent<VoluntarioController>();
     }
 
+    /// <summary>
+    /// Si apunta al enemigo, comprueba que dirección perpendicular 
+    /// a la mira del jugador debe usar para alejarse de la misma.
+    /// </summary>
     void Update()
     {
         RaycastHit2D hit = Physics2D.Raycast(playerHead.position, playerHead.right, 100, LayerMask.GetMask("Enemies"));

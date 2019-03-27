@@ -10,3 +10,4 @@ En esta rama se está desarrollando al "Voluntario", miniboss del nivel 2.
 - Creado el objeto con el "Voluntario".
 - Creado el controlador que hace que se acerque o aleje del jugador dependiendo de su distancia a él.
 - El "Voluntario" se aleja del punto de mira del jugador.
+- El "Voluntario" golpea al jugador si este se acerca demasiado.

@@ -43,6 +43,8 @@ GameObject:
   - component: {fileID: 61892325365910072}
   - component: {fileID: 114269930079344634}
   - component: {fileID: 114535276127985160}
+  - component: {fileID: 95372236653878058}
+  - component: {fileID: 114907840057286088}
   m_Layer: 10
   m_Name: Voluntario
   m_TagString: Untagged
@@ -151,6 +153,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3577214, y: 2.38817}
   m_EdgeRadius: 0
+--- !u!95 &95372236653878058
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1456034295369746}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f86a14edb0680f24188061680f9dd516, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114044484457660528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -209,6 +229,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lurkInterval: {x: 4, y: 5}
+  meleeDistance: 2.5
+  maxMeleeCooldown: 2
+--- !u!114 &114907840057286088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1456034295369746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89eb90cb3cedd8648b36bb9e146867c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  punchKnockback: 50
 --- !u!212 &212444058495848082
 SpriteRenderer:
   m_ObjectHideFlags: 1
