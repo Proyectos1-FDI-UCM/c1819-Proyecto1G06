@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 114808434159946022}
   - component: {fileID: 61892325365910072}
   - component: {fileID: 114269930079344634}
+  - component: {fileID: 114535276127985160}
   m_Layer: 10
   m_Name: Voluntario
   m_TagString: Untagged
@@ -137,7 +138,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.008983672, y: -0.16619992}
+  m_Offset: {x: 0.1423977, y: -0.16619992}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -148,7 +149,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6245495, y: 2.38817}
+  m_Size: {x: 1.3577214, y: 2.38817}
   m_EdgeRadius: 0
 --- !u!114 &114044484457660528
 MonoBehaviour:
@@ -161,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d53b47349551c43b545f474ee8adc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
+  speed: 2.5
 --- !u!114 &114267644073437488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,6 +186,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 75
+--- !u!114 &114535276127985160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1456034295369746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61c36346b106f1b4dbceab1964431e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114808434159946022
 MonoBehaviour:
   m_ObjectHideFlags: 1
