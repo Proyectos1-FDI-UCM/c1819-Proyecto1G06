@@ -50,4 +50,9 @@ public class MkIShooting : Shooting {
         newBullet.Rotate(transform.right);
         shooting = false;
     }
+
+    public bool GetShooting()
+    {
+        return shooting;
+    }
 }

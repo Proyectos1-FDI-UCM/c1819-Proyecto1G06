@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4450168919313366}
   - component: {fileID: 212444058495848082}
+  - component: {fileID: 95892351553449246}
+  - component: {fileID: 114612087152433850}
   m_Layer: 10
   m_Name: Weapon
   m_TagString: Untagged
@@ -88,7 +90,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1565099917645788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.301, y: -0.229, z: 0}
+  m_LocalPosition: {x: 0.42, y: -0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4450168919313366}
@@ -100,7 +102,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1456034295369746}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.926, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -171,6 +173,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95892351553449246
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1166342410284498}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 0a892bd200efd3a4f9eb500cff6887df, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114044484457660528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,6 +237,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c36346b106f1b4dbceab1964431e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114612087152433850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1166342410284498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec51a110fd5b1546bc8cb596ec1cc8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rateOfFire: 1
+  shootingPoint: {fileID: 4557395645150282}
+  bulletPrefab: {fileID: 114601551365168386, guid: f6c4e6b4fda0500419bb7050088a88a8,
+    type: 2}
 --- !u!114 &114808434159946022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,7 +265,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lurkInterval: {x: 4, y: 5}
   meleeDistance: 2.5
-  maxMeleeCooldown: 2
+  meleeCooldown: 2
+  stunCooldown: 3
+  counterCooldown: 3
 --- !u!114 &114907840057286088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -280,7 +317,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d00f24dcb0a6ac144955ed90fa811de2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2.6666667, y: 2.6666667}

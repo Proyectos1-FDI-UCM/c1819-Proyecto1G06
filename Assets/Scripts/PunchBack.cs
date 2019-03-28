@@ -5,7 +5,6 @@ using UnityEngine;
 public class PunchBack : MonoBehaviour {
 
     Transform player;
-    Knockback knockback;
 
     float armLength;
     public float punchKnockback;
@@ -13,7 +12,6 @@ public class PunchBack : MonoBehaviour {
 	void Start ()
     {
         player = GameManager.instance.player.transform;
-        knockback = player.GetComponent<Knockback>();
         armLength = GetComponent<VoluntarioController>().meleeDistance;
 	}
 	
@@ -25,7 +23,8 @@ public class PunchBack : MonoBehaviour {
     {
         if (Vector3.Distance(player.position, transform.position) <= armLength)
         {
-            knockback.TakeKnockback(player.position - transform.position, punchKnockback);
+            player.GetComponent<Knockback>().TakeKnockback(player.position - transform.position, punchKnockback);
+            player.GetComponent<PlayerHealth>().TakeDamage();
         }
     }
 }
