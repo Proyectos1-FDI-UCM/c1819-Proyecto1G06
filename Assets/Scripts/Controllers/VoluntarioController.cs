@@ -83,4 +83,15 @@ public class VoluntarioController : EnemyController {
     {
         avoidDir = dir;
     }
+
+    public EnemyState GetState()
+    {
+        return state;
+    }
+
+    public void Stun()
+    {
+        state = EnemyState.Stunned;
+        anim.SetTrigger("Stun");
+    }
 }

@@ -214,8 +214,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rateOfFire: 1
-  shootingPoint: {fileID: 0}
-  bulletPrefab: {fileID: 0}
+  shootingPoint: {fileID: 666675505}
+  bulletPrefab: {fileID: 114601551365168386, guid: ea3a8e0ac88aff64d9a48f455bb945fb,
+    type: 2}
+--- !u!4 &666675505 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4557395645150282, guid: 728121a7fecf1644bb730edfebe60fa2,
+    type: 2}
+  m_PrefabInternal: {fileID: 666675502}
 --- !u!1001 &1070820826
 Prefab:
   m_ObjectHideFlags: 0
