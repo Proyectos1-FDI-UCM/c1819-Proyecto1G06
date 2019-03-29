@@ -37,6 +37,7 @@ public class VoluntarioController : EnemyController {
     /// </summary>
     private void Update()
     {
+        print(state);
         if (!stunned)
         {
             switch (state)
@@ -47,12 +48,15 @@ public class VoluntarioController : EnemyController {
                 case EnemyState.Chasing:
                     moveDir = (player.transform.position - transform.position).normalized;
                     break;
+                case EnemyState.Idle:
+                    follow.Stop();
+                    break;
             }
             //Se suma avoidDir para hacer un movimiento compuesto
             moveDir += avoidDir;
             if (moveDir.magnitude > 0)
             {
-                follow.MoveTowards(moveDir.normalized);
+                follow.MoveTowards(moveDir);
             }
             else
             {
@@ -101,6 +105,9 @@ public class VoluntarioController : EnemyController {
             {
                 state = EnemyState.Idle;
             }
+        } else
+        {
+            state = EnemyState.Idle;
         }
     }
 
@@ -141,5 +148,10 @@ public class VoluntarioController : EnemyController {
     public void Shoot()
     {
         shooting.Shot();
+    }
+
+    public void ResetShootCooldown()
+    {
+        shooting.ResetCooldown();
     }
 }
