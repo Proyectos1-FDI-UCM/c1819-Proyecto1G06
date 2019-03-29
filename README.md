@@ -8,6 +8,7 @@ Este es el Proyecto 1 del grupo 06 18/19.
 - Están colocados los coleccionables.
 - Puestas salas en el minimapa.
 - Recolocados los enemigos del nivel 2.
+- Arregladas conexiones entre salas y colocación de las mismas.
 
 
 
