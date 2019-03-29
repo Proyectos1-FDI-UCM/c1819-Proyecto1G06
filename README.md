@@ -9,3 +9,4 @@ Esta es la rama principal, donde está la última versión estable del proyecto.
 ## Cambios
 
 - Actualizado el sprite del jugador.
+- Añadido al Voluntario.

@@ -15,6 +15,6 @@ public class Knockback : MonoBehaviour {
     /// </summary>
     public void TakeKnockback(Vector2 dir, float amount)
     {
-        rb.AddForce(amount * dir, ForceMode2D.Impulse);
+        rb.AddForce(amount * dir.normalized, ForceMode2D.Impulse);
     }
 }
