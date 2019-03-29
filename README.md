@@ -14,3 +14,4 @@ En esta rama se está desarrollando al "Voluntario", miniboss del nivel 2.
 - El "Voluntario" dispara al jugador.
 - El "Voluntario" contraataca los ataques del jugador.
 - El "Voluntario" es estuneado si le dispara el jugador mientras está disparando.
+- Aumentado el stun y disminuido al cooldown de contraataque.
