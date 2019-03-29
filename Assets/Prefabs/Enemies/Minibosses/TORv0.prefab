@@ -23,11 +23,10 @@ GameObject:
   - component: {fileID: 61141742489010140}
   - component: {fileID: 50566573873672922}
   - component: {fileID: 114366957913073536}
-  - component: {fileID: 114794486881912964}
   - component: {fileID: 114790710457287958}
   - component: {fileID: 114552786260213272}
   - component: {fileID: 95689185210302394}
-  - component: {fileID: 114067958739207278}
+  - component: {fileID: 114224337707324652}
   m_Layer: 10
   m_Name: TORv0
   m_TagString: Untagged
@@ -111,7 +110,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114067958739207278
+--- !u!114 &114224337707324652
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,7 +118,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1269495984764464}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b17027f5e90d14d4283b9024985e4b74, type: 3}
+  m_Script: {fileID: 11500000, guid: 99604c1b294786b4598b9fc93fdc45fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 40
@@ -159,17 +158,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackAmount: 15
---- !u!114 &114794486881912964
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1269495984764464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2af6fdefe4d742f43b3965906acbf779, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212345647668486984
 SpriteRenderer:
   m_ObjectHideFlags: 1

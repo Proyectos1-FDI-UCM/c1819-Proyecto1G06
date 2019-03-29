@@ -12,11 +12,15 @@ public class RoomManager : MonoBehaviour {
 
     protected RoomState state = RoomState.NonVisited;       // Estado de la sala
 
-    public virtual void Start()
+    public void Awake()
     {
         enemies.gameObject.SetActive(false);
         doors.SetActive(false);
         itemPos.SetActive(false);
+    }
+
+    public virtual void Start()
+    {
         Minimap.instance.StoreRoom(pos, boss);  //Inicializa esta habitación
     }
 
