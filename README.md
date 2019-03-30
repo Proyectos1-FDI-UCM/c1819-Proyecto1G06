@@ -4,10 +4,5 @@ Este es el Proyecto 1 del grupo 06 18/19.
 
 ## Sobre esta rama
 
-Esta es la rama principal, donde está la última versión estable del proyecto.
-
+Esta es la rama FinalBoss, donde se está desarrollando a la I.A.
 ## Cambios
-
-- Actualizado el sprite del jugador.
-- Añadido al Voluntario.
-- Añadido el nivel 2.
