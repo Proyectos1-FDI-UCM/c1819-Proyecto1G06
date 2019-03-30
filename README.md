@@ -8,5 +8,7 @@ Esta es la rama FinalBoss, donde se está desarrollando a la I.A.
 
 ## Cambios
 
+- Puesto un ascensor que lleva al nivel IA.
 - Dise?ado el nivel del boss final.
 - Creado el objeto IA.
+- Creado un objeto C?lula.
