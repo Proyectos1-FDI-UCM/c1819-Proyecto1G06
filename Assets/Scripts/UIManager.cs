@@ -151,4 +151,20 @@ public class UIManager : MonoBehaviour
         child.GetComponent<Image>().sprite = sprite;
         lastItemListSlot++;
     }
+
+    /// <summary>
+    /// Coloca en la lista de sprites los sprites dados
+    /// </summary>
+    public void UpdateItems(Sprite[] sprites)
+    {
+        int i = 0;
+        for(; i < sprites.Length; i++)
+        {
+            Transform child = itemListHolder.GetChild(i);
+            child.gameObject.SetActive(true);
+            child.GetComponent<Image>().sprite = sprites[i];
+        }
+
+        lastItemListSlot = i;
+    }
 }

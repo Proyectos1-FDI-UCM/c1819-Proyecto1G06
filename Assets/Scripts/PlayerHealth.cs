@@ -60,19 +60,10 @@ public class PlayerHealth : MonoBehaviour {
             if (curHealth <= 0)
             {
                 curHealth = 0;
-                Die();
+                GameManager.instance.PlayerDied();
             }
         }
        
-    }
-
-    /// <summary>
-    /// Al morir el jugador, se recarga la escena y se pierden los items
-    /// </summary>
-    public void Die()
-    {
-        GameManager.instance.ReloadScene();
-        ItemManager.instance.DeleteItems();
     }
 
     /// <summary>

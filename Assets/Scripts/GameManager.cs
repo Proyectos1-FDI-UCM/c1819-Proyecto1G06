@@ -40,4 +40,10 @@ public class GameManager : MonoBehaviour {
     {
         SceneManager.LoadScene(scene);
     }
+
+    public void PlayerDied()
+    {
+        SceneManager.LoadScene("Nivel 1");
+        ItemManager.instance.DeleteItems();
+    }
 }
