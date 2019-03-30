@@ -18,21 +18,6 @@ public class ItemManager : MonoBehaviour {
             itemData = new ItemData[tam];
             firstSpace = 0;
         }
-
-        /// <summary>
-        /// Añade amount de espacio a itemList
-        /// </summary>
-        public void AddSpace(int amount)
-        {
-            ItemData[] newList = new ItemData[itemData.Length + amount];
-
-            for(int i = 0; i < firstSpace; i++)
-            {
-                newList[i] = itemData[i];
-            }
-
-            itemData = newList;
-        }
     }
 
     public static ItemManager instance;
@@ -60,7 +45,7 @@ public class ItemManager : MonoBehaviour {
     /// </summary>
     public void AddItem(ItemData item)
     {
-        if (itemList.firstSpace == itemList.itemData.Length) itemList.AddSpace(15);
+        if (itemList.firstSpace == itemList.itemData.Length) AddSpace(ref itemList, 15);
 
         itemList.itemData[itemList.firstSpace] = item;
         itemList.firstSpace++;
@@ -74,6 +59,38 @@ public class ItemManager : MonoBehaviour {
     {
         Minimap.instance.InitializeMap();
         ApplyItemEffects();
+        GameManager.instance.ui.UpdateItems(GetItemSprites(itemList));
+    }
+
+    /// <summary>
+    /// Añade amount de espacio a itemList
+    /// </summary>
+    void AddSpace(ref ItemList list, int amount)
+    {
+        ItemData[] newList = new ItemData[list.itemData.Length + amount];
+
+        for (int i = 0; i < list.firstSpace; i++)
+        {
+            newList[i] = list.itemData[i];
+        }
+
+        list.itemData = newList;
+    }
+
+    /// <summary>
+    /// Devuelve el array de sprites de los items que tiene el jugador
+    /// </summary>
+    /// <param name="list">La lista de items</param>
+    Sprite[] GetItemSprites (ItemList list)
+    {
+        Sprite[] sprites = new Sprite[list.firstSpace];
+
+        for (int i = 0; i < list.firstSpace; i++)
+        {
+            sprites[i] = list.itemData[i].sprite;
+        }
+
+        return sprites;
     }
 
     /// <summary>
