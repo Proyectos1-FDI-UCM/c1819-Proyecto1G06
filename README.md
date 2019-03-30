@@ -4,10 +4,10 @@ Este es el Proyecto 1 del grupo 06 18/19.
 
 ## Sobre esta rama
 
-Esta es la rama principal, donde est? la ?ltima versi?n estable del proyecto.
+Esta es la rama principal, donde está la última versiún estable del proyecto.
 
 ## Cambios
 
 - Actualizado el sprite del jugador.
-- A?adido al Voluntario.
-- A?adido el nivel 2.
+- Añadido al Voluntario.
+- Añadido el nivel 2.
