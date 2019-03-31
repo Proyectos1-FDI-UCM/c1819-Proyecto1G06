@@ -20,7 +20,7 @@ public class Shooting : MonoBehaviour
     /// <summary>
     /// Reduce shootCooldown cada segundo
     /// </summary>
-    public void Cooldown()
+    public virtual void Cooldown()
     {
         if (shootCooldown > 0f)
             shootCooldown -= Time.deltaTime;        //Se reduce si no es 0
