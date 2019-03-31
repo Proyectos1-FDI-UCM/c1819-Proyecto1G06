@@ -4,7 +4,7 @@ Este es el Proyecto 1 del grupo 06 18/19.
 
 ## Sobre esta rama
 
-Esta es la rama FinalBoss, donde se está desarrollando a la I.A.
+Esta es la rama FinalBoss, donde se est? desarrollando la I.A.
 
 ## Cambios
 
@@ -12,3 +12,5 @@ Esta es la rama FinalBoss, donde se está desarrollando a la I.A.
 - Dise?ado el nivel del boss final.
 - Creado el objeto IA.
 - Creado un objeto C?lula.
+- Creado el ataque sweeping laser.
+- Creado el ataque bullet storm.
