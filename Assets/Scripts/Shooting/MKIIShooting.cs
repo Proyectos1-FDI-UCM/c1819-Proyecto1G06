@@ -13,7 +13,7 @@ public class MKIIShooting : MkIShooting
     {
         ResetCooldown();
         BulletMovement newBullet = Instantiate<BulletMovement>(bulletPrefab, shootingPoint.position, Quaternion.identity, bulletPool);
-        newBullet.Rotate(transform.right + new Vector3(0, Random.Range(-deviation / 2, deviation / 2), 0));
+        newBullet.Rotate(transform.right + new Vector3(Random.Range(-deviation / 2, deviation / 2), Random.Range(-deviation / 2, deviation / 2), 0));
         shooting = false;
     }
 }
