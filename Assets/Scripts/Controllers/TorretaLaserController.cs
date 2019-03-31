@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TorretaLaserController : TorretaController {
+public class TorretaLaserController : EnemyController {
 
     private LineRenderer lr;
     private GameObject shootingPoint;
@@ -15,7 +15,7 @@ public class TorretaLaserController : TorretaController {
     }
 
     // Update is called once per frame
-    void Update () {
+    public void ShootLaser() {
 
         if (state == EnemyState.Shooting)
         {
@@ -25,10 +25,18 @@ public class TorretaLaserController : TorretaController {
         }
         else
             lr.enabled = false;
-	}
+    }
 
     public override void Sight(RaycastHit2D sight)
     {
         base.Sight(sight);
+        if (playerDetected)
+        {
+            state = EnemyState.Shooting;
+        }
+        else
+        {
+            state = EnemyState.Idle;
+        }
     }
 }
