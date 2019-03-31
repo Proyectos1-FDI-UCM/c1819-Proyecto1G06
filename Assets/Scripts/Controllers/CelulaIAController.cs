@@ -7,6 +7,9 @@ public class CelulaIAController : MonoBehaviour {
     IAController controller;
     CelulaHealth celHealth;
 
+    bool vulnerable = false;
+    public bool Vulnerable { get { return vulnerable; } set { vulnerable = value; } }
+
     private void Awake()
     {
         controller = GetComponentInParent<IAController>();

@@ -6,19 +6,31 @@ public class IAController : MonoBehaviour {
 
     public CelulaIAController[] celulas;
     int numCelulas;
+    //IAScreen
 
-	enum BossState { FirstPhase, SecondPhase }
-    BossState phase = BossState.FirstPhase;
+	enum BossPhase { First, Second, Third, Fourth } //Cuatro células, dos células, transición, final
+    BossPhase phase = BossPhase.First;
 
     private void Start()
     {
-        int num = 0;
-        while (num < celulas.Length && celulas[num] != null)
-        {
-            num++;
-        }
+        numCelulas = celulas.Length;
+        SetVulnerable(celulas);
+    }
 
-        numCelulas = num;
+    void SetVulnerable(CelulaIAController[] celulas/*, IAScreen*/)
+    {
+        switch (phase)
+        {
+            case BossPhase.First:
+                for (int i = celulas.Length / 2; i < celulas.Length; i++) celulas[i].Vulnerable = true;
+                break;
+            case BossPhase.Second:
+                for (int i = 0; i < celulas.Length / 2; i++) celulas[i].Vulnerable = true;
+                break;
+            case BossPhase.Third:
+                //IAScreen
+                break;
+        }
     }
 
     /// <summary>
@@ -27,9 +39,15 @@ public class IAController : MonoBehaviour {
     public void CelulaDestroyed()
     {
         numCelulas--;
-        if (numCelulas == 0)
+        if(numCelulas == celulas.Length / 2)
         {
-            phase++;
+            phase = BossPhase.Second;
+            SetVulnerable(celulas);
+        } else if(numCelulas == 0)
+        {
+            phase = BossPhase.Third;
+            SetVulnerable(celulas);
         }
+        print(phase);
     }
 }
