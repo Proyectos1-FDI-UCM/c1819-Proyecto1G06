@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class SweepingLaser : MonoBehaviour {
 
-    LineRenderer lr;
     public Transform shootingPoint;
     public Transform followPoint;
+
+    LineRenderer lr;
     RaycastHit2D hit;
 
     void Awake()
@@ -15,8 +16,10 @@ public class SweepingLaser : MonoBehaviour {
     }
 
     void OnEnable()
-    {
+    {   
         lr.enabled = true;
+        lr.startWidth = 0.15f;
+        lr.endWidth = 0.15f;
         lr.SetPosition(0, shootingPoint.position);
         lr.SetPosition(1, followPoint.position);
     }
