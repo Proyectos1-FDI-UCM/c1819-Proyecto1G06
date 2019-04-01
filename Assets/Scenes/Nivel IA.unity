@@ -4909,6 +4909,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1342207155}
   - component: {fileID: 1342207156}
+  - component: {fileID: 1342207157}
   m_Layer: 0
   m_Name: BulletCannons
   m_TagString: Untagged
@@ -4943,7 +4944,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1342207154}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4b34730ff92fe742ab1ba3a6fa7ff72, type: 3}
   m_Name: 
@@ -4953,6 +4954,31 @@ MonoBehaviour:
   bulletPrefab: {fileID: 114601551365168386, guid: ea3a8e0ac88aff64d9a48f455bb945fb,
     type: 2}
   deviation: 0.3
+  shootingPoints:
+  - {fileID: 1000954600}
+  - {fileID: 203496353}
+  - {fileID: 2192614}
+  - {fileID: 2043595267}
+  - {fileID: 390669725}
+  - {fileID: 51508131}
+  - {fileID: 384696170}
+  - {fileID: 1049234532}
+--- !u!114 &1342207157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1342207154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b34730ff92fe742ab1ba3a6fa7ff72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rateOfFire: 1
+  shootingPoint: {fileID: 0}
+  bulletPrefab: {fileID: 114601551365168386, guid: e538aa515f3cc674d81613d55200e58f,
+    type: 2}
+  deviation: 0
   shootingPoints:
   - {fileID: 1000954600}
   - {fileID: 203496353}
