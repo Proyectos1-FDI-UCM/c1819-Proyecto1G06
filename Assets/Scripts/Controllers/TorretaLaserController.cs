@@ -4,90 +4,100 @@ using UnityEngine;
 
 public class TorretaLaserController : TorretaController {
 
-    private LineRenderer lr;
-    TorretaLaserShooting laserShooting;
-    FollowDirection follow;
-    public float timeOffset = 0.5f;
-    GameObject head;
-    public Material RedLaser, OrangeLaser;
-    public Transform shootingPoint;
-    RaycastHit2D hit;
+    public float lerpTime;
 
-    Vector3 currentPosition;
+    private Vector3 startPosition, currentPosition;
+
+    LineRenderer lr;
+
+    GameObject head;
+
+    public Material redLaser, orangeLaser;
+
+    bool shot = false;
+
+    RaycastHit2D hit;
 
     private void Awake()
     {
         lr = GetComponentInChildren<LineRenderer>();
-        laserShooting = GetComponentInChildren<TorretaLaserShooting>();
         head = transform.GetChild(0).gameObject;
+
     }
 
-    // Update is called once per frame
-    void Update() {
+    public void Start()
+    {
+        startPosition = player.transform.position;
+    }
 
-        // Set our position as a fraction of the distance between the markers.
-        currentPosition =laserShooting.Lerp(laserShooting.startPosition, laserShooting.endPosition.position, laserShooting.lerpTime, laserShooting.timeStartedLerping);
-
+    public void Update()
+    {
+        currentPosition = Vector3.Lerp(startPosition, player.transform.position, (Time.time) / lerpTime);
         lr.SetPosition(0, head.transform.position);
         lr.SetPosition(1, currentPosition);
 
         if (state == EnemyState.Shooting)
         {
-            laserShooting.Cooldown();
             lr.enabled = true;
-            if (lr.GetPosition(1) == player.transform.position)
-            {            
-                ShootLaser();
+
+            if (!shot)
+            {
+                Vector2 lookDirection = (currentPosition) - transform.position;
+                float angle = Mathf.Atan(lookDirection.y / lookDirection.x) * (180 / Mathf.PI);
+
+                head.transform.eulerAngles = new Vector3(0, 0, angle + (lookDirection.x < 0f ? 180f : 0f));
                 CheckCollisions();
-                Invoke("StopShootingLaser", timeOffset);
             }
         }
         else
         {
             lr.enabled = false;
-            laserShooting.timeStartedLerping = Time.time;
+            StopShootingLaser();
         }
-            
+    }
+
+    public Vector3 Lerp(Vector3 start, Vector3 end, float timeStartedLerping, float lerpTime)
+    {
+        float timeSinceStarted = Time.time - timeStartedLerping;
+        float percentageComplete = timeSinceStarted / lerpTime;
+
+        Vector3 result = Vector3.Slerp(start, end, percentageComplete);
+
+        return result;
+    }
+
+    void CheckCollisions()
+    {
+        hit = Physics2D.Linecast(head.transform.position, currentPosition, LayerMask.GetMask("Player"));
+        if (hit.transform.GetComponent<PlayerHealth>() != null)
+        {
+            hit.transform.GetComponent<PlayerHealth>().TakeDamage();
+            Debug.Log(hit.transform.GetComponent<PlayerHealth>());
+            ShootLaser();
+            Invoke("StopShootingLaser", 0.5f);
+        }
+    }
+
+    void ShootLaser()
+    {
+        shot = true;
+        lr.material = redLaser;
+        lr.startWidth = 0.2f;
+        lr.endWidth = 0.2f;
+    }
+
+    void StopShootingLaser()
+    {
+        shot = false;
+        lr.material = orangeLaser;
+        lr.startWidth = 0.05f;
+        lr.endWidth = 0.05f;
+
+        lerpTime += Time.time;
     }
 
     public override void Sight(RaycastHit2D sight)
     {
         base.Sight(sight);
-        if (playerDetected)
-            state = EnemyState.Shooting;
-        else
-            state = EnemyState.Idle;
-    }
-
-    void ShootLaser()
-    {
-        laserShooting.found = true;
-        laserShooting.Shoot();
-        lr.startWidth = 0.2f;
-        lr.endWidth = 0.2f;
-        lr.material = RedLaser;
-    }
-
-    void StopShootingLaser()
-    {
-        lr.startWidth = 0.05f;
-        lr.endWidth = 0.05f;
-        lr.material = OrangeLaser;
-        laserShooting.timeStartedLerping = Time.time;
-        laserShooting.found = false;
-    }
-
-    private void OnDisable()
-    {
-        lr.enabled = false;
-    }
-
-    private void CheckCollisions()
-    {
-        lr.SetPosition(1, currentPosition);
-        hit = Physics2D.Linecast(shootingPoint.position, currentPosition, LayerMask.GetMask("Player"));
-        if (hit.transform.GetComponent<PlayerHealth>() != null)
-            hit.transform.GetComponent<PlayerHealth>().TakeDamage();
-
     }
 }
