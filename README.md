@@ -14,3 +14,5 @@ Esta es la rama FinalBoss, donde se est? desarrollando la I.A.
 - Creado un objeto C?lula.
 - Creado el ataque sweeping laser.
 - Creado el ataque bullet storm.
+- Creadas las balas que se dividen.
+- Creado el megal?ser.
