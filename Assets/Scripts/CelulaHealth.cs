@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CelulaHealth : EnemyHealth {
+public class CelulaHealth : IAScreenHealth {
 
-    CelulaIAController controller { get { return GetComponent<CelulaIAController>(); } }
+    IAController ia;
 
-    public override void TakeDamage(float amount)
+    public override void Awake()
     {
-        if (controller.Vulnerable)
-            base.TakeDamage(amount);
+        ia = GetComponentInParent<IAController>();
+        base.Awake();
     }
 
     public override void Die()
     {
-        controller.ACellHasDied();   //Avisa al controlador de que ha sido destruida
+        ia.CelulaDestroyed();  //Avisa al controlador de que ha sido destruida
         Destroy(gameObject);
     }
 }

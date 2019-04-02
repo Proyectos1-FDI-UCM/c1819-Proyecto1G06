@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour {
     public float maxHealth = 10;
     protected float curHealth;
 
-    private void Awake()
+    public virtual void Awake()
     {
         curHealth = maxHealth;
     }

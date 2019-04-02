@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212459835010107730}
   - component: {fileID: 114393722670221724}
   - component: {fileID: 61837140383322800}
-  - component: {fileID: 114147011778996610}
+  - component: {fileID: 114093099287377492}
   m_Layer: 10
   m_Name: "C\xE9lulaIA"
   m_TagString: Untagged
@@ -68,7 +68,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9114156, y: 2}
   m_EdgeRadius: 0
---- !u!114 &114147011778996610
+--- !u!114 &114093099287377492
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76,9 +76,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1205609683257420}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91f17216989b2744e8f0ba77c5042fad, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c79b19eb3f957d429909cdc3644ca77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rateOfFire: 0.2
+  shootingPoint: {fileID: 4501930438405636}
+  bulletPrefab: {fileID: 114601551365168386, guid: ea3a8e0ac88aff64d9a48f455bb945fb,
+    type: 2}
+  numBalas: 10
+  limitAngle: 60
 --- !u!114 &114393722670221724
 MonoBehaviour:
   m_ObjectHideFlags: 1
