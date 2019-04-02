@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IAController : MonoBehaviour {
 
-    public CelulaIAController[] celulas;
+    public CelulaHealth[] celulas;
     int numCelulas;
     //IAScreen
 
@@ -17,7 +17,7 @@ public class IAController : MonoBehaviour {
         SetVulnerable(celulas);
     }
 
-    void SetVulnerable(CelulaIAController[] celulas/*, IAScreen*/)
+    void SetVulnerable(CelulaHealth[] celulas/*, IAScreen*/)
     {
         switch (phase)
         {
