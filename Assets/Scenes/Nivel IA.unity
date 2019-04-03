@@ -1585,6 +1585,16 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114093099287377492, guid: d17ffd4fca532474892524f440a1170a,
+        type: 2}
+      propertyPath: numBalas
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114093099287377492, guid: d17ffd4fca532474892524f440a1170a,
+        type: 2}
+      propertyPath: limitAngle
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d17ffd4fca532474892524f440a1170a, type: 2}
   m_IsPrefabAsset: 0
@@ -1779,8 +1789,8 @@ GameObject:
   - component: {fileID: 238056266}
   - component: {fileID: 238056267}
   - component: {fileID: 238056268}
-  - component: {fileID: 238056269}
   - component: {fileID: 238056271}
+  - component: {fileID: 238056269}
   - component: {fileID: 238056270}
   - component: {fileID: 238056272}
   - component: {fileID: 238056273}
@@ -1957,6 +1967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 1438803089}
   followPoint: {fileID: 1166355931}
+  attackTime: 10
 --- !u!114 &238056270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1969,7 +1980,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 1438803089}
-  movingTime: 10
+  movingTime: 5
+  attackTime: 10
 --- !u!95 &238056271
 Animator:
   serializedVersion: 3
@@ -2146,6 +2158,16 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114093099287377492, guid: d17ffd4fca532474892524f440a1170a,
+        type: 2}
+      propertyPath: numBalas
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114093099287377492, guid: d17ffd4fca532474892524f440a1170a,
+        type: 2}
+      propertyPath: limitAngle
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d17ffd4fca532474892524f440a1170a, type: 2}
   m_IsPrefabAsset: 0
@@ -2288,6 +2310,16 @@ Prefab:
     - target: {fileID: 4501930438405636, guid: d17ffd4fca532474892524f440a1170a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 114093099287377492, guid: d17ffd4fca532474892524f440a1170a,
+        type: 2}
+      propertyPath: numBalas
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114093099287377492, guid: d17ffd4fca532474892524f440a1170a,
+        type: 2}
+      propertyPath: limitAngle
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d17ffd4fca532474892524f440a1170a, type: 2}
@@ -4927,6 +4959,7 @@ MonoBehaviour:
   - {fileID: 542923843}
   - {fileID: 799396364}
   - {fileID: 606217937}
+  screen: {fileID: 1444600637}
 --- !u!1001 &1070820826
 Prefab:
   m_ObjectHideFlags: 0
@@ -5082,6 +5115,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114152090398949314, guid: 94c3d41a6f8126744ad409aec0e3c122,
+        type: 2}
+      propertyPath: maxHealth
+      value: 250000000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c3d41a6f8126744ad409aec0e3c122, type: 2}
   m_IsPrefabAsset: 0
@@ -5176,6 +5214,7 @@ MonoBehaviour:
   - {fileID: 51508131}
   - {fileID: 384696170}
   - {fileID: 1049234532}
+  attackTime: 5
 --- !u!114 &1342207157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5201,6 +5240,7 @@ MonoBehaviour:
   - {fileID: 51508131}
   - {fileID: 384696170}
   - {fileID: 1049234532}
+  attackTime: 5
 --- !u!1001 &1346899011
 Prefab:
   m_ObjectHideFlags: 0
@@ -6447,6 +6487,7 @@ MonoBehaviour:
   - {fileID: 1361109877791562, guid: 5b73e11054334cc48bf76361e28ac250, type: 2}
   - {fileID: 1044712739358064, guid: e96b179d8282fdf4181315e917d18cfb, type: 2}
   numSpawns: 3
+  attackTime: 2
 --- !u!1 &1556703328
 GameObject:
   m_ObjectHideFlags: 0
@@ -6534,6 +6575,16 @@ Prefab:
     - target: {fileID: 4501930438405636, guid: d17ffd4fca532474892524f440a1170a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 114093099287377492, guid: d17ffd4fca532474892524f440a1170a,
+        type: 2}
+      propertyPath: numBalas
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114093099287377492, guid: d17ffd4fca532474892524f440a1170a,
+        type: 2}
+      propertyPath: limitAngle
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d17ffd4fca532474892524f440a1170a, type: 2}

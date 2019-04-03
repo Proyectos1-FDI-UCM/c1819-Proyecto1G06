@@ -2,13 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SweepingLaser : MonoBehaviour {
+public class SweepingLaser : MonoBehaviour, IBossAttack1 {
 
     public Transform shootingPoint;
     public Transform followPoint;
 
     LineRenderer lr;
-    RaycastHit2D hit;
+
+    public float attackTime = 10;
+    public float AttackTime
+    {
+        get
+        {
+            return attackTime;
+        }
+    }
 
     void Awake()
     {
@@ -16,7 +24,8 @@ public class SweepingLaser : MonoBehaviour {
     }
 
     void OnEnable()
-    {   
+    {
+        followPoint.position = shootingPoint.position;
         lr.enabled = true;
         lr.startWidth = 0.15f;
         lr.endWidth = 0.15f;
@@ -26,9 +35,10 @@ public class SweepingLaser : MonoBehaviour {
 
     void Update()
     {
+        RaycastHit2D hit;
         lr.SetPosition(1, followPoint.position);
         hit = Physics2D.Linecast(shootingPoint.position, followPoint.position, LayerMask.GetMask("Player"));
-        if(hit.transform.GetComponent<PlayerHealth>() != null)
+        if(hit.transform != null && hit.transform.GetComponent<PlayerHealth>() != null)
         {
             hit.transform.GetComponent<PlayerHealth>().TakeDamage();
         }
@@ -36,8 +46,11 @@ public class SweepingLaser : MonoBehaviour {
 
     private void OnDisable()
     {
-        followPoint.position = shootingPoint.position;
         lr.enabled = false;
     }
 
+    public void ToggleAttack(bool active)
+    {
+        this.enabled = active;
+    }
 }

@@ -5,19 +5,36 @@ using UnityEngine;
 public class IAController : MonoBehaviour {
 
     public CelulaHealth[] celulas;
-    int numCelulas;
-    //IAScreen
+    public IAScreenHealth screen;
+
+    IBossAttack1[] attacks;
+    int numCelulas, curAttack = 0;
+    float attackTimer = 0;
 
 	enum BossPhase { First, Second, Third, Fourth } //Cuatro células, dos células, transición, final
     BossPhase phase = BossPhase.First;
 
     private void Start()
     {
+        attacks = GetComponentsInChildren<IBossAttack1>();
         numCelulas = celulas.Length;
-        SetVulnerable(celulas);
+        SetVulnerable(celulas, screen);
+        for(int i = 0; i < attacks.Length; i++)
+        {
+            attacks[i].ToggleAttack(false);
+        }
     }
 
-    void SetVulnerable(CelulaHealth[] celulas/*, IAScreen*/)
+    void Update()
+    {
+        if (attackTimer <= 0)
+        {
+            ChangeAttack(attacks, ref curAttack);
+        }
+        else attackTimer -= Time.deltaTime;
+    }
+
+    void SetVulnerable(CelulaHealth[] celulas, IAScreenHealth screen)
     {
         switch (phase)
         {
@@ -28,7 +45,7 @@ public class IAController : MonoBehaviour {
                 for (int i = 0; i < celulas.Length / 2; i++) celulas[i].Vulnerable = true;
                 break;
             case BossPhase.Third:
-                //IAScreen
+                screen.Vulnerable = true;
                 break;
         }
     }
@@ -42,12 +59,25 @@ public class IAController : MonoBehaviour {
         if(numCelulas == celulas.Length / 2)
         {
             phase = BossPhase.Second;
-            SetVulnerable(celulas);
+            SetVulnerable(celulas, screen);
         } else if(numCelulas == 0)
         {
             phase = BossPhase.Third;
-            SetVulnerable(celulas);
+            SetVulnerable(celulas, screen);
         }
-        print(phase);
+    }
+
+    void DeactivateAttack(int index)
+    {
+        attacks[index].ToggleAttack(false);
+    }
+
+    void ChangeAttack(IBossAttack1[] attacks, ref int index)
+    {
+        DeactivateAttack((index + attacks.Length - 1) % attacks.Length);
+        attacks[index].ToggleAttack(true);
+        attackTimer = attacks[index].AttackTime;
+        index++;
+        index %= attacks.Length;
     }
 }

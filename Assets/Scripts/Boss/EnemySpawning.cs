@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawning : MonoBehaviour {
+public class EnemySpawning : MonoBehaviour, IBossAttack1 {
 
     public Transform[] spawnPoints;
     public GameObject[] enemyPrefabs;
     public int numSpawns = 3;
 
     int spawnPointsSize = 0;
+
+    public float attackTime = 2;
+    public float AttackTime { get { return attackTime; } }
 
     private void OnEnable()
     {
@@ -53,5 +56,10 @@ public class EnemySpawning : MonoBehaviour {
         int i = 0;
         while (i < array.Length && array[i] != item) i++;
         return i == array.Length ? -1 : i;
+    }
+
+    public void ToggleAttack(bool active)
+    {
+        this.enabled = active;
     }
 }

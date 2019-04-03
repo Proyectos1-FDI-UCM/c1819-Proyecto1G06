@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Megalaser : MonoBehaviour {
+public class Megalaser : MonoBehaviour, IBossAttack1 {
 
     public Transform shootingPoint;
     public float movingTime;
@@ -15,6 +15,15 @@ public class Megalaser : MonoBehaviour {
     bool check = false;
     Animator anim;
     RaycastHit2D hit;
+
+    public float attackTime = 5;
+    public float AttackTime
+    {
+        get
+        {
+            return attackTime;
+        }
+    }
 
     private void Awake()
     {
@@ -49,7 +58,7 @@ public class Megalaser : MonoBehaviour {
         {
             shot = true;
             follow.HardStop();
-            anim.SetTrigger("Laser");
+            anim.SetBool("Laser", true);
             lr.enabled = true;
             lr.SetPosition(0, shootingPoint.position);
             lr.SetPosition(1, new Vector2(shootingPoint.position.x, -100));
@@ -61,7 +70,7 @@ public class Megalaser : MonoBehaviour {
     private void CheckCollisions()
     {
         hit = Physics2D.CircleCast(shootingPoint.position, lr.endWidth / 2, Vector2.down, 100, LayerMask.GetMask("Player"));
-        if(hit.transform.GetComponent<PlayerHealth>() != null)
+        if(hit.transform == player)
         {
             player.GetComponent<PlayerHealth>().TakeDamage();
         }
@@ -70,10 +79,16 @@ public class Megalaser : MonoBehaviour {
     private void OnDisable()
     {
         lr.enabled = false;
+        anim.SetBool("Laser", false);
     }
 
     public void StartChecking()
     {
         check = true;
-    } 
+    }
+
+    public void ToggleAttack(bool active)
+    {
+        this.enabled = active;
+    }
 }

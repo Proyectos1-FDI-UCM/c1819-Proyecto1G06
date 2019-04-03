@@ -2,12 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletStorm : Shooting
+public class BulletStorm : Shooting, IBossAttack1
 {
     public float deviation = 0.3f;
     public Transform[] shootingPoints;
 
     float[] shootCooldowns;
+
+    public float attackTime = 5;
+    public float AttackTime
+    {
+        get
+        {
+            return attackTime;
+        }
+    }
 
     private void OnEnable()
     {
@@ -48,5 +57,10 @@ public class BulletStorm : Shooting
     public void ResetCooldown(int i)
     {
         shootCooldowns[i] = 1 / rateOfFire;
+    }
+
+    public void ToggleAttack(bool active)
+    {
+        this.enabled = active;
     }
 }
