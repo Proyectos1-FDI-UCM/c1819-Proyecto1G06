@@ -1426,7 +1426,23 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114633770729734902, guid: d397f8f1a785a474b813712b8eaf003d,
+        type: 2}
+      propertyPath: endTrigger
+      value: 
+      objectReference: {fileID: 1002515891}
+    - target: {fileID: 114633770729734902, guid: d397f8f1a785a474b813712b8eaf003d,
+        type: 2}
+      propertyPath: boss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399452532637158, guid: d397f8f1a785a474b813712b8eaf003d,
+        type: 2}
+      propertyPath: room
+      value: 
+      objectReference: {fileID: 1189106475}
+    m_RemovedComponents:
+    - {fileID: 114633770729734902, guid: d397f8f1a785a474b813712b8eaf003d, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: d397f8f1a785a474b813712b8eaf003d, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &51496251
@@ -2362,8 +2378,8 @@ MonoBehaviour:
   doors: {fileID: 2126462688}
   itemPos: {fileID: 51496251}
   pos:
-    x: 0
-    y: 0
+    x: 2
+    y: 3
   boss: 0
 --- !u!4 &462851876
 Transform:
@@ -4694,6 +4710,16 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 386405274}
   m_Script: {fileID: 11500000, guid: 17ee778990124bf418ec34c41031a9ec, type: 3}
+--- !u!4 &811721963 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4054480133449592, guid: d397f8f1a785a474b813712b8eaf003d,
+    type: 2}
+  m_PrefabInternal: {fileID: 37769332}
+--- !u!1 &880043803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1371029724153120, guid: d397f8f1a785a474b813712b8eaf003d,
+    type: 2}
+  m_PrefabInternal: {fileID: 37769332}
 --- !u!1 &977719652
 GameObject:
   m_ObjectHideFlags: 0
@@ -4825,6 +4851,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1002515891 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1119197769197992, guid: d397f8f1a785a474b813712b8eaf003d,
+    type: 2}
+  m_PrefabInternal: {fileID: 37769332}
 --- !u!114 &1015528182 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114393722670221724, guid: d17ffd4fca532474892524f440a1170a,
@@ -4929,7 +4960,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1065060365}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 668305479}
@@ -4940,8 +4971,8 @@ Transform:
   - {fileID: 238056266}
   - {fileID: 1342207155}
   - {fileID: 1534435336}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 811721963}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1065060367
 MonoBehaviour:
@@ -5115,14 +5146,34 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114152090398949314, guid: 94c3d41a6f8126744ad409aec0e3c122,
-        type: 2}
-      propertyPath: maxHealth
-      value: 250000000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c3d41a6f8126744ad409aec0e3c122, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1189106474 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1825439357762392, guid: d397f8f1a785a474b813712b8eaf003d,
+    type: 2}
+  m_PrefabInternal: {fileID: 37769332}
+--- !u!114 &1189106475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1189106474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dfa7b977ceea5a4ab98bf7e42a1b539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies: {fileID: 811721963}
+  doors: {fileID: 880043803}
+  itemPos: {fileID: 1556802609}
+  pos:
+    x: 2
+    y: 2
+  boss: 1
+  cameraPlayer: {fileID: 1268308027}
+  cameraBoss: {fileID: 1899007690}
 --- !u!1 &1215008554
 GameObject:
   m_ObjectHideFlags: 0
@@ -5151,6 +5202,11 @@ Transform:
   m_Father: {fileID: 1534435336}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1268308027 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1614320439405694, guid: 24977787fb839504c98c80808726673e,
+    type: 2}
+  m_PrefabInternal: {fileID: 485714597}
 --- !u!1 &1342207154
 GameObject:
   m_ObjectHideFlags: 0
@@ -6516,6 +6572,16 @@ Transform:
   m_Father: {fileID: 1534435336}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1556802609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1802560294762720, guid: d397f8f1a785a474b813712b8eaf003d,
+    type: 2}
+  m_PrefabInternal: {fileID: 37769332}
+--- !u!4 &1614612637 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4354615746607846, guid: 94c3d41a6f8126744ad409aec0e3c122,
+    type: 2}
+  m_PrefabInternal: {fileID: 1173403460}
 --- !u!1001 &1616273182
 Prefab:
   m_ObjectHideFlags: 0
@@ -6636,6 +6702,117 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0299b4c82e13327438e1cd9501079017, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1899007690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1899007693}
+  - component: {fileID: 1899007692}
+  - component: {fileID: 1899007691}
+  - component: {fileID: 1899007694}
+  - component: {fileID: 1899007695}
+  m_Layer: 0
+  m_Name: BossCamera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!81 &1899007691
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1899007690}
+  m_Enabled: 1
+--- !u!20 &1899007692
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1899007690}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_projectionMatrixMode: 1
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 1
+  orthographic size: 10
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &1899007693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1899007690}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1899007694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1899007690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbb822f89f7978e4194579a0414afb84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1614612637}
+  followX: 0
+  followY: 1
+--- !u!95 &1899007695
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1899007690}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4d0e10dfb5e04a84ab2342624e56d7f2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1945134040
 GameObject:
   m_ObjectHideFlags: 0
