@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VoluntarioHealth : EnemyHealth {
+public class VoluntarioHealth : BossHealth {
 
     VoluntarioController controller;
 
@@ -19,7 +19,6 @@ public class VoluntarioHealth : EnemyHealth {
         if (controller.BulletHit())
         {
             base.TakeDamage(amount);
-            GameManager.instance.ui.UpdateBossHealth(curHealth, maxHealth);
         }
     }
 }

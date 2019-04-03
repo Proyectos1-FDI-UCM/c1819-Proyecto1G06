@@ -17,4 +17,5 @@ Esta es la rama FinalBoss, donde se est? desarrollando la I.A.
 - Creadas las balas que se dividen.
 - Creado el megal?ser.
 - Creado el ataque de las c?lulas.
-- Hecho que la cámara cambie de tamaño al entrar en la sala del boss.
+- Hecho que la c?mara cambie de tama?o al entrar en la sala del boss.
+- Hecho que la barra de vida se actualice correctamente en la primera fase.

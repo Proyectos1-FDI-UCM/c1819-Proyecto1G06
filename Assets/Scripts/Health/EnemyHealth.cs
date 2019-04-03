@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour {
 
     public float maxHealth = 10;
+    public float CurHealth { get { return curHealth; } }
+
     protected float curHealth;
 
     public virtual void Awake()

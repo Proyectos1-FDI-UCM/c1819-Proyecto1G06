@@ -8,6 +8,7 @@ public class IAController : MonoBehaviour {
     public IAScreenHealth screen;
 
     IBossAttack1[] attacks;
+    float combinedMaxHealth = 0, combinedCurHealth = 0;
     int numCelulas, curAttack = 0;
     float attackTimer = 0;
 
@@ -19,6 +20,8 @@ public class IAController : MonoBehaviour {
         attacks = GetComponentsInChildren<IBossAttack1>();
         numCelulas = celulas.Length;
         SetVulnerable(celulas, screen);
+        GameManager.instance.ui.ToggleBossHealth(true);
+        combinedMaxHealth = celulas[2].maxHealth + celulas[3].maxHealth;
         for(int i = 0; i < attacks.Length; i++)
         {
             attacks[i].ToggleAttack(false);
@@ -59,10 +62,12 @@ public class IAController : MonoBehaviour {
         if(numCelulas == celulas.Length / 2)
         {
             phase = BossPhase.Second;
+            combinedMaxHealth = celulas[0].maxHealth + celulas[1].maxHealth;
             SetVulnerable(celulas, screen);
         } else if(numCelulas == 0)
         {
             phase = BossPhase.Third;
+            combinedMaxHealth = screen.maxHealth;
             SetVulnerable(celulas, screen);
         }
     }
@@ -79,5 +84,22 @@ public class IAController : MonoBehaviour {
         attackTimer = attacks[index].AttackTime;
         index++;
         index %= attacks.Length;
+    }
+
+    public void TakeDamage()
+    {
+        switch (phase)
+        {
+            case BossPhase.First:
+                combinedCurHealth = celulas[2].CurHealth + celulas[3].CurHealth;
+                break;
+            case BossPhase.Second:
+                combinedCurHealth = celulas[0].CurHealth + celulas[1].CurHealth;
+                break;
+            case BossPhase.Third:
+                combinedCurHealth = screen.CurHealth;
+                break;
+        }
+        GameManager.instance.ui.UpdateBossHealth(combinedCurHealth, combinedMaxHealth);
     }
 }

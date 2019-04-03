@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TORv0Health : EnemyHealth {
+public class TORv0Health : BossHealth {
 
     bool vulnerable;
 
@@ -15,7 +15,6 @@ public class TORv0Health : EnemyHealth {
         if (vulnerable)
         {
             base.TakeDamage(amount);
-            GameManager.instance.ui.UpdateBossHealth(curHealth, maxHealth);
         }
     }
 

@@ -37,7 +37,6 @@ public class VoluntarioController : EnemyController {
     /// </summary>
     private void Update()
     {
-        print(state);
         if (!stunned)
         {
             switch (state)

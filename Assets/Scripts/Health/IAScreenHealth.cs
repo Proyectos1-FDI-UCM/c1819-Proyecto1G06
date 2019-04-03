@@ -10,6 +10,9 @@ public class IAScreenHealth : EnemyHealth {
     public override void TakeDamage(float amount)
     {
         if (Vulnerable)
+        {
             base.TakeDamage(amount);
+            GetComponentInParent<IAController>().TakeDamage();
+        }
     }
 }

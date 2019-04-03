@@ -39,7 +39,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4117784434146168}
-  - component: {fileID: 114876517840638424}
   - component: {fileID: 114122832802393956}
   m_Layer: 0
   m_Name: RoomBoss2
@@ -221,7 +220,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1224098136426710}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 120, y: 60, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4843456630638190}
@@ -926,7 +925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a362d86c6b8f9cc45836bdf91903e1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  room: {fileID: 114876517840638424}
+  room: {fileID: 0}
 --- !u!114 &114564516172755664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -951,24 +950,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 1
---- !u!114 &114876517840638424
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1224098136426710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9286d5901f7868b43a3d4c7a1caf0979, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemies: {fileID: 4628868233552884}
-  doors: {fileID: 1453036737769772}
-  itemPos: {fileID: 1916896093197246}
-  pos:
-    x: 4
-    y: 0
-  boss: 1
 --- !u!114 &114930513741143882
 MonoBehaviour:
   m_ObjectHideFlags: 1
