@@ -50,8 +50,8 @@ public class TorretaLaserController : TorretaController {
 
                 head.transform.eulerAngles = new Vector3(0, 0, angle + (lookDirection.x < 0f ? 180f : 0f));
 
-                
-                   CheckCollisions();
+
+                CheckCollisions();
             }
         }
         else
@@ -63,8 +63,8 @@ public class TorretaLaserController : TorretaController {
 
     void CheckCollisions()
     {
-        hit = Physics2D.Linecast(head.transform.position, followPoint.position);
-        
+        hit = Physics2D.Linecast(head.transform.position, followPoint.position, LayerMask.GetMask("Player"));
+
         if (hit.transform.GetComponent<PlayerHealth>() != null) //No detecta la colision (Opciones, linecast, raycast)
         {
             player.GetComponent<PlayerHealth>().TakeDamage();
@@ -80,7 +80,6 @@ public class TorretaLaserController : TorretaController {
         lr.material = redLaser;
         lr.startWidth = 0.5f;
         lr.endWidth = 0.5f;
-        print("Funciona");
     }
 
     void StopShootingLaser()
