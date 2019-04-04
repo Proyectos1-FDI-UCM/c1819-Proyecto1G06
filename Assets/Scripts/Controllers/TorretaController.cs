@@ -18,7 +18,7 @@ public class TorretaController : EnemyController {
         {
             shooting.Cooldown();
             shooting.Shoot();
-        }
+        }            
     }
 
     public override void Sight(RaycastHit2D sight)
