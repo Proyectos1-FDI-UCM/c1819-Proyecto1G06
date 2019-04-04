@@ -7,7 +7,7 @@ public class SweepingLaser : MonoBehaviour, IBossAttack1 {
     public Transform shootingPoint;
     public Transform followPoint;
 
-    LineRenderer lr;
+    protected LineRenderer lr;
 
     public float attackTime = 10;
     public float AttackTime
@@ -33,7 +33,7 @@ public class SweepingLaser : MonoBehaviour, IBossAttack1 {
         lr.SetPosition(1, followPoint.position);
     }
 
-    void Update()
+    public virtual void Update()
     {
         RaycastHit2D hit;
         lr.SetPosition(1, followPoint.position);
