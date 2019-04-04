@@ -11,3 +11,4 @@ Esta es la rama principal, donde está la última versiún estable del proyecto.
 - Actualizado el sprite del jugador.
 - Añadido al Voluntario.
 - Añadido el nivel 2.
+- Añadida la torreta láser.
