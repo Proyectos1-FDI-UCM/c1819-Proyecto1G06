@@ -10,9 +10,4 @@ public class SweepingLaser2 : SweepingLaser {
         lr.SetPosition(1, followPoint.position);
         base.Update();
     }
-
-    public void Toggle()
-    {
-        this.enabled = !this.enabled;
-    }
 }

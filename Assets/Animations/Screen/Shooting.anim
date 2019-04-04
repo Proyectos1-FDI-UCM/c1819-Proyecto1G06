@@ -20,10 +20,10 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: d9541debca5203142aa14f28dc017d75, type: 3}
-    - time: 4.5
+    - time: 7
       value: {fileID: 21300000, guid: d9541debca5203142aa14f28dc017d75, type: 3}
     attribute: m_Sprite
-    path: Screen
+    path: 
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -34,7 +34,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3638584326
+      path: 0
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -48,7 +48,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 4.516667
+    m_StopTime: 7.016667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -69,22 +69,8 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: 0
-    functionName: 
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 1.5
-    functionName: 
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 3
-    functionName: 
+  - time: 6.9666667
+    functionName: GoIdle
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

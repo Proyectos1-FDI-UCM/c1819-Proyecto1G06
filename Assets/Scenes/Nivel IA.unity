@@ -4863,7 +4863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d53b47349551c43b545f474ee8adc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 5.5
 --- !u!1 &880043803 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1371029724153120, guid: d397f8f1a785a474b813712b8eaf003d,
@@ -5555,6 +5555,9 @@ GameObject:
   - component: {fileID: 1367377434}
   - component: {fileID: 1367377436}
   - component: {fileID: 1367377435}
+  - component: {fileID: 1367377437}
+  - component: {fileID: 1367377438}
+  - component: {fileID: 1367377439}
   m_Layer: 10
   m_Name: Screen
   m_TagString: Untagged
@@ -5629,7 +5632,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1367377432}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad6cfd7d5750ac94eb0d9683248f2760, type: 3}
   m_Name: 
@@ -5729,6 +5732,55 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!95 &1367377437
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367377432}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e1645c63b5e8f144295b2dea4ed203cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1367377438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367377432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b74a80593ab750849b699f049a957eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intervalAttacks: {x: 3, y: 5}
+--- !u!114 &1367377439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367377432}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b34730ff92fe742ab1ba3a6fa7ff72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rateOfFire: 1
+  shootingPoint: {fileID: 1165345547}
+  bulletPrefab: {fileID: 114601551365168386, guid: ea3a8e0ac88aff64d9a48f455bb945fb,
+    type: 2}
+  deviation: 0.3
+  shootingPoints:
+  - {fileID: 1165345547}
+  attackTime: 5
 --- !u!1 &1438803088
 GameObject:
   m_ObjectHideFlags: 0
@@ -7039,7 +7091,6 @@ GameObject:
   - component: {fileID: 1636650305}
   - component: {fileID: 1636650307}
   - component: {fileID: 1636650306}
-  - component: {fileID: 1636650308}
   m_Layer: 10
   m_Name: IAPhase2
   m_TagString: Untagged
@@ -7215,24 +7266,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2895708, y: 2.8820686}
   m_EdgeRadius: 0
---- !u!95 &1636650308
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1636650297}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 22ac0af9233e2744db656c6fd35bd63e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1667989117
 Prefab:
   m_ObjectHideFlags: 0

@@ -20,3 +20,4 @@ Esta es la rama FinalBoss, donde se est? desarrollando la I.A.
 - Hecho que la c?mara cambie de tama?o al entrar en la sala del boss.
 - Hecho que la barra de vida se actualice correctamente en la primera fase.
 - En la segunda fase, la I.A. va hacia el jugador y se para al atacar.
+- En la segunda fase, la I.A. dispara un láser y balas.

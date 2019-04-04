@@ -26,5 +26,4 @@ public class Phase2Controller : EnemyController {
                 break;
         }       
     }
-
 }
