@@ -2,32 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TorretaLaserShooting : Shooting {
+public class TorretaLaserShooting : MkIShooting {
 
-    GameObject player;
-    TorretaLaserController laserController;
+    bool damaging = false;
 
-    private void Awake()
+    public override void Start()
     {
-        player = GameManager.instance.player;
-        laserController = GetComponentInParent<TorretaLaserController>();
-        
+        base.Start();
     }
 
-    // Update is called once per frame
-     public override void Update () {
-
-        if (shootCooldown == 0)
+    public override void Update()
+    {
+        if (!shooting)
+            base.Update();
+        if (damaging)
         {
-            laserController.ShootLaser();
-            ResetCooldown();
-            Vector2 lookDirection = (player.transform.position) - transform.position;
-            float angle = Mathf.Atan(lookDirection.y / lookDirection.x) * (180 / Mathf.PI);
-
-            transform.eulerAngles = new Vector3(0, 0, angle + (lookDirection.x < 0f ? 180f : 0f));        
+            RaycastHit2D hit = Physics2D.Raycast(shootingPoint.position, transform.right, Mathf.Infinity, LayerMask.GetMask("Environment", "Player"));
+            if (hit.transform == player)
+            {
+                hit.transform.GetComponent<PlayerHealth>().TakeDamage();
+            }
         }
+    }
 
-        else
-            Cooldown();
-     }
+    public void StartDamaging()
+    {
+        damaging = true;
+    }
+
+    public void StopDamaging()
+    {
+        damaging = false;
+    }
+
+    public void StopShooting()
+    {
+        shooting = false;
+        ResetCooldown();
+    }
 }

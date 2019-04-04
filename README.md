@@ -7,7 +7,9 @@ Esta es la rama donde se est? desarrollando la torreta l?ser.
 
 ## Cambios
 
-
+- La torreta dispara l?ser.
+- La torreta hace da?o con el l?ser.
+- La torreta apunta al jugador.
 
 
 

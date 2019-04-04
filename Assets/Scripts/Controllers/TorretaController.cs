@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class TorretaController : EnemyController {
 
-    private Shooting shooting;
+    protected Shooting shooting;
 
     private void Awake()
     {
-        shooting = transform.GetChild(0).GetComponent<TorretaArtilleríaShooting>();
+        shooting = transform.GetComponentInChildren<TorretaArtilleríaShooting>();
     }
 
     private void Update()
     {
-        //Si está en Shooting intenta disparar y redue el cooldown del disparo
+        //Si está en Shooting intenta disparar y reduce el cooldown del disparo
         if (state == EnemyState.Shooting)
         {
             shooting.Cooldown();

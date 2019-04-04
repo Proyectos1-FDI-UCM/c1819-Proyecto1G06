@@ -36,9 +36,9 @@ GameObject:
   - component: {fileID: 4570005017964834}
   - component: {fileID: 212141540474010710}
   - component: {fileID: 114805523593647262}
-  - component: {fileID: 114287391131869432}
   - component: {fileID: 114390578030057312}
   - component: {fileID: 61469061857586954}
+  - component: {fileID: 114579945875799742}
   m_Layer: 10
   m_Name: TorretaLaser
   m_TagString: Untagged
@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 212101324036533962}
   - component: {fileID: 120069553195287880}
   - component: {fileID: 114708769692375228}
+  - component: {fileID: 95037551587251594}
   m_Layer: 10
   m_Name: torretaCabeza
   m_TagString: Untagged
@@ -70,7 +71,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1721151924105994}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.1, y: 0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -85,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1156342361321192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.133, y: 0.042, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4076060056303728}
@@ -130,17 +131,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114287391131869432
-MonoBehaviour:
+--- !u!95 &95037551587251594
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1451109395574382}
+  m_GameObject: {fileID: 1721151924105994}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9c4e38f2b8b90a428d3af9118eff4f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: b22af0b670104a7479f30eb16e591a2b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114390578030057312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,6 +160,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d36bfcc99e120c46ae6608e1a9b55d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114579945875799742
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1451109395574382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6781e557fb49346b2a7a1b4cf5e02c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 22
 --- !u!114 &114708769692375228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -163,9 +183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68628d02638299e439545a7e3d1885ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rateOfFire: 1
-  shootingPoint: {fileID: 0}
-  bulletPrefab: {fileID: 0}
+  rateOfFire: 0.2
+  shootingPoint: {fileID: 4159047885683368}
+  bulletPrefab: {fileID: 114601551365168386, guid: f1e39e6e42db39a4fa1c3c8b29690968,
+    type: 2}
 --- !u!114 &114805523593647262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,7 +213,7 @@ LineRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 6e67a4113c7e60a469db5cda393b0240, type: 2}
+  - {fileID: 2100000, guid: 9f79c22c36b2b6d49a3f336a69f9cb04, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -214,10 +235,10 @@ LineRenderer:
   m_SortingOrder: -1
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.05
+    widthMultiplier: 0.02
     widthCurve:
       serializedVersion: 2
       m_Curve:
