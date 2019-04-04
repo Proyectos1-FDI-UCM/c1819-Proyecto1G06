@@ -261,8 +261,10 @@ GameObject:
   - component: {fileID: 1349618951}
   - component: {fileID: 1349618950}
   - component: {fileID: 1349618952}
+  - component: {fileID: 1349618955}
+  - component: {fileID: 1349618954}
   - component: {fileID: 1349618953}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dron blindado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,9 +383,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 1349618948}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83a1517675cab3049ad42e057183254d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b6781e557fb49346b2a7a1b4cf5e02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 30
+--- !u!114 &1349618954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1349618948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a519aa428e4b1af46b3f9ca6721c0055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackAmount: 5
+--- !u!114 &1349618955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1349618948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ff0049bfccd9c94cbf3890bca794a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Amigo: {fileID: 1404730090}
+--- !u!4 &1404730090 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4569699344064594, guid: eef0e71220b30854dac5e1ed03673880,
+    type: 2}
+  m_PrefabInternal: {fileID: 1039833402}
 --- !u!1 &1661861847 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1206035332229422, guid: 94c3d41a6f8126744ad409aec0e3c122,
