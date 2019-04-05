@@ -28,4 +28,12 @@ public class FollowDirection : MonoBehaviour {
     {
         rb.velocity *= 0.8f;
     }
+
+    /// <summary>
+    /// Para completamente al objeto
+    /// </summary>
+    public void HardStop()
+    {
+        rb.velocity = Vector2.zero;
+    }
 }

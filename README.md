@@ -1,4 +1,4 @@
-# Proyecto1
+﻿# Proyecto1
 
 Este es el Proyecto 1 del grupo 06 18/19.
 
@@ -11,3 +11,4 @@ Esta es la rama principal, donde está la última versiún estable del proyecto.
 - Actualizado el sprite del jugador.
 - Añadido al Voluntario.
 - Añadido el nivel 2.
+- Añadida escena de la I.A., células y sus comportamientos.
