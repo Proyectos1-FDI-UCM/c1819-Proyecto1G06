@@ -15,4 +15,9 @@ public class IAScreenHealth : EnemyHealth {
             GetComponentInParent<IAController>().TakeDamage();
         }
     }
+
+    public override void Die()
+    {
+        GameManager.instance.LoadScene("Nivel 1");
+    }
 }
