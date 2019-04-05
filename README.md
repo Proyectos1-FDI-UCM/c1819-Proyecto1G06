@@ -4,13 +4,9 @@ Este es el Proyecto 1 del grupo 06 18/19.
 
 ## Sobre esta rama
 
-Esta es la rama principal, donde está la última versiún estable del proyecto.
+Esta es la rama de objetos, donde se cerarán los distintos items del juego.
 
 ## Cambios
 
-- Actualizado el sprite del jugador.
-- Añadido al Voluntario.
-- Añadido el nivel 2.
-- Añadida la torreta láser.
-- Añadida escena de la I.A., células y sus comportamientos.
+- Creada la Lente de refuerzo, que pone el fecto de disparo de atravesar.
 

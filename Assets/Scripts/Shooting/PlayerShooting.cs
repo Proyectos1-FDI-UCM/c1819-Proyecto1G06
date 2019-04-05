@@ -6,6 +6,7 @@ public class PlayerShooting : Shooting {
 
     public float baseDamage = 2;
     public float damageMultiplier = 1;
+    public BulletMovement[] possibleBullets;
 
     public void Start()
     {
@@ -47,5 +48,13 @@ public class PlayerShooting : Shooting {
     {
         baseDamage += amount;
         GameManager.instance.ui.UpdateDamage(baseDamage);
+    }
+
+    /// <summary>
+    /// Cambia la bala según el nuevo efecto.
+    /// </summary>
+    public void ChangeEffect(BulletEffects effect)
+    {
+        bulletPrefab = possibleBullets[(int)effect];
     }
 }

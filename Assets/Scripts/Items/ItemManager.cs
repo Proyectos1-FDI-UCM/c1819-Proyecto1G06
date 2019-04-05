@@ -12,11 +12,15 @@ public class ItemManager : MonoBehaviour {
     {
         public ItemData[] itemData;
         public int firstSpace;     // Primer hueco libre de la lista, o su tamaño
+        public ItemData effect;
+        public ItemData weapon;
 
         public ItemList(int tam)
         {
             itemData = new ItemData[tam];
             firstSpace = 0;
+            effect = null;
+            weapon = null;
         }
     }
 
@@ -45,11 +49,22 @@ public class ItemManager : MonoBehaviour {
     /// </summary>
     public void AddItem(ItemData item)
     {
-        if (itemList.firstSpace == itemList.itemData.Length) AddSpace(ref itemList, 15);
+        switch (item.type)
+        {
+            case (ObjetcType.Item):
+                if (itemList.firstSpace == itemList.itemData.Length) AddSpace(ref itemList, 15);
 
-        itemList.itemData[itemList.firstSpace] = item;
-        itemList.firstSpace++;
-        GameManager.instance.ui.AddItem(item.sprite);
+                itemList.itemData[itemList.firstSpace] = item;
+                itemList.firstSpace++;
+                GameManager.instance.ui.AddItem(item.sprite);
+                break;
+            case (ObjetcType.Effect):
+                itemList.effect = item;
+                break;
+            case (ObjetcType.Weapon):
+                itemList.weapon = item;
+                break;
+        }          
     }
 
     /// <summary>
@@ -143,5 +158,10 @@ public class ItemManager : MonoBehaviour {
     public void AddDamage(float amount)
     {
         player.GetComponentInChildren<PlayerShooting>().AddDamage(amount);
+    }
+
+    public void ChangeEffect(BulletEffects effect)
+    {
+        player.GetComponentInChildren<PlayerShooting>().ChangeEffect(effect);
     }
 }

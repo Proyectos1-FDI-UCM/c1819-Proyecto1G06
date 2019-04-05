@@ -8,6 +8,7 @@ public class ItemData : MonoBehaviour {
     public char Tier { get { return char.ToUpper(tier); } }
     public Sprite sprite { get { return GetComponent<SpriteRenderer>().sprite; } }
     public IItem[] effects { get { return GetComponents<IItem>(); } }
+    public ObjetcType type;
 
     /// <summary>
     /// Al chocarse con el jugador, recoger el item
