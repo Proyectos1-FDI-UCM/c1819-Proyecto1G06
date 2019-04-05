@@ -12,7 +12,7 @@ public class MkIShooting : Shooting {
         anim = GetComponent<Animator>();
     }
 
-    public void Start()
+    public virtual void Start()
     {
         ResetCooldown();
     }
