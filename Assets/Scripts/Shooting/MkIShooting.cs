@@ -33,7 +33,7 @@ public class MkIShooting : Shooting {
     /// </summary>
     public override void Shoot()
     {
-        if (shooting == false && shootCooldown == 0)
+        if (shooting == false && shootCooldown == 0 && !disarmed)
         {
             anim.SetTrigger("Shoot");
             shooting = true;

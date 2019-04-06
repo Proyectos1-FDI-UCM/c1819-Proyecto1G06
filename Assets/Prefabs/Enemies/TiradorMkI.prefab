@@ -101,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1565328057034312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.14, y: 0.11041446, z: 0.045898438}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4140031445389830}
@@ -233,7 +233,7 @@ MonoBehaviour:
   shootingPoint: {fileID: 4338970375912462}
   bulletPrefab: {fileID: 114601551365168386, guid: f1e39e6e42db39a4fa1c3c8b29690968,
     type: 2}
-  LaserFlickerTime: 0.4
+  disarmable: 1
 --- !u!120 &120367506483493104
 LineRenderer:
   m_ObjectHideFlags: 1

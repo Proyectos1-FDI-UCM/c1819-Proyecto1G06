@@ -18,7 +18,7 @@ public class CelulaShooting : Shooting {
     /// </summary>
     public override void Shoot()
     {
-        if (shootCooldown == 0f)
+        if (shootCooldown == 0f && !disarmed)
         {
             ResetCooldown();
 
