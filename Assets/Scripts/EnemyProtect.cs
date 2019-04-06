@@ -5,36 +5,31 @@ using UnityEngine;
 public class EnemyProtect : MonoBehaviour
 {
     public Transform Amigo;
-    private Transform player;
+    public Transform FollowPoint;
+    ColliderDistance2D colDistance;
+    FollowDirection follow;
+    public Transform player;
 
-    RaycastHit2D vectorEJ;
-
-    // Use this for initialization
     void Start()
     {
-        player = GameManager.instance.player.transform;
-
+        follow = GetComponent<FollowDirection>();    
     }
 
-    // Update is called once per frame
     void Update()
     {
-        vectorEJ = Physics2D.Linecast(player.position, Amigo.position);
-        Debug.DrawLine(player.position, Amigo.position);
-
-
-        transform.position = vectorEJ.transform.position / 2;
-
-        /*vectorEJ = Physics2D.Linecast(player.position, Amigo.position);
-        Debug.DrawLine(player.position, Amigo.position);
-        if (transform.position != vectorEJ.transform.position / 2)
+        colDistance = Physics2D.Distance(FollowPoint.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        
+        if (Amigo != null)
         {
-            transform.position =
+            if (colDistance.distance >= 0.05)
+            {
+                follow.MoveTowards(FollowPoint.position - transform.position);
+            }
+            else
+            {
+                transform.position = FollowPoint.position;
+            }
+            
         }
-        else
-        {
-            transform.position = vectorEJ.transform.position / 2;
-        }*/
-
     }
 }
