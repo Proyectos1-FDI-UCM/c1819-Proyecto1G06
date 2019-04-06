@@ -7,18 +7,19 @@ public class FollowPointDronB : MonoBehaviour {
 
     public Transform Amigo;
     public Transform player;
-    RaycastHit2D hit;
+    Vector2 hit;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
 	
-	// Update is called once per frame
 	void Update () {
-        hit = Physics2D.Linecast(Amigo.position, player.position);
-        Debug.DrawLine(player.position, hit.transform.position);
+        // Creamos un vector entre Jugador y el enemigo que el Dron Blindado defendera
+        if (Amigo != null)
+        {
+            hit = player.position - Amigo.position;
+            Debug.DrawLine(player.position, hit);
 
-        transform.position = hit.transform.position / 2;
+
+            transform.position = (hit / hit.magnitude) * 2f;
+        } 
+       
     }
 }

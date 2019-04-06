@@ -18,10 +18,10 @@ public class EnemyProtect : MonoBehaviour
     void Update()
     {
         colDistance = Physics2D.Distance(FollowPoint.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-        
+
         if (Amigo != null)
         {
-            if (colDistance.distance >= 0.05)
+            if (colDistance.distance >= 0.005) //Hace un pequeno teletransporte al llegar al FollowPoint.position
             {
                 follow.MoveTowards(FollowPoint.position - transform.position);
             }
@@ -29,7 +29,11 @@ public class EnemyProtect : MonoBehaviour
             {
                 transform.position = FollowPoint.position;
             }
-            
+
+        }
+        else
+        {
+            follow.MoveTowards(player.position - transform.position);
         }
     }
 }
