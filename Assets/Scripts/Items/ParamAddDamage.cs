@@ -11,6 +11,6 @@ public class ParamAddDamage : MonoBehaviour, IItem {
     /// </summary>
     public void PickEffect()
     {
-        ItemManager.instance.AddDamage(amount);
+        GameManager.instance.player.GetComponentInChildren<PlayerShooting>().AddDamage(amount);
     }
 }

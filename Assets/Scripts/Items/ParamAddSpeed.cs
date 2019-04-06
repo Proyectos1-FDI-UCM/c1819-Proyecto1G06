@@ -11,6 +11,6 @@ public class ParamAddSpeed : MonoBehaviour, IItem {
     /// </summary>
     public void PickEffect()
     {
-        ItemManager.instance.AddSpeed(amount);
+        GameManager.instance.player.GetComponent<PlayerMovement>().AddSpeed(amount);
     }
 }

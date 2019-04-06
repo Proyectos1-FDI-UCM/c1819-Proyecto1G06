@@ -135,33 +135,4 @@ public class ItemManager : MonoBehaviour {
 
         itemList.itemData = new ItemData[15];
     }
-
-    /// <summary>
-    /// Avisa al jugador que aumente su vida
-    /// </summary>
-    public void AddHealth(int amount, bool heal)
-    {
-        player.GetComponent<PlayerHealth>().AddMaxHealth(amount, heal);
-    }
-
-    /// <summary>
-    /// Avisa al jugador que aumente su velocidad
-    /// </summary>
-    public void AddSpeed(float amount)
-    {
-        player.GetComponent<PlayerMovement>().AddSpeed(amount);
-    }
-
-    /// <summary>
-    /// Avisa al jugador que aumente su daño
-    /// </summary>
-    public void AddDamage(float amount)
-    {
-        player.GetComponentInChildren<PlayerShooting>().AddDamage(amount);
-    }
-
-    public void ChangeEffect(BulletEffects effect)
-    {
-        player.GetComponentInChildren<PlayerShooting>().ChangeEffect(effect);
-    }
 }

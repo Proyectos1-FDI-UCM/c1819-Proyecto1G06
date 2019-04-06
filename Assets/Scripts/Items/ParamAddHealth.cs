@@ -13,6 +13,6 @@ public class ParamAddHealth : MonoBehaviour, IItem {
     /// </summary>
     public void PickEffect()
     {
-        ItemManager.instance.AddHealth(amount, heal);
+        GameManager.instance.player.GetComponent<PlayerHealth>().AddMaxHealth(amount, heal);
     }
 }
