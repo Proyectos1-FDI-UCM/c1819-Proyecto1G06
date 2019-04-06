@@ -4,22 +4,28 @@ using UnityEngine;
 
 public class FollowPointDronB : MonoBehaviour {
 
-
     public Transform Amigo;
-    public Transform player;
-    Vector2 hit;
+    public float distance;
 
-	
-	void Update () {
-        // Creamos un vector entre Jugador y el enemigo que el Dron Blindado defendera
-        if (Amigo != null)
+    FollowDirection follow;
+    Transform player;
+
+    private void Start()
+    {
+        follow = GetComponent<FollowDirection>();
+        player = GameManager.instance.player.transform;
+    }
+
+    void Update ()
+    {
+        if(Amigo != null)
         {
-            hit = player.position - Amigo.position;
-            Debug.DrawLine(player.position, hit);
-
-
-            transform.position = (hit / hit.magnitude) * 2f;
-        } 
-       
+            Vector3 playerAmigo = player.position - Amigo.position;
+            transform.position = Amigo.position + (playerAmigo / playerAmigo.magnitude) * distance;
+        }
+        else
+        {
+            this.enabled = false;
+        }
     }
 }

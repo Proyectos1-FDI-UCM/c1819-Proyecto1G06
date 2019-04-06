@@ -8,4 +8,5 @@ Esta es la rama donde trabajamos para crear un enemigo lento que proteja a otro 
 
 ## Cambios
 
-- Actualizado la rama DronBlindado (Ahora el FollowPoint se mueve dentro del vector jugaro-amigo)
+- Actualizado la rama DronBlindado (Ahora el FollowPoint se mueve dentro del vector jugaro-amigo).
+- El dron blindado intenta siempre ponerse entre su amigo y el jugador.

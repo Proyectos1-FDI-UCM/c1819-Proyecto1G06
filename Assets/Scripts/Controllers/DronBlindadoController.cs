@@ -2,38 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyProtect : MonoBehaviour
+public class DronBlindadoController : MonoBehaviour
 {
     public Transform Amigo;
     public Transform FollowPoint;
+
+    DronAserradoController dronAss;
     ColliderDistance2D colDistance;
     FollowDirection follow;
-    public Transform player;
+    Transform player;
 
     void Start()
     {
-        follow = GetComponent<FollowDirection>();    
+        follow = GetComponent<FollowDirection>();
+        player = GameManager.instance.player.transform;
+        dronAss = GetComponent<DronAserradoController>();
     }
 
     void Update()
     {
-        colDistance = Physics2D.Distance(FollowPoint.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-
         if (Amigo != null)
         {
-            if (colDistance.distance >= 0.005) //Hace un pequeno teletransporte al llegar al FollowPoint.position
+            if (Vector2.Distance(FollowPoint.position, player.position) > 0.1f)
             {
                 follow.MoveTowards(FollowPoint.position - transform.position);
             }
             else
             {
-                transform.position = FollowPoint.position;
+                follow.Stop();
             }
 
         }
         else
         {
-            follow.MoveTowards(player.position - transform.position);
+            dronAss.enabled = true;
+            this.enabled = false;
         }
     }
 }
