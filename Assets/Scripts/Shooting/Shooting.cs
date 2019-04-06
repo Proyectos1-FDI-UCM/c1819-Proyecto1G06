@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {   
+    [Tooltip("Balas por segundo.")]
     public float rateOfFire = 1f;                   //Numero de balas por segundo
     public Transform shootingPoint;                 //Punto de donde sale la bala
     public BulletMovement bulletPrefab;             //Script del movimiento de la bala
