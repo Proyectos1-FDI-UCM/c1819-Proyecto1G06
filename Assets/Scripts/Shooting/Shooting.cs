@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {   
+    [Tooltip("Balas por segundo.")]
     public float rateOfFire = 1f;                   //Numero de balas por segundo
     public Transform shootingPoint;                 //Punto de donde sale la bala
     public BulletMovement bulletPrefab;             //Script del movimiento de la bala
+    public bool disarmable = true;                  //Si puede ser desarmado
 
     protected float shootCooldown = 0f;             //Tiempo hasta la siguiente bala
     protected Transform player { get { return GameManager.instance.player.transform; } }
     protected Transform bulletPool { get { return GameManager.instance.bulletPool; } }                 //Padre de las balas
+    protected bool disarmed = false;
 
     public virtual void Update()
     {
@@ -34,7 +37,7 @@ public class Shooting : MonoBehaviour
     /// </summary>
     public virtual void Shoot()
     {
-        if (shootCooldown == 0f)
+        if (shootCooldown == 0f && !disarmed)   //Si puede disparar
         {
             ResetCooldown();
             BulletMovement newBullet = Instantiate<BulletMovement>(bulletPrefab, shootingPoint.position, Quaternion.identity, bulletPool);
@@ -48,5 +51,18 @@ public class Shooting : MonoBehaviour
     public virtual void ResetCooldown()
     {
         shootCooldown = 1 / rateOfFire;
+    }
+
+    public void Disarm()
+    {
+        if (disarmable)
+        {
+            disarmed = true;
+        }
+    }
+
+    public void Rearm()
+    {
+        disarmed = false;
     }
 }

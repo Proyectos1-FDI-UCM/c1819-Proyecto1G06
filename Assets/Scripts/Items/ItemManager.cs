@@ -12,11 +12,15 @@ public class ItemManager : MonoBehaviour {
     {
         public ItemData[] itemData;
         public int firstSpace;     // Primer hueco libre de la lista, o su tamaño
+        public ItemData effect;
+        public ItemData weapon;
 
         public ItemList(int tam)
         {
             itemData = new ItemData[tam];
             firstSpace = 0;
+            effect = null;
+            weapon = null;
         }
     }
 
@@ -45,11 +49,22 @@ public class ItemManager : MonoBehaviour {
     /// </summary>
     public void AddItem(ItemData item)
     {
-        if (itemList.firstSpace == itemList.itemData.Length) AddSpace(ref itemList, 15);
+        switch (item.type)
+        {
+            case (ObjetcType.Item):
+                if (itemList.firstSpace == itemList.itemData.Length) AddSpace(ref itemList, 15);
 
-        itemList.itemData[itemList.firstSpace] = item;
-        itemList.firstSpace++;
-        GameManager.instance.ui.AddItem(item.sprite);
+                itemList.itemData[itemList.firstSpace] = item;
+                itemList.firstSpace++;
+                GameManager.instance.ui.AddItem(item.sprite);
+                break;
+            case (ObjetcType.Effect):
+                itemList.effect = item;
+                break;
+            case (ObjetcType.Weapon):
+                itemList.weapon = item;
+                break;
+        }          
     }
 
     /// <summary>
@@ -119,29 +134,5 @@ public class ItemManager : MonoBehaviour {
         }
 
         itemList.itemData = new ItemData[15];
-    }
-
-    /// <summary>
-    /// Avisa al jugador que aumente su vida
-    /// </summary>
-    public void AddHealth(int amount, bool heal)
-    {
-        player.GetComponent<PlayerHealth>().AddMaxHealth(amount, heal);
-    }
-
-    /// <summary>
-    /// Avisa al jugador que aumente su velocidad
-    /// </summary>
-    public void AddSpeed(float amount)
-    {
-        player.GetComponent<PlayerMovement>().AddSpeed(amount);
-    }
-
-    /// <summary>
-    /// Avisa al jugador que aumente su daño
-    /// </summary>
-    public void AddDamage(float amount)
-    {
-        player.GetComponentInChildren<PlayerShooting>().AddDamage(amount);
     }
 }

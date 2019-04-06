@@ -4,7 +4,7 @@ Este es el Proyecto 1 del grupo 06 18/19.
 
 ## Sobre esta rama
 
-Esta es la rama donde trabajamos para crear un enemigo lento que proteja a otro enemigo
+Esta es la rama principal, donde está la última versión estable del proyecto.
 
 ## Cambios
 
@@ -14,3 +14,4 @@ Esta es la rama donde trabajamos para crear un enemigo lento que proteja a otro 
 - Añadida la torreta láser.
 - Añadida escena de la I.A., células y sus comportamientos.
 - Añadido el dron blindado con su comportamiento.
+- Añadidos los objetos Lente de Refuerzo, Lente convergente, Bobina Portátil y Dron Volador.

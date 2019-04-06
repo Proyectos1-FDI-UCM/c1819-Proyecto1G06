@@ -6,10 +6,13 @@ public class PlayerShooting : Shooting {
 
     public float baseDamage = 2;
     public float damageMultiplier = 1;
+    public BulletMovement[] possibleBullets;
+    //Weapons weapon; //Arma, de momento sin usar
 
     public void Start()
     {
         GameManager.instance.ui.UpdateDamage(baseDamage);
+        //weapon = Weapons.Default;
     }
 
     /// <summary>
@@ -47,5 +50,34 @@ public class PlayerShooting : Shooting {
     {
         baseDamage += amount;
         GameManager.instance.ui.UpdateDamage(baseDamage);
+    }
+
+    /// <summary>
+    /// Cambia la bala según el nuevo efecto.
+    /// </summary>
+    public void ChangeEffect(BulletEffects effect)
+    {
+        bulletPrefab = possibleBullets[(int)effect];
+    }
+
+    public void ChangeWeapon(Weapons weaponNew)
+    {
+        switch (weaponNew)
+        {
+            case (Weapons.Default):
+                rateOfFire = 0.5f;
+                damageMultiplier = 1f;
+                break;
+            case (Weapons.LenteConvergente):
+                rateOfFire = 0.75f;
+                damageMultiplier = 2.5f;
+                break;
+            case (Weapons.ReactorCinético):
+                rateOfFire = 5f;
+                damageMultiplier = 0.75f;
+                break;
+        }
+
+        //weapon = weaponNew;
     }
 }
