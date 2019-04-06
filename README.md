@@ -4,7 +4,7 @@ Este es el Proyecto 1 del grupo 06 18/19.
 
 ## Sobre esta rama
 
-Esta es la rama principal, donde está la última versiún estable del proyecto.
+Esta es la rama donde trabajamos para crear un enemigo lento que proteja a otro enemigo
 
 ## Cambios
 
@@ -13,4 +13,4 @@ Esta es la rama principal, donde está la última versiún estable del proyecto.
 - Añadido el nivel 2.
 - Añadida la torreta láser.
 - Añadida escena de la I.A., células y sus comportamientos.
-
+- Añadido el dron blindado con su comportamiento.
