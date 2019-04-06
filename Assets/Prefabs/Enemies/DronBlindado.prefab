@@ -56,10 +56,10 @@ GameObject:
   - component: {fileID: 114249930116049910}
   - component: {fileID: 114037521663318560}
   - component: {fileID: 114776123238108194}
-  - component: {fileID: 114135794759722560}
   - component: {fileID: 114943798387335756}
   - component: {fileID: 114472495656021538}
   - component: {fileID: 114595337557102302}
+  - component: {fileID: 114713752958614688}
   m_Layer: 10
   m_Name: DronBlindado
   m_TagString: Untagged
@@ -166,18 +166,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Amigo: {fileID: 0}
   FollowPoint: {fileID: 4021247240638074}
---- !u!114 &114135794759722560
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1762776325543048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b6781e557fb49346b2a7a1b4cf5e02c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 30
 --- !u!114 &114249930116049910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,6 +215,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af6fdefe4d742f43b3965906acbf779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114713752958614688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1762776325543048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 224fcc7de44a5fa4bb3a2f24dc3485dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 30
 --- !u!114 &114776123238108194
 MonoBehaviour:
   m_ObjectHideFlags: 1

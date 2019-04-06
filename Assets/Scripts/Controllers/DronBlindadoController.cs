@@ -23,13 +23,13 @@ public class DronBlindadoController : MonoBehaviour
     {
         if (Amigo != null)
         {
-            if (Vector2.Distance(FollowPoint.position, player.position) > 0.1f)
+            if (Vector2.Distance(FollowPoint.position, transform.position) > 0.1f)
             {
                 follow.MoveTowards(FollowPoint.position - transform.position);
             }
             else
             {
-                follow.Stop();
+                follow.HardStop();
             }
 
         }
