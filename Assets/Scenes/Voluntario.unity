@@ -194,6 +194,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114347065649226506, guid: 728121a7fecf1644bb730edfebe60fa2,
+        type: 2}
+      propertyPath: maxHealth
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 728121a7fecf1644bb730edfebe60fa2, type: 2}
   m_IsPrefabAsset: 0
@@ -236,20 +241,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114459815016468716, guid: 0eb883752c44bbf4480138ef5adea62f,
-        type: 2}
-      propertyPath: room
-      value: 
-      objectReference: {fileID: 876700683}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eb883752c44bbf4480138ef5adea62f, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &876700683 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114122832802393956, guid: 0eb883752c44bbf4480138ef5adea62f,
-    type: 2}
-  m_PrefabInternal: {fileID: 827416876}
-  m_Script: {fileID: 11500000, guid: e7e37e8e24e5bfd41bbe66da35f46a83, type: 3}
 --- !u!1001 &1070820826
 Prefab:
   m_ObjectHideFlags: 0
