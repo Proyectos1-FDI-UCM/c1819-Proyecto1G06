@@ -114,13 +114,12 @@ public class ItemManager : MonoBehaviour {
     public void ApplyItemEffects()
     {
         for(int i = 0; i < itemList.firstSpace; i++)
-        {
-            IItem[] effects = itemList.itemData[i].effects;
-            foreach(IItem effect in effects)
-            {
-                effect.PickEffect();
-            }
+        {            
+            ApplyItem(itemList.itemData[i].effects);
         }
+
+        if(itemList.weapon != null) ApplyItem(itemList.weapon.effects);
+        if(itemList.effect != null) ApplyItem(itemList.effect.effects);
     }
 
     /// <summary>
@@ -134,5 +133,13 @@ public class ItemManager : MonoBehaviour {
         }
 
         itemList.itemData = new ItemData[15];
+    }
+
+    void ApplyItem(IItem[] list)
+    {
+        for (int i = 0; i < list.Length; i++)
+        {
+            list[i].PickEffect();
+        }
     }
 }

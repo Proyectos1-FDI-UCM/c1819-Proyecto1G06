@@ -10,12 +10,10 @@ public class DronBlindadoController : MonoBehaviour
     DronAserradoController dronAss;
     ColliderDistance2D colDistance;
     FollowDirection follow;
-    Transform player;
 
     void Start()
     {
         follow = GetComponent<FollowDirection>();
-        player = GameManager.instance.player.transform;
         dronAss = GetComponent<DronAserradoController>();
     }
 

@@ -120,7 +120,6 @@ public class VoluntarioController : EnemyController {
 
     public bool BulletHit()
     {
-        print(stunTimer);
         if (shooting.GetShooting() && stunTimer <= 0)
         {
             stunTimer = stunCooldown;
