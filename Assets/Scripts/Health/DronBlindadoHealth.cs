@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class DronBlindadoHealth : EnemyHealth
 {
+    GameObject parent;
     public override void Die()
     {
         SendMessageUpwards("EnemyDied", transform, SendMessageOptions.DontRequireReceiver);
-        Destroy(transform.parent.gameObject);
+        parent = GetComponentInParent<Transform>().gameObject;
+        Destroy(parent);
     }
 }
