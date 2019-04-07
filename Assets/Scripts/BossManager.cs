@@ -42,7 +42,7 @@ public class BossManager : RoomManager {
         if (enemies.childCount > 0)
         {
             state = RoomState.Closed;
-            enemies.gameObject.SetActive(true);
+            Invoke("SummonEnemies", summonTime);
             ToggleDoors(state);
             GameManager.instance.ui.ToggleBossHealth(true);
         }

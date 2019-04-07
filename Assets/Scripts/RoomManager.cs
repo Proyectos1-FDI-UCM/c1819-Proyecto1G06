@@ -5,6 +5,7 @@ using UnityEngine;
 public class RoomManager : MonoBehaviour {
 
     public Transform enemies;
+    [Tooltip("Tiempo en segundos que tarda la habitación en invocar enemigos al entrar el jugador")] public float summonTime;
     public GameObject doors;
     public GameObject itemPos;
     public Coord pos;
@@ -48,9 +49,17 @@ public class RoomManager : MonoBehaviour {
         if (enemies.childCount > 0)
         {
             state = RoomState.Closed;
-            enemies.gameObject.SetActive(true);
+            Invoke("SummonEnemies", summonTime);
             ToggleDoors(state);
         }
+    }
+
+    /// <summary>
+    /// Invoca a los enemigos
+    /// </summary>
+    private void SummonEnemies()
+    {
+        enemies.gameObject.SetActive(true);
     }
 
     /// <summary>
