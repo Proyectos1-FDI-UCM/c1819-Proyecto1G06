@@ -15,3 +15,4 @@ Esta es la rama principal, donde está la última versión estable del proyecto.
 - Añadida escena de la I.A., células y sus comportamientos.
 - Añadido el dron blindado con su comportamiento.
 - Añadidos los objetos Lente de Refuerzo, Lente convergente, Bobina Portátil y Dron Volador.
+- Implementados los objetos de arriba en el Nivel 2.
