@@ -15,8 +15,11 @@ public class TorretaArtilleríaShooting : Shooting {
     public override void Update ()
     {
         Vector2 lookDirection = (player.position) - transform.position;
-        float angle = Mathf.Atan(lookDirection.y / lookDirection.x) * (180 / Mathf.PI);
+        float angle = Mathf.Atan(lookDirection.y / lookDirection.x) * (180 / Mathf.PI) + (lookDirection.x < 0f ? 180f : 0f);
 
-        transform.eulerAngles = new Vector3(0, 0, angle + (lookDirection.x < 0f ? 180f : 0f));
+        if (angle > 90 || angle < -90) GetComponent<SpriteRenderer>().flipY = true; // Hacer que no tenga un movimiento poco natural
+        else GetComponent<SpriteRenderer>().flipY = false;
+
+        transform.eulerAngles = new Vector3(0, 0, angle);
     }
 }

@@ -18,12 +18,16 @@ public class PlayerShooting : Shooting {
     /// <summary>
     /// Apunta hacia el ratón y dispara al hacer Fire1
     /// </summary>
-    public override void Update() 
+    public override void Update()
     {
         Vector2 lookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;   //Vector entre el ratón y el jugador
-        float angle = Mathf.Atan(lookDirection.y / lookDirection.x) * (180 / Mathf.PI);
 
-        transform.eulerAngles = new Vector3(0, 0, angle + (lookDirection.x < 0f ? 180f : 0f));              //Arctan se queda con el ángulo más pequeño y utilizamos un offset para corregirlo
+        //Arctan se queda con el ángulo más pequeño y utilizamos un offset para corregirlo
+        float angle = Mathf.Atan(lookDirection.y / lookDirection.x) * (180 / Mathf.PI) + (lookDirection.x < 0f ? 180f : 0f);    
+        transform.eulerAngles = new Vector3(0, 0, angle);              
+
+        if (angle > 90 || angle < -90) GetComponent<SpriteRenderer>().flipY = true; // Hacer que no tenga un movimiento poco natural
+        else GetComponent<SpriteRenderer>().flipY = false;
 
         if (Input.GetButton("Fire1") && shootCooldown == 0f)        //Dispara al hacer clic
             Shoot();
