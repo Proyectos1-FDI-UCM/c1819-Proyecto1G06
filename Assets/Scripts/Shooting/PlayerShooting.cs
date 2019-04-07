@@ -49,19 +49,21 @@ public class PlayerShooting : Shooting {
     public void AddDamage(float amount)
     {
         baseDamage += amount;
-        GameManager.instance.ui.UpdateDamage(baseDamage);
+        GameManager.instance.ui.UpdateDamage(baseDamage * damageMultiplier);
     }
 
     /// <summary>
     /// Cambia la bala según el nuevo efecto.
     /// </summary>
-    public void ChangeEffect(BulletEffects effect)
+    public void ChangeEffect(BulletEffects effect, ItemData data)
     {
         bulletPrefab = possibleBullets[(int)effect];
+        GameManager.instance.ui.UpdateEffect(data.sprite);
     }
 
-    public void ChangeWeapon(Weapons weaponNew)
+    public void ChangeWeapon(Weapons weaponNew, ItemData data)
     {
+        UIManager ui = GameManager.instance.ui;
         switch (weaponNew)
         {
             case (Weapons.Default):
@@ -77,6 +79,9 @@ public class PlayerShooting : Shooting {
                 damageMultiplier = 0.75f;
                 break;
         }
+
+        ui.UpdateDamage(baseDamage * damageMultiplier);
+        ui.UpdateWeapon(data.sprite);
 
         //weapon = weaponNew;
     }

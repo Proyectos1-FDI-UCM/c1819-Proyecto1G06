@@ -11,6 +11,6 @@ public class Effect : MonoBehaviour, IItem {
     /// </summary>
     public void PickEffect()
     {
-        GameManager.instance.player.GetComponentInChildren<PlayerShooting>().ChangeEffect(effect);
+        GameManager.instance.player.GetComponentInChildren<PlayerShooting>().ChangeEffect(effect, GetComponent<ItemData>());
     }
 }

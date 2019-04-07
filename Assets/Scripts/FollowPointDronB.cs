@@ -7,12 +7,10 @@ public class FollowPointDronB : MonoBehaviour {
     public Transform Amigo;
     public float distance;
 
-    FollowDirection follow;
     Transform player;
 
     private void Start()
     {
-        follow = GetComponent<FollowDirection>();
         player = GameManager.instance.player.transform;
     }
 
