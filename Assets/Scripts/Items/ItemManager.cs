@@ -39,8 +39,11 @@ public class ItemManager : MonoBehaviour {
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else Destroy(gameObject);
+        else Destroy(gameObject);       
+    }
 
+    private void Start()
+    {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 

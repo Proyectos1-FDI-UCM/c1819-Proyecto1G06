@@ -11,7 +11,7 @@ public class PlayerShooting : Shooting {
 
     public void Start()
     {
-        GameManager.instance.ui.UpdateDamage(baseDamage);
+        GameManager.instance.ui.UpdateDamage(baseDamage * damageMultiplier);
         //weapon = Weapons.Default;
     }
 
