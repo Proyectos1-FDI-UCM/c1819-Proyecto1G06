@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
     public static GameManager instance;
 
@@ -15,7 +16,7 @@ public class GameManager : MonoBehaviour {
     /// <summary>
     /// Singleton
     /// </summary>
-    void Awake ()
+    void Awake()
     {
         if (instance == null)
         {
@@ -23,7 +24,7 @@ public class GameManager : MonoBehaviour {
             DontDestroyOnLoad(gameObject);
         }
         else Destroy(gameObject);
-	}
+    }
 
     /// <summary>
     /// Recarga la escena
@@ -43,7 +44,14 @@ public class GameManager : MonoBehaviour {
 
     public void PlayerDied()
     {
-        SceneManager.LoadScene("Nivel 1");
+        SceneManager.LoadScene("Menu");
         ItemManager.instance.DeleteItems();
+    }
+    private void Update()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            LoadScene("Menu");
+        }
     }
 }
