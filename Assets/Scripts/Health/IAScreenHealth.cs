@@ -18,6 +18,6 @@ public class IAScreenHealth : EnemyHealth {
 
     public override void Die()
     {
-        GameManager.instance.LoadScene("Nivel 1");
+        GameManager.instance.LoadScene("Menu");
     }
 }

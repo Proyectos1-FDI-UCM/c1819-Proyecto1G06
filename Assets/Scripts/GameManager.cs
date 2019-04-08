@@ -44,16 +44,8 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDied()
     {
-        SceneManager.LoadScene("Nivel 1");
+        SceneManager.LoadScene("Menu");
         ItemManager.instance.DeleteItems();
     }
-    public void CargaNivel(string nombreNivel)
-    {
-        SceneManager.LoadScene(nombreNivel);
-    }
-    public void CerrarJuego()
-    {
-        Debug.Log("Juego Cerrado");
-        Application.Quit();
-    }
+
 }

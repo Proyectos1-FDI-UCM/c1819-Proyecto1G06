@@ -1611,6 +1611,11 @@ Prefab:
       propertyPath: limitAngle
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 114393722670221724, guid: d17ffd4fca532474892524f440a1170a,
+        type: 2}
+      propertyPath: maxHealth
+      value: 75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d17ffd4fca532474892524f440a1170a, type: 2}
   m_IsPrefabAsset: 0
@@ -2184,6 +2189,11 @@ Prefab:
       propertyPath: limitAngle
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 114393722670221724, guid: d17ffd4fca532474892524f440a1170a,
+        type: 2}
+      propertyPath: maxHealth
+      value: 75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d17ffd4fca532474892524f440a1170a, type: 2}
   m_IsPrefabAsset: 0
@@ -2336,6 +2346,11 @@ Prefab:
         type: 2}
       propertyPath: limitAngle
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114393722670221724, guid: d17ffd4fca532474892524f440a1170a,
+        type: 2}
+      propertyPath: maxHealth
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d17ffd4fca532474892524f440a1170a, type: 2}
@@ -5260,6 +5275,7 @@ MonoBehaviour:
   shootingPoint: {fileID: 0}
   bulletPrefab: {fileID: 114601551365168386, guid: ea3a8e0ac88aff64d9a48f455bb945fb,
     type: 2}
+  disarmable: 1
   deviation: 0.3
   shootingPoints:
   - {fileID: 1000954600}
@@ -5286,6 +5302,7 @@ MonoBehaviour:
   shootingPoint: {fileID: 0}
   bulletPrefab: {fileID: 114601551365168386, guid: e538aa515f3cc674d81613d55200e58f,
     type: 2}
+  disarmable: 1
   deviation: 0
   shootingPoints:
   - {fileID: 1000954600}
@@ -6651,6 +6668,11 @@ Prefab:
         type: 2}
       propertyPath: limitAngle
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114393722670221724, guid: d17ffd4fca532474892524f440a1170a,
+        type: 2}
+      propertyPath: maxHealth
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d17ffd4fca532474892524f440a1170a, type: 2}
