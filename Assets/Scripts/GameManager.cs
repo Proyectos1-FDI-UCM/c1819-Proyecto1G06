@@ -47,5 +47,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
         ItemManager.instance.DeleteItems();
     }
-
+    private void Update()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            LoadScene("Menu");
+        }
+    }
 }
