@@ -27,8 +27,7 @@ public class SweepingLaser : MonoBehaviour, IBossAttack1 {
     {
         followPoint.position = shootingPoint.position;
         lr.enabled = true;
-        lr.startWidth = 0.15f;
-        lr.endWidth = 0.15f;
+        lr.widthMultiplier = 1f;
         lr.SetPosition(0, shootingPoint.position);
         lr.SetPosition(1, followPoint.position);
     }

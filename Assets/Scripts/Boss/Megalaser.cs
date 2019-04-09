@@ -60,6 +60,7 @@ public class Megalaser : MonoBehaviour, IBossAttack1 {
             follow.HardStop();
             anim.SetBool("Laser", true);
             lr.enabled = true;
+            lr.widthMultiplier = 1f;
             lr.SetPosition(0, shootingPoint.position);
             lr.SetPosition(1, new Vector2(shootingPoint.position.x, -100));
         }
@@ -78,7 +79,6 @@ public class Megalaser : MonoBehaviour, IBossAttack1 {
 
     private void OnDisable()
     {
-        lr.widthMultiplier = 0.1f;
         lr.enabled = false;
         anim.SetBool("Laser", false);
     }
