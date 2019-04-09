@@ -5,7 +5,14 @@ using UnityEngine;
 public class IAScreenHealth : EnemyHealth {
 
     bool vulnerable = false;
-    public bool Vulnerable { get { return vulnerable; } set { vulnerable = value; } }
+    public bool Vulnerable { get { return vulnerable; } set { vulnerable = value; anim.SetBool("Vulnerable", value); } }
+    Animator anim;
+
+    public override void Awake()
+    {
+        base.Awake();
+        anim = GetComponent<Animator>();
+    }
 
     public override void TakeDamage(float amount)
     {

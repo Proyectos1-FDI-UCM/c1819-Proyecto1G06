@@ -5468,6 +5468,7 @@ GameObject:
   - component: {fileID: 1444600636}
   - component: {fileID: 1444600634}
   - component: {fileID: 1444600637}
+  - component: {fileID: 1444600635}
   m_Layer: 10
   m_Name: IAScreen
   m_TagString: Untagged
@@ -5501,6 +5502,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.197931, y: 8.224068}
   m_EdgeRadius: 0
+--- !u!95 &1444600635
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1444600633}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f553a2525fd43804a8f62a0d291e9b57, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &1444600636
 SpriteRenderer:
   m_ObjectHideFlags: 0
