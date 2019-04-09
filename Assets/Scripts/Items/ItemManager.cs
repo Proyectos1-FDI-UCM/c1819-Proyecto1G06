@@ -78,6 +78,8 @@ public class ItemManager : MonoBehaviour {
         Minimap.instance.InitializeMap();
         ApplyItemEffects();
         GameManager.instance.ui.UpdateItems(GetItemSprites(itemList));
+        if(itemList.weapon != null) GameManager.instance.ui.UpdateWeapon(itemList.weapon.sprite);
+        if(itemList.effect != null) GameManager.instance.ui.UpdateEffect(itemList.effect.sprite);
     }
 
     /// <summary>
@@ -134,8 +136,10 @@ public class ItemManager : MonoBehaviour {
         {
             Destroy(itemList.itemData[i].gameObject);
         }
+        if(itemList.weapon != null) Destroy(itemList.weapon.gameObject);
+        if(itemList.effect != null) Destroy(itemList.effect.gameObject);
 
-        itemList.itemData = new ItemData[15];
+        itemList = new ItemList(15);
     }
 
     void ApplyItem(IItem[] list)

@@ -44,8 +44,8 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDied()
     {
-        SceneManager.LoadScene("Menu");
         ItemManager.instance.DeleteItems();
+        SceneManager.LoadScene("Menu");
     }
     private void Update()
     {
