@@ -32,7 +32,11 @@ public class IAController : MonoBehaviour {
     {
         if (attackTimer <= 0)
         {
-            ChangeAttack(attacks, ref curAttack);
+            DeactivateAttack(curAttack);
+            int num = Random.Range(0, attacks.Length);
+            while (num == curAttack) num = Random.Range(0, attacks.Length);
+            curAttack = num;
+            ChangeAttack(attacks, curAttack);
         }
         else attackTimer -= Time.deltaTime;
     }
@@ -77,13 +81,10 @@ public class IAController : MonoBehaviour {
         attacks[index].ToggleAttack(false);
     }
 
-    void ChangeAttack(IBossAttack1[] attacks, ref int index)
+    void ChangeAttack(IBossAttack1[] attacks, int index)
     {
-        DeactivateAttack((index + attacks.Length - 1) % attacks.Length);
         attacks[index].ToggleAttack(true);
         attackTimer = attacks[index].AttackTime;
-        index++;
-        index %= attacks.Length;
     }
 
     public void TakeDamage()

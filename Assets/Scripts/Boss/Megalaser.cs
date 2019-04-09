@@ -78,6 +78,7 @@ public class Megalaser : MonoBehaviour, IBossAttack1 {
 
     private void OnDisable()
     {
+        lr.widthMultiplier = 0.1f;
         lr.enabled = false;
         anim.SetBool("Laser", false);
     }

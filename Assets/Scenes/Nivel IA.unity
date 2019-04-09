@@ -5162,6 +5162,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114152090398949314, guid: 94c3d41a6f8126744ad409aec0e3c122,
+        type: 2}
+      propertyPath: maxHealth
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c3d41a6f8126744ad409aec0e3c122, type: 2}
   m_IsPrefabAsset: 0
@@ -6581,7 +6586,7 @@ MonoBehaviour:
   - {fileID: 1361109877791562, guid: 5b73e11054334cc48bf76361e28ac250, type: 2}
   - {fileID: 1044712739358064, guid: e96b179d8282fdf4181315e917d18cfb, type: 2}
   numSpawns: 3
-  attackTime: 2
+  attackTime: 8
 --- !u!1 &1556703328
 GameObject:
   m_ObjectHideFlags: 0
