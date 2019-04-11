@@ -110,7 +110,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void UpdateDamage(float damage)
     {
-        this.damage.text = "Daño: " + damage;
+        this.damage.text = damage.ToString("F2");
     }
 
     /// <summary>
@@ -118,7 +118,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void UpdateSpeed(float speed)
     {
-        this.speed.text = "Velocidad: " + speed;
+        this.speed.text = (speed * (3f/7f)).ToString("F2");
     }
 
     /// <summary>
