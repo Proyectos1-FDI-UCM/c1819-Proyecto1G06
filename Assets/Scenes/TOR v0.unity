@@ -244,6 +244,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4762489090421404, guid: b53228210a77d0248a886e6be24fc0d0,
     type: 2}
   m_PrefabInternal: {fileID: 279052629}
+--- !u!1 &947137078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1720373839192450, guid: 81836d3f859e2be4ba35905feae80af5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1166935727}
+--- !u!95 &947137079
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 947137078}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1248a53036079714780a49adf50b1242, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &947137080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 947137078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb9197481afd274db7ed5b9badef964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1023995343 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1206035332229422, guid: 94c3d41a6f8126744ad409aec0e3c122,
@@ -523,21 +557,6 @@ Prefab:
     - target: {fileID: 4354615746607846, guid: 94c3d41a6f8126744ad409aec0e3c122, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114528737028883932, guid: 94c3d41a6f8126744ad409aec0e3c122,
-        type: 2}
-      propertyPath: bulletPool
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114152090398949314, guid: 94c3d41a6f8126744ad409aec0e3c122,
-        type: 2}
-      propertyPath: ui
-      value: 
-      objectReference: {fileID: 1916349608}
-    - target: {fileID: 114152090398949314, guid: 94c3d41a6f8126744ad409aec0e3c122,
-        type: 2}
-      propertyPath: maxHealth
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c3d41a6f8126744ad409aec0e3c122, type: 2}
