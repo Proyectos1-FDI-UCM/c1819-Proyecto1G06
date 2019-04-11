@@ -8,12 +8,4 @@ Esta es la rama principal, donde está la última versión estable del proyecto.
 
 ## Cambios
 
-- Actualizado el sprite del jugador.
-- Añadido al Voluntario.
-- Añadido el nivel 2.
-- Añadida la torreta láser.
-- Añadida escena de la I.A., células y sus comportamientos.
-- Añadido el dron blindado con su comportamiento.
-- Añadidos los objetos Lente de Refuerzo, Lente convergente, Bobina Portátil y Dron Volador.
-- Implementados los objetos de arriba en el Nivel 2.
-- Equilibrados enemigos y nivel 2.
+- Equilibrado los prefabs de items de velocidad y los prefabs microdrones
