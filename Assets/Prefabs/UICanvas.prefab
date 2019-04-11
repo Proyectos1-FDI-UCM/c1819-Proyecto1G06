@@ -478,6 +478,8 @@ GameObject:
   - component: {fileID: 224387539803384952}
   - component: {fileID: 222500033785399348}
   - component: {fileID: 114840331312606860}
+  - component: {fileID: 95491001206915242}
+  - component: {fileID: 114109338575683488}
   m_Layer: 5
   m_Name: BossHealthBar
   m_TagString: Untagged
@@ -760,6 +762,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &95491001206915242
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1720373839192450}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1248a53036079714780a49adf50b1242, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114011377585181054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -943,6 +963,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114109338575683488
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1720373839192450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb9197481afd274db7ed5b9badef964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114161286046056884
 MonoBehaviour:
   m_ObjectHideFlags: 1
