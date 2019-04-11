@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61045454042408354}
   - component: {fileID: 114072657210305172}
   - component: {fileID: 114678251358187528}
+  - component: {fileID: 114873511240161834}
   m_Layer: 11
   m_Name: LenteDeRefuerzo
   m_TagString: Untagged
@@ -93,6 +94,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect: 1
+--- !u!114 &114873511240161834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1445712468109716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c82e6b49127b1e4cbf096c203b09968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableTime: 0.3
 --- !u!212 &212886738878494584
 SpriteRenderer:
   m_ObjectHideFlags: 1

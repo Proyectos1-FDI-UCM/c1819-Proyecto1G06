@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114637756998396640}
   - component: {fileID: 61542683994856824}
   - component: {fileID: 114571045380001706}
+  - component: {fileID: 114629181934182414}
   m_Layer: 0
   m_Name: Jetpack
   m_TagString: Untagged
@@ -80,6 +81,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 2
+--- !u!114 &114629181934182414
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1444048018493126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c82e6b49127b1e4cbf096c203b09968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableTime: 0.3
 --- !u!114 &114637756998396640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -92,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tier: 67
+  type: 0
 --- !u!212 &212988650453029286
 SpriteRenderer:
   m_ObjectHideFlags: 1

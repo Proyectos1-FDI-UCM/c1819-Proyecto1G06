@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212884613950019270}
   - component: {fileID: 114810007963717822}
   - component: {fileID: 61830716733600934}
+  - component: {fileID: 114805501439273880}
   m_Layer: 0
   m_Name: BombonaDeO2
   m_TagString: Untagged
@@ -67,6 +68,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114805501439273880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1072724266990498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c82e6b49127b1e4cbf096c203b09968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableTime: 0.3
 --- !u!114 &114810007963717822
 MonoBehaviour:
   m_ObjectHideFlags: 1

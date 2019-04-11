@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114526730384979386}
   - component: {fileID: 61667418277947462}
   - component: {fileID: 114108114942032132}
+  - component: {fileID: 114284655009874114}
   m_Layer: 0
   m_Name: BobinaPortatil
   m_TagString: Untagged
@@ -80,6 +81,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   companion: {fileID: 1476141434750352, guid: 0b64c79bc0aaf3343bbde3c7074d3db8, type: 2}
+--- !u!114 &114284655009874114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1552171174136058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c82e6b49127b1e4cbf096c203b09968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableTime: 0.3
 --- !u!114 &114526730384979386
 MonoBehaviour:
   m_ObjectHideFlags: 1

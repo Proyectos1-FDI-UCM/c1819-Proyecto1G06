@@ -26,12 +26,20 @@ public class GameManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    private void Update()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            LoadMenu();
+        }
+    }
+
     /// <summary>
     /// Recarga la escena
     /// </summary>
     public void ReloadScene()
     {
-        SceneManager.LoadScene(activeScene);
+        LoadScene(activeScene);
     }
 
     /// <summary>
@@ -44,14 +52,12 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDied()
     {
-        ItemManager.instance.DeleteItems();
-        SceneManager.LoadScene("Menu");
+        LoadMenu();
     }
-    private void Update()
+
+    void LoadMenu()
     {
-        if (Input.GetButtonDown("Cancel"))
-        {
-            LoadScene("Menu");
-        }
+        ItemManager.instance.DeleteItems();
+        LoadScene("Menu");
     }
 }

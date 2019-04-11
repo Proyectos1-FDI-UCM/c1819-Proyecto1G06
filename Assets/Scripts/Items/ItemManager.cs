@@ -54,17 +54,17 @@ public class ItemManager : MonoBehaviour {
     {
         switch (item.type)
         {
-            case (ObjetcType.Item):
+            case (ObjectType.Item):
                 if (itemList.firstSpace == itemList.itemData.Length) AddSpace(ref itemList, 15);
 
                 itemList.itemData[itemList.firstSpace] = item;
                 itemList.firstSpace++;
                 GameManager.instance.ui.AddItem(item.sprite);
                 break;
-            case (ObjetcType.Effect):
+            case (ObjectType.Effect):
                 itemList.effect = item;
                 break;
-            case (ObjetcType.Weapon):
+            case (ObjectType.Weapon):
                 itemList.weapon = item;
                 break;
         }          

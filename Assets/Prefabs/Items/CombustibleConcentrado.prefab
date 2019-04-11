@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114824452034385276}
   - component: {fileID: 114226467083423704}
   - component: {fileID: 61690201904978696}
+  - component: {fileID: 114297572786917522}
   m_Layer: 0
   m_Name: CombustibleConcentrado
   m_TagString: Untagged
@@ -94,6 +95,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 1
+--- !u!114 &114297572786917522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1734267868256088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c82e6b49127b1e4cbf096c203b09968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableTime: 0.3
 --- !u!114 &114824452034385276
 MonoBehaviour:
   m_ObjectHideFlags: 1
