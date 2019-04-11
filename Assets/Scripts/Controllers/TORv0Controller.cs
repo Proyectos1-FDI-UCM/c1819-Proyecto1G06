@@ -61,6 +61,8 @@ public class TORv0Controller : EnemyController {
     /// </summary>
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Stun();
+        CancelInvoke("Chase");
+        if (state != EnemyState.Stunned)
+            Stun();
     }
 }
