@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
     public Image[] curLives = new Image[10];
     public Image[] maxLives = new Image[10];
     public RawImage mapRaw;
-    public Text damage, speed;
+    public Text damage, speed, multiplier;
     public Image bossHealthBack, bossHealth, weaponImage, effectImage;
     public RectTransform itemListHolder;
 
@@ -108,9 +108,10 @@ public class UIManager : MonoBehaviour
     /// <summary>
     /// Actualiza el texto de daño
     /// </summary>
-    public void UpdateDamage(float damage)
+    public void UpdateDamage(float damage, float multiplier)
     {
         this.damage.text = damage.ToString("F2");
+        this.multiplier.text = "x" + multiplier.ToString("F2");
     }
 
     /// <summary>
