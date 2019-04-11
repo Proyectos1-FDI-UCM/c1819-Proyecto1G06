@@ -128,9 +128,12 @@ public class UIManager : MonoBehaviour
     /// <param name="active">Controla la activación</param>
     public void ToggleBossHealth(bool active)
     {
-        if (!active) bossHealth.fillAmount = 1f;
+        if (!active)
+        {        
+          bossHealth.fillAmount = 1f;
+        }
         bossHealth.gameObject.SetActive(active);
-        bossHealthBack.gameObject.SetActive(active);
+        bossHealthBack.gameObject.SetActive(active);       
     }
 
     /// <summary>
