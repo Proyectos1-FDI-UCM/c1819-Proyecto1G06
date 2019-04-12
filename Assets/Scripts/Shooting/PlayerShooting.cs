@@ -11,7 +11,7 @@ public class PlayerShooting : Shooting {
 
     public void Start()
     {
-        GameManager.instance.ui.UpdateDamage(baseDamage * damageMultiplier);
+        GameManager.instance.ui.UpdateDamage(baseDamage * damageMultiplier, damageMultiplier);
         //weapon = Weapons.Default;
     }
 
@@ -53,7 +53,7 @@ public class PlayerShooting : Shooting {
     public void AddDamage(float amount)
     {
         baseDamage += amount;
-        GameManager.instance.ui.UpdateDamage(baseDamage * damageMultiplier);
+        GameManager.instance.ui.UpdateDamage(baseDamage * damageMultiplier, damageMultiplier);
     }
 
     /// <summary>
@@ -84,7 +84,7 @@ public class PlayerShooting : Shooting {
                 break;
         }
 
-        ui.UpdateDamage(baseDamage * damageMultiplier);
+        ui.UpdateDamage(baseDamage * damageMultiplier, damageMultiplier);
         ui.UpdateWeapon(data.sprite);
 
         //weapon = weaponNew;

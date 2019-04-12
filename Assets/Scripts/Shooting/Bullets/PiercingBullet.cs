@@ -14,11 +14,10 @@ public class PiercingBullet : PlayerBullet {
         if (enemyHealth != null)
         {
             enemyHealth.TakeDamage(Damage);
+            Damage *= 0.8f;
         }
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Environment"))
             Destroy(gameObject);
-
-        Damage *= 0.8f;
     }
 }

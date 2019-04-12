@@ -90,4 +90,9 @@ public class PlayerHealth : MonoBehaviour {
 
         ui.UpdateLives(curHealth, maxHealth);
     }
+
+    public int CurrentHealth()
+    {
+        return curHealth;
+    }
 }
