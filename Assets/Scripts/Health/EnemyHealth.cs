@@ -5,13 +5,16 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour {
 
     public float maxHealth = 10;
-    public float CurHealth { get { return curHealth; } }
+    public float damagedTime = 0.1f;
 
     protected float curHealth;
+    public float CurHealth { get { return curHealth; } }
+    Animator anim;
 
     public virtual void Awake()
     {
         curHealth = maxHealth;
+        anim = GetComponent<Animator>();
     }
 
     /// <summary>
@@ -19,7 +22,9 @@ public class EnemyHealth : MonoBehaviour {
     /// </summary>
     public virtual void TakeDamage(float amount)
     {
+        anim.SetLayerWeight(1, 1);
         curHealth -= amount;
+        Invoke("ResetLayerWeight", damagedTime);
 
         if (curHealth <= 0)
         {
@@ -35,5 +40,10 @@ public class EnemyHealth : MonoBehaviour {
     {
         SendMessageUpwards("EnemyDied", transform, SendMessageOptions.DontRequireReceiver);
         Destroy(gameObject);
+    }
+
+    protected virtual void ResetLayerWeight()
+    {
+        anim.SetLayerWeight(1, 0);
     }
 }
