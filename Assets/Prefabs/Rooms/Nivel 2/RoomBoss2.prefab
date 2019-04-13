@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 212883332108068468}
   - component: {fileID: 114930513741143882}
   - component: {fileID: 61005701922188602}
+  - component: {fileID: 114356833436664236}
   m_Layer: 12
   m_Name: NextLevelTrigger
   m_TagString: Untagged
@@ -184,7 +185,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1224098136426710}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 120, y: 60, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4843456630638190}
@@ -849,6 +850,18 @@ MonoBehaviour:
     y: 0
   boss: 1
   endTrigger: {fileID: 1530944269435124}
+--- !u!114 &114356833436664236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1530944269435124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c82e6b49127b1e4cbf096c203b09968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableTime: 0.3
 --- !u!114 &114459815016468716
 MonoBehaviour:
   m_ObjectHideFlags: 1
