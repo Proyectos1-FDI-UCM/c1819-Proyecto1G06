@@ -5,19 +5,22 @@ using UnityEngine;
 public class RoomManager : MonoBehaviour {
 
     public Transform enemies;
-    [Tooltip("Tiempo en segundos que tarda la habitación en invocar enemigos al entrar el jugador")] public float summonTime;
     public GameObject doors;
     public GameObject itemPos;
+    public AudioClip doorClip, spawnClip;
     public Coord pos;
     public bool boss = false;
 
     protected RoomState state = RoomState.NonVisited;       // Estado de la sala
+    AudioSource audioSource;
+    protected float summonTime = 2.2f;
 
     public void Awake()
     {
         enemies.gameObject.SetActive(false);
         doors.SetActive(false);
         itemPos.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     public virtual void Start()
@@ -51,6 +54,7 @@ public class RoomManager : MonoBehaviour {
             state = RoomState.Closed;
             Invoke("SummonEnemies", summonTime);
             ToggleDoors(state);
+            audioSource.PlayOneShot(spawnClip);
         }
     }
 
@@ -70,6 +74,7 @@ public class RoomManager : MonoBehaviour {
         bool toggle = false;
         if (state == RoomState.Closed) toggle = true;
         doors.SetActive(toggle);
+        audioSource.PlayOneShot(doorClip);
     }
 
     /// <summary>
