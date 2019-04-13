@@ -15,10 +15,12 @@ public class PlayerMovement : MonoBehaviour {
 
     Rigidbody2D rb;
     Vector2 movement = Vector2.zero;
+    Animator anim;
 
     private void Awake()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Start()
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour {
     /// </summary>
     void Update () {
         movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        anim.SetFloat("Velocity", rb.velocity.magnitude);
     }
 
     /// <summary>
