@@ -25,7 +25,6 @@ GameObject:
   - component: {fileID: 114152090398949314}
   - component: {fileID: 68866030913801634}
   - component: {fileID: 114174970568122544}
-  - component: {fileID: 95600187322915292}
   m_Layer: 8
   m_Name: HeroShooter
   m_TagString: Untagged
@@ -45,7 +44,7 @@ GameObject:
   - component: {fileID: 50745627732953648}
   - component: {fileID: 114528737028883932}
   m_Layer: 8
-  m_Name: HeroHead
+  m_Name: HeroWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1891049405440942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0.368, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4717687805506496}
@@ -100,8 +99,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1595526289749762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.043, y: 0.55, z: 0}
-  m_LocalScale: {x: 0.7500004, y: 0.7500004, z: 1}
+  m_LocalPosition: {x: 0.001, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4314993379390742}
   m_Father: {fileID: 4354615746607846}
@@ -162,26 +161,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0.3
   m_Points:
-  - {x: 0, y: 0.48570833}
-  - {x: 0, y: -0.44919896}
---- !u!95 &95600187322915292
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1206035332229422}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ba65360e9d5523a4e85f1d1e50f4c6b8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  - {x: 0, y: 0.45343736}
+  - {x: 0, y: -0.8368506}
 --- !u!114 &114152090398949314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -228,6 +209,7 @@ MonoBehaviour:
   possibleBullets:
   - {fileID: 114570068157640350, guid: b52ae6ddaa2ab724c80d0ca0ff6e6f4b, type: 2}
   - {fileID: 114223399538601412, guid: 5d01030a383653747a33aedaa86b82b0, type: 2}
+  body: {fileID: 212152949152580146}
 --- !u!114 &114969751812258340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -278,7 +260,7 @@ SpriteRenderer:
   m_SortingLayerID: -1968514619
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 278be2ae050c4bc4bba7da92a10d9688, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d3bfa5a8f8ca95944a87c7bd17e9238d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -324,7 +306,7 @@ SpriteRenderer:
   m_SortingLayerID: -1968514619
   m_SortingLayer: 2
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 2f27b5fe74541c84abdf6315c9142b02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 585932eafa2439a409e1389d964554a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

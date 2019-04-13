@@ -7,6 +7,7 @@ public class PlayerShooting : Shooting {
     public float baseDamage = 2;
     public float damageMultiplier = 1;
     public BulletMovement[] possibleBullets;
+    public SpriteRenderer body;
     //Weapons weapon; //Arma, de momento sin usar
 
     public void Start()
@@ -24,10 +25,18 @@ public class PlayerShooting : Shooting {
 
         //Arctan se queda con el ángulo más pequeño y utilizamos un offset para corregirlo
         float angle = Mathf.Atan(lookDirection.y / lookDirection.x) * (180 / Mathf.PI) + (lookDirection.x < 0f ? 180f : 0f);    
-        transform.eulerAngles = new Vector3(0, 0, angle);              
+        transform.eulerAngles = new Vector3(0, 0, angle);
 
-        if (angle > 90 || angle < -90) GetComponent<SpriteRenderer>().flipY = true; // Hacer que no tenga un movimiento poco natural
-        else GetComponent<SpriteRenderer>().flipY = false;
+        if (angle > 90 || angle < -90)
+        {
+            GetComponent<SpriteRenderer>().flipY = true; // Hacer que no tenga un movimiento poco natural
+            body.flipX = true;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().flipY = false;
+            body.flipX = false;
+        }
 
         if (Input.GetButton("Fire1") && shootCooldown == 0f)        //Dispara al hacer clic
             Shoot();
