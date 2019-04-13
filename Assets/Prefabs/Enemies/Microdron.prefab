@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 50132953649348864}
   - component: {fileID: 61115297307538126}
   - component: {fileID: 114598512494616646}
+  - component: {fileID: 95333149217199488}
   m_Layer: 10
   m_Name: Microdron
   m_TagString: Untagged
@@ -93,6 +94,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.39534009, y: 0.5}
   m_EdgeRadius: 0
+--- !u!95 &95333149217199488
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1903149187923030}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d4d8d0ab58affbe4ab7303dd109ef961, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114024225311399932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 2
+  damagedTime: 0.1
 --- !u!114 &114895594380406182
 MonoBehaviour:
   m_ObjectHideFlags: 1

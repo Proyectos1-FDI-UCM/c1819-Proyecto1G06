@@ -41,7 +41,7 @@ public class PlayerHealth : MonoBehaviour {
         else if (invulnerability < 0f)
         {
             invulnerability = 0f;
-            anim.SetBool("Invulnerable", false);
+            anim.SetLayerWeight(1, 0);
         }
     }
 
@@ -53,7 +53,7 @@ public class PlayerHealth : MonoBehaviour {
         if (invulnerability == 0f)  //Mientras no sea invulnerable
         {
             invulnerability = invulTime;    //Le hace invulnerable
-            anim.SetBool("Invulnerable", true);
+            anim.SetLayerWeight(1, 1);
             curHealth--;
             ui.UpdateLives(curHealth, maxHealth);      //Hacer que el UIManager actualice la UI
 

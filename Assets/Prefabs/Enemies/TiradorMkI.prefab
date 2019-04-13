@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 114555543298833322}
   - component: {fileID: 61745796094681854}
   - component: {fileID: 114132505848876260}
+  - component: {fileID: 95494155129561644}
   m_Layer: 10
   m_Name: TiradorMkI
   m_TagString: Untagged
@@ -101,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1565328057034312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 5.14, y: 0.11041446, z: 0.045898438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4140031445389830}
@@ -171,6 +172,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95494155129561644
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1565328057034312}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b00806129e6e4784089abd51f5e6a64d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114132505848876260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -194,6 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 6
+  damagedTime: 0.1
 --- !u!114 &114555543298833322
 MonoBehaviour:
   m_ObjectHideFlags: 1

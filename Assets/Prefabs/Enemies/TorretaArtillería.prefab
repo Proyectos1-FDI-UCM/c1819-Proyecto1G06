@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 114988711702864562}
   - component: {fileID: 114870513159284958}
   - component: {fileID: 61256701825038086}
+  - component: {fileID: 95449053245441276}
   m_Layer: 10
   m_Name: "TorretaArtiller\xEDa"
   m_TagString: Untagged
@@ -150,6 +151,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &95449053245441276
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1846605632134442}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 169e530d14895b543bda02ba384fb3ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114001987343597688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -173,6 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 20
+  damagedTime: 0.1
 --- !u!114 &114988711702864562
 MonoBehaviour:
   m_ObjectHideFlags: 1

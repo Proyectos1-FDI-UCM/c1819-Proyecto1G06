@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 61676866843635374}
   - component: {fileID: 114961704261164212}
   - component: {fileID: 114831987297414732}
+  - component: {fileID: 95493906222159286}
   m_Layer: 10
   m_Name: TiradorMkII
   m_TagString: Untagged
@@ -170,6 +171,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95493906222159286
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1361109877791562}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: cb331e34de90fae4b9fe6450e5be1f3a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114136304410479770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,6 +204,7 @@ MonoBehaviour:
   shootingPoint: {fileID: 4596253122253662}
   bulletPrefab: {fileID: 114601551365168386, guid: ea3a8e0ac88aff64d9a48f455bb945fb,
     type: 2}
+  disarmable: 1
   deviation: 0.2
 --- !u!114 &114163979560343442
 MonoBehaviour:
@@ -198,6 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 12
+  damagedTime: 0.1
 --- !u!114 &114500679350775426
 MonoBehaviour:
   m_ObjectHideFlags: 1

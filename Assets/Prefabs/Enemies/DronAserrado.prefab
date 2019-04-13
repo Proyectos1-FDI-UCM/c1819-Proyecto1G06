@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114749002085145298}
   - component: {fileID: 114238606498955626}
   - component: {fileID: 114635376744371748}
+  - component: {fileID: 95520636120528814}
   m_Layer: 10
   m_Name: DronAserrado
   m_TagString: Untagged
@@ -42,7 +43,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1653411378832456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 6.47, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -93,6 +94,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8015051, y: 0.6015048}
   m_EdgeRadius: 0
+--- !u!95 &95520636120528814
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1653411378832456}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f4931f9ebebca0444b8c5d69a9e98217, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114238606498955626
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,7 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6781e557fb49346b2a7a1b4cf5e02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  maxHealth: 10
+  damagedTime: 0.1
 --- !u!114 &114336888419120784
 MonoBehaviour:
   m_ObjectHideFlags: 1

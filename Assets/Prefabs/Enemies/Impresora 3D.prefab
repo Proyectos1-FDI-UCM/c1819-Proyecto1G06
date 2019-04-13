@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114873539324903576}
   - component: {fileID: 114168787519935280}
   - component: {fileID: 114226057979699484}
+  - component: {fileID: 95303847649479132}
   m_Layer: 10
   m_Name: Impresora 3D
   m_TagString: Untagged
@@ -66,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1044712739358064}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 5.901, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4079985876282128}
@@ -98,6 +99,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1541507, y: 1.1786678}
   m_EdgeRadius: 0
+--- !u!95 &95303847649479132
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044712739358064}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5dc62d2c234418a448c86113c2315781, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114168787519935280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 15
+  damagedTime: 0.1
 --- !u!114 &114226057979699484
 MonoBehaviour:
   m_ObjectHideFlags: 1

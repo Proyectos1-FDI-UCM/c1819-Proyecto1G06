@@ -18,3 +18,4 @@ Esta es la rama de equilibrado, donde se testean cambios de balanceo del juego.
 - Implementados los objetos de arriba en el Nivel 2.
 - Implementados cambios propuestos durante la evaluación informal del 10-04-2019.
 - Añadida animación a la barra de vida del boss.
+- Añadida animación de recibir daño de los personajes.

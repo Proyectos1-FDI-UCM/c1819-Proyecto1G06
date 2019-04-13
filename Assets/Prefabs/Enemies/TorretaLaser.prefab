@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114390578030057312}
   - component: {fileID: 61469061857586954}
   - component: {fileID: 114579945875799742}
+  - component: {fileID: 95900238913371822}
   m_Layer: 10
   m_Name: TorretaLaser
   m_TagString: Untagged
@@ -59,7 +60,7 @@ GameObject:
   - component: {fileID: 114708769692375228}
   - component: {fileID: 95037551587251594}
   m_Layer: 10
-  m_Name: torretaCabeza
+  m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,6 +150,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95900238913371822
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1451109395574382}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 169e530d14895b543bda02ba384fb3ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114390578030057312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -172,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 22
+  damagedTime: 0.1
 --- !u!114 &114708769692375228
 MonoBehaviour:
   m_ObjectHideFlags: 1

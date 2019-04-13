@@ -39,6 +39,30 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+  - serializedVersion: 5
+    m_Name: Damaged
+    m_StateMachine: {fileID: 1107260603771015016}
+    m_Mask: {fileID: 0}
+    m_Motions:
+    - serializedVersion: 2
+      m_State: {fileID: 1102668246902867396}
+      m_Motion: {fileID: 7400000, guid: 61bbf6fe21561a846ae8cb1c7b71c29e, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102476426819332036}
+      m_Motion: {fileID: 7400000, guid: 026bc616c2dd08d4eb72aa6c18e6810c, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102954198955345776}
+      m_Motion: {fileID: 7400000, guid: c9ea27ec27bea7b4484fc4c2eb9981f5, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102971580329314158}
+      m_Motion: {fileID: 7400000, guid: c5685301dd3bed44fb21c32fb5c13bdf, type: 2}
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: 0
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
 --- !u!206 &206739660086185694
 BlendTree:
   m_ObjectHideFlags: 1
@@ -294,6 +318,24 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1107 &1107260603771015016
+AnimatorStateMachine:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Damaged
+  m_ChildStates: []
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 0}
 --- !u!1107 &1107493102956111258
 AnimatorStateMachine:
   serializedVersion: 5
