@@ -8,11 +8,19 @@ public class PlayerShooting : Shooting {
     public float damageMultiplier = 1;
     public BulletMovement[] possibleBullets;
     public SpriteRenderer body;
+    public SpriteRenderer effectArm;
     //Weapons weapon; //Arma, de momento sin usar
+
+    SpriteRenderer arm;
+
+    private void Awake()
+    {
+        arm = GetComponent<SpriteRenderer>();
+    }
 
     public void Start()
     {
-        GameManager.instance.ui.UpdateDamage(baseDamage * damageMultiplier, damageMultiplier);
+        GameManager.instance.ui.UpdateDamage(baseDamage * damageMultiplier, damageMultiplier);       
         //weapon = Weapons.Default;
     }
 
@@ -30,11 +38,13 @@ public class PlayerShooting : Shooting {
         if (angle > 90 || angle < -90)
         {
             GetComponent<SpriteRenderer>().flipY = true; // Hacer que no tenga un movimiento poco natural
+            effectArm.flipY = true;
             body.flipX = true;
         }
         else
         {
             GetComponent<SpriteRenderer>().flipY = false;
+            effectArm.flipY = false;
             body.flipX = false;
         }
 
@@ -68,13 +78,13 @@ public class PlayerShooting : Shooting {
     /// <summary>
     /// Cambia la bala según el nuevo efecto.
     /// </summary>
-    public void ChangeEffect(BulletEffects effect, ItemData data)
+    public void ChangeEffect(BulletEffects effect, ItemData data, Sprite effectSprite)
     {
         bulletPrefab = possibleBullets[(int)effect];
-        GameManager.instance.ui.UpdateEffect(data.sprite);
+        effectArm.sprite = effectSprite;
     }
 
-    public void ChangeWeapon(Weapons weaponNew, ItemData data)
+    public void ChangeWeapon(Weapons weaponNew, ItemData data, Sprite weaponSprite)
     {
         UIManager ui = GameManager.instance.ui;
         switch (weaponNew)
@@ -94,7 +104,7 @@ public class PlayerShooting : Shooting {
         }
 
         ui.UpdateDamage(baseDamage * damageMultiplier, damageMultiplier);
-        ui.UpdateWeapon(data.sprite);
+        arm.sprite = weaponSprite;
 
         //weapon = weaponNew;
     }

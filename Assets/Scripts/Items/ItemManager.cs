@@ -77,9 +77,7 @@ public class ItemManager : MonoBehaviour {
     {
         Minimap.instance.InitializeMap();
         ApplyItemEffects();
-        GameManager.instance.ui.UpdateItems(GetItemSprites(itemList));
-        if(itemList.weapon != null) GameManager.instance.ui.UpdateWeapon(itemList.weapon.sprite);
-        if(itemList.effect != null) GameManager.instance.ui.UpdateEffect(itemList.effect.sprite);
+        GameManager.instance.ui.UpdateItems(GetItemSprites(itemList));       
     }
 
     /// <summary>
