@@ -10,6 +10,7 @@ public class ItemData : MonoBehaviour {
     public Sprite sprite { get { return GetComponent<SpriteRenderer>().sprite; } }
     public IItem[] effects { get { return GetComponents<IItem>(); } }
     public ObjectType type;
+    public string itemName, itemFlavor;
 
     Interactable interactable;
 
