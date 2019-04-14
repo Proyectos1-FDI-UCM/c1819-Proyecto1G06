@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
     public Image[] maxLives = new Image[10];
     public RawImage mapRaw;
     public Text damage, speed, multiplier;
-    public Image bossHealthBack, bossHealth, weaponImage, effectImage;
+    public Image bossHealthBack, bossHealth;
     public RectTransform itemListHolder;
 
     int lastActiveMaxLife = 0;
@@ -170,15 +170,5 @@ public class UIManager : MonoBehaviour
         }
 
         lastItemListSlot = i;
-    }
-
-    public void UpdateWeapon(Sprite sprite)
-    {
-        weaponImage.sprite = sprite;
-    }
-
-    public void UpdateEffect(Sprite sprite)
-    {
-        effectImage.sprite = sprite;
     }
 }
