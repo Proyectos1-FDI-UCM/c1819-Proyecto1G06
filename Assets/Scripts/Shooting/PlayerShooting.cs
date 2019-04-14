@@ -13,10 +13,14 @@ public class PlayerShooting : Shooting {
 
     SpriteRenderer arm;
 
+    private void Awake()
+    {
+        arm = GetComponent<SpriteRenderer>();
+    }
+
     public void Start()
     {
-        GameManager.instance.ui.UpdateDamage(baseDamage * damageMultiplier, damageMultiplier);
-        arm = GetComponent<SpriteRenderer>();
+        GameManager.instance.ui.UpdateDamage(baseDamage * damageMultiplier, damageMultiplier);       
         //weapon = Weapons.Default;
     }
 
