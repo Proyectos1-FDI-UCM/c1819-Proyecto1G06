@@ -18,6 +18,11 @@ public class ItemData : MonoBehaviour {
         interactable = GetComponent<Interactable>();
     }
 
+    private void OnEnable()
+    {
+        GetComponent<AudioSource>().PlayDelayed(0.3f);
+    }
+
     /// <summary>
     /// Al chocarse con el jugador, recoger el item
     /// </summary>
