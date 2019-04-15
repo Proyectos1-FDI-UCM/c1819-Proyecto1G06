@@ -9,11 +9,14 @@ public class Shooting : MonoBehaviour
     public Transform shootingPoint;                 //Punto de donde sale la bala
     public BulletMovement bulletPrefab;             //Script del movimiento de la bala
     public bool disarmable = true;                  //Si puede ser desarmado
+    public float disarmCoolodown = 3;
 
     protected float shootCooldown = 0f;             //Tiempo hasta la siguiente bala
     protected Transform player { get { return GameManager.instance.player.transform; } }
     protected Transform bulletPool { get { return GameManager.instance.bulletPool; } }                 //Padre de las balas
     protected bool disarmed = false;
+    protected float disarmTimer = 0f;
+    protected float disCooldown = 0f;
 
     public virtual void Update()
     {
@@ -25,11 +28,18 @@ public class Shooting : MonoBehaviour
     /// </summary>
     public virtual void Cooldown()
     {
-        if (shootCooldown > 0f)
-            shootCooldown -= Time.deltaTime;        //Se reduce si no es 0
+        if (!disarmed)
+        {
+            if (shootCooldown > 0f) shootCooldown -= Time.deltaTime;        //Se reduce si no es 0
+            else shootCooldown = 0f;
+        }
 
-        else
-            shootCooldown = 0f;
+        if (disarmTimer > 0f) disarmTimer -= Time.deltaTime;
+        else if (disarmTimer < 0f) disarmTimer = 0f;
+        else if (disarmed) Rearm();
+
+        if (disCooldown > 0f) disarmTimer -= Time.deltaTime;
+        else if (disCooldown < 0f) disarmTimer = 0f;
     }
 
     /// <summary>
@@ -53,16 +63,20 @@ public class Shooting : MonoBehaviour
         shootCooldown = 1 / rateOfFire;
     }
 
-    public void Disarm()
+    public void Disarm(float duration)
     {
-        if (disarmable)
+        if (disarmable && disCooldown == 0f && disarmTimer == 0f)
         {
             disarmed = true;
+            disarmTimer = duration;
+            print("Uy mi arma");
         }
     }
 
     public void Rearm()
     {
+        disCooldown = disarmCoolodown;
         disarmed = false;
+        print("Ya estoy de vuelta");
     }
 }

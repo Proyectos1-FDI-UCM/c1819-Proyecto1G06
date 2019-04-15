@@ -102,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1206035332229422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3, y: -0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4717687805506496}
@@ -253,11 +253,13 @@ MonoBehaviour:
   bulletPrefab: {fileID: 114570068157640350, guid: b52ae6ddaa2ab724c80d0ca0ff6e6f4b,
     type: 2}
   disarmable: 0
+  disarmCoolodown: 3
   baseDamage: 2
   damageMultiplier: 1
   possibleBullets:
   - {fileID: 114570068157640350, guid: b52ae6ddaa2ab724c80d0ca0ff6e6f4b, type: 2}
   - {fileID: 114223399538601412, guid: 5d01030a383653747a33aedaa86b82b0, type: 2}
+  - {fileID: 114686674852598154, guid: baf6bee6896a420489a7d0e8e3c708ce, type: 2}
   body: {fileID: 212152949152580146}
   effectArm: {fileID: 212647643549282392}
 --- !u!114 &114969751812258340
