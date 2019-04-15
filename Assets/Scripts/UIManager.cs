@@ -9,8 +9,10 @@ public class UIManager : MonoBehaviour
     public Image[] maxLives = new Image[10];
     public RawImage mapRaw;
     public Text damage, speed, multiplier;
+    public Text itemName, itemDesc;
     public Image bossHealthBack, bossHealth;
     public RectTransform itemListHolder;
+    public float displayTime;
 
     int lastActiveMaxLife = 0;
     int lastActiveCurLife = 0;
@@ -29,6 +31,7 @@ public class UIManager : MonoBehaviour
         {
             child.gameObject.SetActive(false);
         }
+        DisableItemText();
     }
 
     /// <summary>
@@ -170,5 +173,20 @@ public class UIManager : MonoBehaviour
         }
 
         lastItemListSlot = i;
+    }
+
+    public void DisplayItemText(string name, string desc)
+    {
+        itemName.text = name;
+        itemDesc.text = desc;
+
+        CancelInvoke("DisableItemText");
+        Invoke("DisableItemText", displayTime);
+    }
+
+    private void DisableItemText()
+    {
+        itemName.text = "";
+        itemDesc.text = "";
     }
 }

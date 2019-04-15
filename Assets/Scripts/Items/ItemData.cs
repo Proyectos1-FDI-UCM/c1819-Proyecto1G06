@@ -40,6 +40,7 @@ public class ItemData : MonoBehaviour {
                 transform.GetComponent<BoxCollider2D>().enabled = false;    //Desactiva los componentes innecesarios.
                 transform.GetComponent<SpriteRenderer>().enabled = false;
                 ItemManager.instance.AddItem(this);
+                GameManager.instance.ui.DisplayItemText(itemName, itemFlavor);
             }
         }
     }
