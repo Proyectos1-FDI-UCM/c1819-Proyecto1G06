@@ -5,19 +5,33 @@ using UnityEngine;
 public class RoomManager : MonoBehaviour {
 
     public Transform enemies;
-    [Tooltip("Tiempo en segundos que tarda la habitación en invocar enemigos al entrar el jugador")] public float summonTime;
     public GameObject doors;
     public GameObject itemPos;
+    public AudioClip doorClip, spawnClip;
+    public GameObject enemySpawnIndicator;
     public Coord pos;
     public bool boss = false;
 
     protected RoomState state = RoomState.NonVisited;       // Estado de la sala
+    AudioSource audioSource;
+    protected float summonTime = 2.2f;
+    GameObject[] indicators;
 
     public void Awake()
     {
+        indicators = new GameObject[enemies.childCount];
+        int cont = 0;
+        for(int i = 0; i < enemies.childCount; i++)
+        {
+            GameObject indicator = Instantiate<GameObject>(enemySpawnIndicator, enemies.GetChild(i).position, Quaternion.identity, transform);
+            indicators[cont] = indicator;
+            indicator.SetActive(false);
+            cont++;
+        }
         enemies.gameObject.SetActive(false);
         doors.SetActive(false);
         itemPos.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     public virtual void Start()
@@ -49,8 +63,18 @@ public class RoomManager : MonoBehaviour {
         if (enemies.childCount > 0)
         {
             state = RoomState.Closed;
+            SpawnIndicators();
             Invoke("SummonEnemies", summonTime);
             ToggleDoors(state);
+            audioSource.PlayOneShot(spawnClip);
+        }
+    }
+
+    void SpawnIndicators()
+    {
+        for(int i = 0; i < indicators.Length; i++)
+        {
+            indicators[i].SetActive(true);
         }
     }
 
@@ -60,6 +84,10 @@ public class RoomManager : MonoBehaviour {
     private void SummonEnemies()
     {
         enemies.gameObject.SetActive(true);
+        for (int i = 0; i < indicators.Length; i++)
+        {
+            Destroy(indicators[i]);
+        }
     }
 
     /// <summary>
@@ -70,6 +98,7 @@ public class RoomManager : MonoBehaviour {
         bool toggle = false;
         if (state == RoomState.Closed) toggle = true;
         doors.SetActive(toggle);
+        audioSource.PlayOneShot(doorClip);
     }
 
     /// <summary>

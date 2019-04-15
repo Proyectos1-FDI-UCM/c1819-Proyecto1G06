@@ -14,6 +14,11 @@ public class BombonadeO2 : MonoBehaviour {
         interactable = GetComponent<Interactable>();
     }
 
+    private void OnEnable()
+    {
+        GetComponent<AudioSource>().PlayDelayed(0.3f);
+    }
+
     /// <summary>
     /// Suma una cantidad amount de salud al jugador y se destruye.
     /// </summary>
