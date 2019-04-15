@@ -117,6 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4825690471622304}
   - component: {fileID: 114793623307858096}
+  - component: {fileID: 82467631173552096}
   m_Layer: 0
   m_Name: Room 2.3
   m_TagString: Untagged
@@ -306,7 +307,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1560181448537084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.878927, y: 29.961931, z: 0}
+  m_LocalPosition: {x: 60, y: -30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4312309792448042}
@@ -485,6 +486,26 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 2113883505598717446}
     m_ColliderPaths:
+    - - X: 150000000
+        Y: 20000000
+      - X: 110000000
+        Y: 20000000
+      - X: 110000000
+        Y: 110000000
+      - X: 20000000
+        Y: 110000000
+      - X: 20000000
+        Y: 150000000
+      - X: 10000000
+        Y: 150000000
+      - X: 10000000
+        Y: 100000000
+      - X: 100000000
+        Y: 100000000
+      - X: 100000000
+        Y: 10000000
+      - X: 150000000
+        Y: 10000000
     - - X: -10000000
         Y: -100000000
       - X: -140000000
@@ -509,26 +530,6 @@ CompositeCollider2D:
         Y: -150000000
       - X: -10000000
         Y: -150000000
-    - - X: 150000000
-        Y: 20000000
-      - X: 110000000
-        Y: 20000000
-      - X: 110000000
-        Y: 110000000
-      - X: 20000000
-        Y: 110000000
-      - X: 20000000
-        Y: 150000000
-      - X: 10000000
-        Y: 150000000
-      - X: 10000000
-        Y: 100000000
-      - X: 100000000
-        Y: 100000000
-      - X: 100000000
-        Y: 10000000
-      - X: 150000000
-        Y: 10000000
     - - X: -90000000
         Y: 30000000
       - X: -60000000
@@ -583,6 +584,16 @@ CompositeCollider2D:
         Y: -150000000
   m_CompositePaths:
     m_Paths:
+    - - {x: 15, y: 2}
+      - {x: 11, y: 2}
+      - {x: 11, y: 11}
+      - {x: 2, y: 11}
+      - {x: 2, y: 15}
+      - {x: 1, y: 15}
+      - {x: 1, y: 10}
+      - {x: 10, y: 10}
+      - {x: 10, y: 1}
+      - {x: 15, y: 1}
     - - {x: -1, y: -10}
       - {x: -14, y: -10}
       - {x: -14, y: 10}
@@ -595,16 +606,6 @@ CompositeCollider2D:
       - {x: -2, y: -11}
       - {x: -2, y: -15}
       - {x: -1, y: -15}
-    - - {x: 15, y: 2}
-      - {x: 11, y: 2}
-      - {x: 11, y: 11}
-      - {x: 2, y: 11}
-      - {x: 2, y: 15}
-      - {x: 1, y: 15}
-      - {x: 1, y: 10}
-      - {x: 10, y: 10}
-      - {x: 10, y: 1}
-      - {x: 15, y: 1}
     - - {x: -9, y: 3}
       - {x: -6, y: 3}
       - {x: -6, y: -6}
@@ -632,6 +633,101 @@ CompositeCollider2D:
       - {x: 1, y: -15}
       - {x: 2, y: -15}
   m_VertexDistance: 0.0005
+--- !u!82 &82467631173552096
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560181448537084}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 57c867d7c2e09164299b71aa567a9fb1, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114517945291527456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -656,9 +752,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: {fileID: 4293065221857506}
-  summonTime: 1
   doors: {fileID: 1854523207806314}
   itemPos: {fileID: 1396905927413856}
+  doorClip: {fileID: 8300000, guid: 57c867d7c2e09164299b71aa567a9fb1, type: 3}
+  spawnClip: {fileID: 8300000, guid: 9b1fd7cfd06c40b43acfe31d6b9e0419, type: 3}
+  enemySpawnIndicator: {fileID: 1166108884059202, guid: 57ecf1f4ee7567647a4f907dae7c847d,
+    type: 2}
   pos:
     x: 0
     y: 0

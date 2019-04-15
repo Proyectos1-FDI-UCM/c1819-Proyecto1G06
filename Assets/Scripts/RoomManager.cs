@@ -13,7 +13,7 @@ public class RoomManager : MonoBehaviour {
     public bool boss = false;
 
     protected RoomState state = RoomState.NonVisited;       // Estado de la sala
-    AudioSource audioSource;
+    protected AudioSource audioSource;
     protected float summonTime = 2.2f;
     GameObject[] indicators;
 
@@ -60,7 +60,7 @@ public class RoomManager : MonoBehaviour {
     public virtual void DetectPlayer()
     {
         Minimap.instance.NewRoomExplored(pos);
-        if (enemies.childCount > 0)
+        if (enemies.childCount > 0 && state != RoomState.Closed)
         {
             state = RoomState.Closed;
             SpawnIndicators();
@@ -70,7 +70,7 @@ public class RoomManager : MonoBehaviour {
         }
     }
 
-    void SpawnIndicators()
+    protected void SpawnIndicators()
     {
         for(int i = 0; i < indicators.Length; i++)
         {

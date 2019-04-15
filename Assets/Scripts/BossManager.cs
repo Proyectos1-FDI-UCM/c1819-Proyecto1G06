@@ -39,12 +39,14 @@ public class BossManager : RoomManager {
     public override void DetectPlayer()
     {
         Minimap.instance.NewRoomExplored(pos);
-        if (enemies.childCount > 0)
+        if (enemies.childCount > 0 && state != RoomState.Closed)
         {
             state = RoomState.Closed;
+            SpawnIndicators();
             Invoke("SummonEnemies", summonTime);
             ToggleDoors(state);
             GameManager.instance.ui.ToggleBossHealth(true);
+            audioSource.PlayOneShot(spawnClip);
         }
     }
 }

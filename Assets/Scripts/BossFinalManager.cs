@@ -9,12 +9,15 @@ public class BossFinalManager : RoomManager {
 
     public override void DetectPlayer()
     {
-        Minimap.instance.NewRoomExplored(pos);
-        state = RoomState.Closed;
-        enemies.gameObject.SetActive(true);
-        ToggleDoors(state);
-        cameraPlayer.SetActive(false);
-        cameraBoss.SetActive(true);
+        if (state != RoomState.Closed)
+        {
+            Minimap.instance.NewRoomExplored(pos);
+            state = RoomState.Closed;
+            enemies.gameObject.SetActive(true);
+            ToggleDoors(state);
+            cameraPlayer.SetActive(false);
+            cameraBoss.SetActive(true);
+        }
     }
 
 }
