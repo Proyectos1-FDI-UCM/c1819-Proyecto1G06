@@ -9,7 +9,7 @@ public class PlayerBullet : MonoBehaviour {
     /// <summary>
     /// Hace daño al enemigo. Se destruye
     /// </summary>
-    private void OnTriggerEnter2D(Collider2D other)
+    public virtual void OnTriggerEnter2D(Collider2D other)
     {   
         EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();       
 

@@ -18,6 +18,5 @@ public class CompanionCompañeroVolador : MonoBehaviour {
         Vector3 dir = GameManager.instance.player.transform.position - transform.position;
         if (dir.magnitude > minDistance)
             follow.MoveTowards(dir);
-        else follow.Stop();
     }
 }

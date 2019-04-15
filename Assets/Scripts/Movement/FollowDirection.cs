@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowDirection : MonoBehaviour {
 
-    private Rigidbody2D rb;
+    protected Rigidbody2D rb;
     public float speed = 5f;
 
     private void Awake()
@@ -16,7 +16,7 @@ public class FollowDirection : MonoBehaviour {
     /// Se mueve hacia direction
     /// </summary>
     /// <param name="direction">La dirección</param>
-    public void MoveTowards(Vector2 direction)
+    public virtual void MoveTowards(Vector2 direction)
     {
         rb.velocity = direction.normalized * speed;
     }
@@ -24,7 +24,7 @@ public class FollowDirection : MonoBehaviour {
     /// <summary>
     /// Deja de moverse
     /// </summary>
-    public void Stop()
+    public virtual void Stop()
     {
         rb.velocity *= 0.8f;
     }    
@@ -32,7 +32,7 @@ public class FollowDirection : MonoBehaviour {
     /// <summary>
     /// Para completamente al objeto
     /// </summary>
-    public void HardStop()
+    public virtual void HardStop()
     {
         rb.velocity = Vector2.zero;
     }

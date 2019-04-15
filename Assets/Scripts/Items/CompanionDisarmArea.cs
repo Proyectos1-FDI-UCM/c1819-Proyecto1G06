@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CompanionDisarmArea : MonoBehaviour {
 
+    public float disarmDuartion;
+
     private void Start()
     {
         GetComponent<FollowTarget>().target = GameManager.instance.player.transform;
@@ -14,7 +16,7 @@ public class CompanionDisarmArea : MonoBehaviour {
         Shooting shooting = collision.GetComponentInChildren<Shooting>();
         if (shooting != null)
         {
-            shooting.Disarm();
+            shooting.Disarm(disarmDuartion);
         }
     }
 

@@ -207,7 +207,8 @@ MonoBehaviour:
   shootingPoint: {fileID: 4159047885683368}
   bulletPrefab: {fileID: 114601551365168386, guid: f1e39e6e42db39a4fa1c3c8b29690968,
     type: 2}
-  disarmable: 1
+  disarmable: 0
+  disarmCoolodown: 3
 --- !u!114 &114805523593647262
 MonoBehaviour:
   m_ObjectHideFlags: 1

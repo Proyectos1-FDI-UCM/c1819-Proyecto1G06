@@ -9,49 +9,48 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1917376792506676}
+  m_RootGameObject: {fileID: 1763037591322004}
   m_IsPrefabAsset: 1
---- !u!1 &1917376792506676
+--- !u!1 &1763037591322004
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4538487738594926}
-  - component: {fileID: 212077478362090592}
-  - component: {fileID: 61346698580419474}
-  - component: {fileID: 114562922547090778}
-  - component: {fileID: 114601487073096790}
-  - component: {fileID: 114889614271006190}
-  - component: {fileID: 114212726250675530}
-  - component: {fileID: 82732201877374076}
+  - component: {fileID: 4725815547076428}
+  - component: {fileID: 212118309622524852}
+  - component: {fileID: 61883854729229264}
+  - component: {fileID: 114512385723017352}
+  - component: {fileID: 114386595039918072}
+  - component: {fileID: 114579826128826872}
+  - component: {fileID: 82976927796789500}
   m_Layer: 0
-  m_Name: PastillaDeAzucar
+  m_Name: "ModuloT\xE1ctico"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4538487738594926
+--- !u!4 &4725815547076428
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1917376792506676}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18, y: 0, z: 0}
+  m_GameObject: {fileID: 1763037591322004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61346698580419474
+--- !u!61 &61883854729229264
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1917376792506676}
+  m_GameObject: {fileID: 1763037591322004}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -62,21 +61,21 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.299363}
-    newSize: {x: 1.57, y: 2.04}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.299363}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!82 &82732201877374076
+--- !u!82 &82976927796789500
 AudioSource:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1917376792506676}
+  m_GameObject: {fileID: 1763037591322004}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -166,63 +165,52 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114212726250675530
+--- !u!114 &114386595039918072
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1917376792506676}
+  m_GameObject: {fileID: 1763037591322004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5346c541e6e48f84e9da53c35e597d9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tier: 67
+  type: 1
+  itemName: "M\xD3DULO T\xC1CTICO"
+  itemFlavor: "\xA1T\xE1ser!"
+--- !u!114 &114512385723017352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1763037591322004}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c82e6b49127b1e4cbf096c203b09968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interactableTime: 0.3
---- !u!114 &114562922547090778
+--- !u!114 &114579826128826872
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1917376792506676}
+  m_GameObject: {fileID: 1763037591322004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5346c541e6e48f84e9da53c35e597d9b, type: 3}
+  m_Script: {fileID: 11500000, guid: 84d120da4a092f14998d11261598d42b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tier: 68
-  type: 0
-  itemName: "PASTILLA DE AZ\xDACAR"
-  itemFlavor: No parece demasiado efectiva
---- !u!114 &114601487073096790
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1917376792506676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9ca6ebb8587a3a4b8947b5902f46335, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 0.3
---- !u!114 &114889614271006190
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1917376792506676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 569e76cc7a587394596635547647cb8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 0.2
---- !u!212 &212077478362090592
+  effect: 2
+  effectSprite: {fileID: 21300002, guid: 96fb61956c6e3eb4888545c8daa06dd9, type: 3}
+--- !u!212 &212118309622524852
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1917376792506676}
+  m_GameObject: {fileID: 1763037591322004}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -252,12 +240,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 31930c5e9fc1b3643917e9f33e0782c8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfa6112e0d1ba644496baa7077daa67e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.57, y: 2.04}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
