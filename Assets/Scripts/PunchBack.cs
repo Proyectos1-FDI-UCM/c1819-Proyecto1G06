@@ -24,7 +24,7 @@ public class PunchBack : MonoBehaviour {
         if (Vector3.Distance(player.position, transform.position) <= armLength)
         {
             player.GetComponent<Knockback>().TakeKnockback(player.position - transform.position, punchKnockback);
-            player.GetComponent<PlayerHealth>().TakeDamage();
+            GameManager.instance.onPlayerTookDamage();
         }
     }
 }

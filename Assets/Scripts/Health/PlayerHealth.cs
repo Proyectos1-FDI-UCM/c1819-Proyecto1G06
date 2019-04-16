@@ -18,6 +18,9 @@ public class PlayerHealth : MonoBehaviour {
         curHealth = maxHealth;
         anim = GetComponent<Animator>();
         GameManager.instance.player = gameObject;
+
+        GameManager.instance.onPlayerTookDamage += TakeDamage;
+        GameManager.instance.onPlayerRestoredHealth += RestoreHealth;
     }
 
     /// <summary>
@@ -80,13 +83,11 @@ public class PlayerHealth : MonoBehaviour {
     /// <summary>
     /// Añade amount de vida máxima, hasta absoluteMaxHealth
     /// </summary>
-    /// <param name="heal">Si además debería curarse el jugador</param>
-    public void AddMaxHealth(int amount, bool heal)
+    public void AddMaxHealth(int amount)
     {
         maxHealth += amount;
         if (maxHealth > absoluteMaxHealth)
             maxHealth = absoluteMaxHealth;
-        if (heal) RestoreHealth(amount);
 
         ui.UpdateLives(curHealth, maxHealth);
     }

@@ -13,7 +13,7 @@ public class EnemyBullet : MonoBehaviour {
 
         if (playerHealth != null)
         {
-            playerHealth.TakeDamage();
+            GameManager.instance.onPlayerTookDamage();
         }
 
         if (other.GetComponent<EnemyHealth>() == null)

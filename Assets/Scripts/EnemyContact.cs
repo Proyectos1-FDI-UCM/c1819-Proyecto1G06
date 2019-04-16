@@ -16,7 +16,7 @@ public class EnemyContact : MonoBehaviour {
 
         if(playerHealth != null)
         {
-            playerHealth.TakeDamage();
+            GameManager.instance.onPlayerTookDamage();
             if(knockback != null)
             {
                 knockback.TakeKnockback(-other.contacts[0].normal, knockbackAmount);

@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuCanvas : MonoBehaviour {
-
-
+public class MenuCanvas : MonoBehaviour
+{
     public void CargaNivel(string nombreNivel)
     {
-        SceneManager.LoadScene(nombreNivel);
+        GameManager.instance.LoadScene(nombreNivel);
     }
 
     public void CerrarJuego()

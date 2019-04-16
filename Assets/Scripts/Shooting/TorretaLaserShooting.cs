@@ -20,7 +20,7 @@ public class TorretaLaserShooting : MkIShooting {
             RaycastHit2D hit = Physics2D.Raycast(shootingPoint.position, transform.right, Mathf.Infinity, LayerMask.GetMask("Environment", "Player"));
             if (hit.transform == player)
             {
-                hit.transform.GetComponent<PlayerHealth>().TakeDamage();
+                GameManager.instance.onPlayerTookDamage();
             }
         }
     }

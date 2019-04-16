@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public delegate void OnEffectChanged(BulletEffects effect, ItemData data, Sprite effectSprite);
     public delegate void OnWeaponChanged(Weapons weaponNew, ItemData data, Sprite weaponSprite);
+    public delegate void OnPlayerTookDamage();
+    public delegate void OnPlayerRestoredHealth(int amount);
 
     public static GameManager instance;
 
@@ -17,6 +19,8 @@ public class GameManager : MonoBehaviour
 
     public OnEffectChanged onEffectChanged;
     public OnWeaponChanged onWeaponChanged;
+    public OnPlayerTookDamage onPlayerTookDamage;
+    public OnPlayerRestoredHealth onPlayerRestoredHealth;
 
     /// <summary>
     /// Singleton

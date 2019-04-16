@@ -8,7 +8,7 @@ public class VoluntarioHealth : BossHealth {
 
     private void Start()
     {
-        controller = GetComponent<VoluntarioController>();       
+        controller = GetComponent<VoluntarioController>();
     }
 
     /// <summary>

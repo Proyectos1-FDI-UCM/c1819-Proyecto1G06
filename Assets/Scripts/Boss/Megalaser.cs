@@ -73,7 +73,7 @@ public class Megalaser : MonoBehaviour, IBossAttack1 {
         hit = Physics2D.CircleCast(shootingPoint.position, lr.endWidth / 2, Vector2.down, 100, LayerMask.GetMask("Player"));
         if(hit.transform == player)
         {
-            player.GetComponent<PlayerHealth>().TakeDamage();
+            GameManager.instance.onPlayerTookDamage();
         }
     }
 
