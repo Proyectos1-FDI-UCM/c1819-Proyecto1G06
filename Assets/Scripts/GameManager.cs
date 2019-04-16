@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public delegate void OnEffectChanged(BulletEffects effect, ItemData data, Sprite effectSprite);
+    public delegate void OnWeaponChanged(Weapons weaponNew, ItemData data, Sprite weaponSprite);
 
     public static GameManager instance;
 
@@ -12,6 +14,9 @@ public class GameManager : MonoBehaviour
     public UIManager ui;
     public Transform bulletPool;
     public string activeScene { get { return SceneManager.GetActiveScene().name; } }
+
+    public OnEffectChanged onEffectChanged;
+    public OnWeaponChanged onWeaponChanged;
 
     /// <summary>
     /// Singleton

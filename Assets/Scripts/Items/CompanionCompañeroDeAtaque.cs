@@ -16,7 +16,7 @@ public class CompanionCompañeroDeAtaque : Shooting {
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    protected virtual void OnTriggerStay2D(Collider2D collision)
     {
         if(target == null && collision.GetComponent<EnemyHealth>() != null)
         {
