@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114108662922601042}
   - component: {fileID: 114978189945882692}
   - component: {fileID: 95995426198779172}
+  - component: {fileID: 114559819801375526}
   m_Layer: 0
   m_Name: Seein'Red
   m_TagString: Untagged
@@ -198,6 +199,18 @@ MonoBehaviour:
   type: 0
   itemName: Seein' Red
   itemFlavor: "\xA1La ansiedad es poder!"
+--- !u!114 &114559819801375526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1103217014940280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b8e08707e0886a4c9f245ca83d75d40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageDivider: 2
 --- !u!114 &114978189945882692
 MonoBehaviour:
   m_ObjectHideFlags: 1
