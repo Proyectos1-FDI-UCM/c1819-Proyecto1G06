@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public delegate void OnWeaponChanged(Weapons weaponNew, ItemData data, Sprite weaponSprite);
     public delegate void OnPlayerTookDamage();
     public delegate void OnPlayerRestoredHealth(int amount);
+    public delegate void OnPlayerAddedDamage(float amount);
 
     public static GameManager instance;
 
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     public OnWeaponChanged onWeaponChanged;
     public OnPlayerTookDamage onPlayerTookDamage;
     public OnPlayerRestoredHealth onPlayerRestoredHealth;
+    public OnPlayerAddedDamage onPlayerAddedDamage;
 
     /// <summary>
     /// Singleton

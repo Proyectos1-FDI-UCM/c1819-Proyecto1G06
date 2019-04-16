@@ -10,6 +10,7 @@ public class CompanionCompañeroMímico : CompanionCompañeroDeAtaque
     {
         GameManager.instance.onEffectChanged += ChangeEffect;
         GameManager.instance.onWeaponChanged += ChangeWeapon;
+        GameManager.instance.onPlayerAddedDamage += AddDamage;
     }
 
     private void Start()
@@ -25,9 +26,14 @@ public class CompanionCompañeroMímico : CompanionCompañeroDeAtaque
         bulletPrefab = playerShooting.bulletPrefab;
     }
 
-    public void ChangeWeapon(Weapons weaponNew, ItemData data, Sprite weaponSprite)
+    private void ChangeWeapon(Weapons weaponNew, ItemData data, Sprite weaponSprite)
     {
         damage = playerShooting.damageMultiplier * playerShooting.baseDamage;
         rateOfFire = playerShooting.rateOfFire;
+    }
+
+    void AddDamage(float amount)
+    {
+        damage = playerShooting.baseDamage * playerShooting.damageMultiplier;
     }
 }

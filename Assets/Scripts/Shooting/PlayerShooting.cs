@@ -17,6 +17,7 @@ public class PlayerShooting : Shooting {
     {
         GameManager.instance.onEffectChanged += ChangeEffect;
         GameManager.instance.onWeaponChanged += ChangeWeapon;
+        GameManager.instance.onPlayerAddedDamage += AddDamage;
         arm = GetComponent<SpriteRenderer>();
     }
 
