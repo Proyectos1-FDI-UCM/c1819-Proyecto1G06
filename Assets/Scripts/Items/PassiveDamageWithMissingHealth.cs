@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PassiveDamageWithMissingHealth : MonoBehaviour {
+public class PassiveDamageWithMissingHealth : MonoBehaviour, IItem {
 
     public float damageDivider = 2f;
 
@@ -14,6 +14,7 @@ public class PassiveDamageWithMissingHealth : MonoBehaviour {
     public void PickEffect()
     {
         GameManager.instance.onPlayerTookDamage += PlayerChangedHealth;
+        GameManager.instance.onPlayerRestoredHealth += PlayerChangedHealth;
         PlayerChangedHealth();
     } 
 
@@ -23,5 +24,10 @@ public class PassiveDamageWithMissingHealth : MonoBehaviour {
         GameManager.instance.onPlayerAddedDamage(-curDamageBonus);
         curDamageBonus = (playerHealth.maxHealth - playerHealth.CurrentHealth()) / damageDivider;
         GameManager.instance.onPlayerAddedDamage(curDamageBonus);
+    }
+
+    void PlayerChangedHealth(int amount)
+    {
+        PlayerChangedHealth();
     }
 }
