@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour {
     public float maxAbsoluteVelocity = 12f;
 
     float accelerationMultiplier = 0.9f;            //El multiplicador del impulso, es decir, lo rápido que acelera.
+    bool canLooseSpeed = true;
 
     Rigidbody2D rb;
     Vector2 movement = Vector2.zero;
@@ -60,10 +61,27 @@ public class PlayerMovement : MonoBehaviour {
     /// </summary>
     public void AddSpeed(float amount)
     {
-        maxVelocity += amount;
-        if (maxVelocity > maxAbsoluteVelocity) maxVelocity = maxAbsoluteVelocity;
-        accelerationMultiplier = maxVelocity * VelocityToAccelerationRatio;
-        GameManager.instance.ui.UpdateSpeed(maxVelocity);
+        if(amount < 0)
+        {
+            if (canLooseSpeed)
+            {
+                maxVelocity += amount;
+                if (maxVelocity > maxAbsoluteVelocity) maxVelocity = maxAbsoluteVelocity;
+                accelerationMultiplier = maxVelocity * VelocityToAccelerationRatio;
+                GameManager.instance.ui.UpdateSpeed(maxVelocity);
+            }
+        }
+        else
+        {
+            maxVelocity += amount;
+            if (maxVelocity > maxAbsoluteVelocity) maxVelocity = maxAbsoluteVelocity;
+            accelerationMultiplier = maxVelocity * VelocityToAccelerationRatio;
+            GameManager.instance.ui.UpdateSpeed(maxVelocity);
+        }
+    }
 
+    public void InvertCanLooseSpeed()
+    {
+        canLooseSpeed = !canLooseSpeed;
     }
 }
