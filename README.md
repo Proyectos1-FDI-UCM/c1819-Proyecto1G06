@@ -18,5 +18,4 @@ Esta es la rama principal, donde está la última versión estable del proyecto.
 - Implementados los objetos de arriba en el Nivel 2.
 - Implementados cambios propuestos durante la evaluación informal del 10-04-2019.
 - Implementados sonidos de habitaciones y de objetos.
-- Creada Mega Armadura y Pastilla de Azúcar.
-- Creado Compañero Mímico.
+- Creados diversos objetos.
