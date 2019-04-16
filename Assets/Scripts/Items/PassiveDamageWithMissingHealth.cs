@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PassiveDamageWithMissingHealth : MonoBehaviour {
+public class PassiveDamageWithMissingHealth : MonoBehaviour, IItem {
 
     public float damageDivider = 2f;
 
