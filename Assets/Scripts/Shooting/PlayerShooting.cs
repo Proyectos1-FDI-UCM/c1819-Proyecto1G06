@@ -15,6 +15,8 @@ public class PlayerShooting : Shooting {
 
     private void Awake()
     {
+        GameManager.instance.onEffectChanged += ChangeEffect;
+        GameManager.instance.onWeaponChanged += ChangeWeapon;
         arm = GetComponent<SpriteRenderer>();
     }
 

@@ -9,6 +9,6 @@ public class Weapon : MonoBehaviour, IItem {
 
 	public void PickEffect()
     {
-        GameManager.instance.player.GetComponentInChildren<PlayerShooting>().ChangeWeapon(weapon, GetComponent<ItemData>(), spriteWeapon);
+        GameManager.instance.onWeaponChanged(weapon, GetComponent<ItemData>(), spriteWeapon);
     }
 }

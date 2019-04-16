@@ -9,49 +9,49 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1763037591322004}
+  m_RootGameObject: {fileID: 1748327997059320}
   m_IsPrefabAsset: 1
---- !u!1 &1763037591322004
+--- !u!1 &1748327997059320
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4725815547076428}
-  - component: {fileID: 212118309622524852}
-  - component: {fileID: 61883854729229264}
-  - component: {fileID: 114512385723017352}
-  - component: {fileID: 114386595039918072}
-  - component: {fileID: 114579826128826872}
-  - component: {fileID: 82976927796789500}
-  - component: {fileID: 95360957979765250}
+  - component: {fileID: 4855462454171260}
+  - component: {fileID: 212167664380046502}
+  - component: {fileID: 61839727277582500}
+  - component: {fileID: 114721977949057348}
+  - component: {fileID: 114314820116011766}
+  - component: {fileID: 114474330154487454}
+  - component: {fileID: 95545221243214540}
+  - component: {fileID: 82046377641710308}
   m_Layer: 0
-  m_Name: "ModuloT\xE1ctico"
+  m_Name: "Compa\xF1eroM\xEDmico"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4725815547076428
+--- !u!4 &4855462454171260
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1763037591322004}
+  m_GameObject: {fileID: 1748327997059320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 7.24, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61883854729229264
+--- !u!61 &61839727277582500
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1763037591322004}
+  m_GameObject: {fileID: 1748327997059320}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -71,12 +71,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!82 &82976927796789500
+--- !u!82 &82046377641710308
 AudioSource:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1763037591322004}
+  m_GameObject: {fileID: 1748327997059320}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -166,13 +166,13 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &95360957979765250
+--- !u!95 &95545221243214540
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1763037591322004}
+  m_GameObject: {fileID: 1748327997059320}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: ec3888bceeeabb64b9fcf29982705923, type: 2}
@@ -184,52 +184,51 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114386595039918072
+--- !u!114 &114314820116011766
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1763037591322004}
+  m_GameObject: {fileID: 1748327997059320}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5346c541e6e48f84e9da53c35e597d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tier: 67
-  type: 1
-  itemName: "M\xD3DULO T\xC1CTICO"
-  itemFlavor: "\xA1T\xE1ser!"
---- !u!114 &114512385723017352
+  tier: 65
+  type: 0
+  itemName: "COMPA\xD1ERO M\xCDMICO"
+  itemFlavor: Dos cabezas disparan mejor que una
+--- !u!114 &114474330154487454
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1763037591322004}
+  m_GameObject: {fileID: 1748327997059320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47cab8b667681ef4388f0d5a87598013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  companion: {fileID: 1310360725290724, guid: e9146463ba6d90549978788b872cadac, type: 2}
+--- !u!114 &114721977949057348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1748327997059320}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c82e6b49127b1e4cbf096c203b09968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interactableTime: 0.3
---- !u!114 &114579826128826872
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1763037591322004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84d120da4a092f14998d11261598d42b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effect: 2
-  effectSprite: {fileID: 21300002, guid: 96fb61956c6e3eb4888545c8daa06dd9, type: 3}
---- !u!212 &212118309622524852
+--- !u!212 &212167664380046502
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1763037591322004}
+  m_GameObject: {fileID: 1748327997059320}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -259,7 +258,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bfa6112e0d1ba644496baa7077daa67e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4aa2f31a5013c144913b165a236e654, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

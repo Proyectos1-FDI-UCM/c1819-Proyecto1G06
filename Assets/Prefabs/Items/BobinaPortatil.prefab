@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114108114942032132}
   - component: {fileID: 114284655009874114}
   - component: {fileID: 82137400454562810}
+  - component: {fileID: 95635466251133384}
   m_Layer: 0
   m_Name: BobinaPortatil
   m_TagString: Untagged
@@ -165,6 +166,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &95635466251133384
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1552171174136058}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ec3888bceeeabb64b9fcf29982705923, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114108114942032132
 MonoBehaviour:
   m_ObjectHideFlags: 1
