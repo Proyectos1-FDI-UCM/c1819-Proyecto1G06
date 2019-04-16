@@ -62,7 +62,10 @@ public class ItemManager : MonoBehaviour {
                 GameManager.instance.ui.AddItem(item.sprite);
                 break;
             case (ObjectType.Effect):
-                itemList.effect = item;
+                if(itemList.effect == null || CurrentEfect() != BulletEffects.Illegal)
+                {
+                    itemList.effect = item;
+                }
                 break;
             case (ObjectType.Weapon):
                 itemList.weapon = item;
@@ -146,5 +149,22 @@ public class ItemManager : MonoBehaviour {
         {
             list[i].PickEffect();
         }
+    }
+
+    /// <summary>
+    /// Devuelve el nombre del efecto contrario
+    /// </summary>
+    public BulletEffects CurrentEfect()
+    {
+        if (itemList.effect == null) return BulletEffects.None;
+        else return itemList.effect.gameObject.GetComponent<Effect>().effect;
+    }
+
+    /// <summary>
+    /// Sobreescribe el efecto, en concreto para facilitar el Ilegal.
+    /// </summary>
+    public void OverrideEffect(ItemData item)
+    {
+        itemList.effect = item;
     }
 }

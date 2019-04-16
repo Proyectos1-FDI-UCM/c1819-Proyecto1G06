@@ -80,8 +80,11 @@ public class PlayerShooting : Shooting {
     /// </summary>
     public void ChangeEffect(BulletEffects effect, ItemData data, Sprite effectSprite)
     {
-        bulletPrefab = possibleBullets[(int)effect];
-        effectArm.sprite = effectSprite;
+        if(ItemManager.instance.CurrentEfect() != BulletEffects.Illegal)
+        {
+            bulletPrefab = possibleBullets[(int)effect];
+            effectArm.sprite = effectSprite;
+        }
     }
 
     public void ChangeWeapon(Weapons weaponNew, ItemData data, Sprite weaponSprite)
