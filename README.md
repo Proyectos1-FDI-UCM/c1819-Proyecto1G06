@@ -19,4 +19,4 @@ Esta es la rama principal, donde está la última versión estable del proyecto.
 - Implementados cambios propuestos durante la evaluación informal del 10-04-2019.
 - Implementados sonidos de habitaciones y de objetos.
 - Creados diversos objetos.
-- Creado Seein' Red.
+- Creado Seein' Red, Antifreeze, compañero mímico, compañero de ataque, pastilla de azúcar y pastilla extraña.
