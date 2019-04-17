@@ -20,9 +20,8 @@ public class PassiveDamageWithMissingHealth : MonoBehaviour, IItem {
 
     void PlayerChangedHealth()
     {
-        PlayerHealth playerHealth = GameManager.instance.player.GetComponent<PlayerHealth>();
         GameManager.instance.onPlayerAddedDamage(-curDamageBonus);
-        curDamageBonus = (playerHealth.maxHealth - playerHealth.CurrentHealth()) / damageDivider;
+        curDamageBonus = (PlayerHealth.instance.maxHealth - PlayerHealth.instance.CurrentHealth()) / damageDivider;
         GameManager.instance.onPlayerAddedDamage(curDamageBonus);
     }
 

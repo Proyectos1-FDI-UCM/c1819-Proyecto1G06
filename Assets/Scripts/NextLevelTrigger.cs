@@ -21,8 +21,7 @@ public class NextLevelTrigger : MonoBehaviour {
     {
         if (interactable.interactable)
         {
-            PlayerHealth health = collision.GetComponent<PlayerHealth>();
-            if (health != null)
+            if (collision.gameObject == GameManager.instance.player)
             {
                 GameManager.instance.LoadScene(sceneName);
             }

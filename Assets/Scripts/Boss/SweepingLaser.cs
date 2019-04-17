@@ -37,7 +37,7 @@ public class SweepingLaser : MonoBehaviour, IBossAttack1 {
         RaycastHit2D hit;
         lr.SetPosition(1, followPoint.position);
         hit = Physics2D.Linecast(shootingPoint.position, followPoint.position, LayerMask.GetMask("Player"));
-        if(hit.transform != null && hit.transform.GetComponent<PlayerHealth>() != null)
+        if(hit.transform == GameManager.instance.player.transform)
         {
             GameManager.instance.onPlayerTookDamage();
         }

@@ -11,10 +11,9 @@ public class EnemyContact : MonoBehaviour {
     /// </summary>
     void OnCollisionEnter2D(Collision2D other)
     {
-        PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
         Knockback knockback = other.gameObject.GetComponent<Knockback>();
 
-        if(playerHealth != null)
+        if(other.gameObject == GameManager.instance.player)
         {
             GameManager.instance.onPlayerTookDamage();
             if(knockback != null)

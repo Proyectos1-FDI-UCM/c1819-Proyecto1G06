@@ -1,18 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MenuCanvas : MonoBehaviour
 {
-    public void CargaNivel(string nombreNivel)
+    public void LoadLevel(string name)
     {
-        GameManager.instance.LoadScene(nombreNivel);
+        GameManager.instance.LoadScene(name);
     }
 
-    public void CerrarJuego()
+    public void CloseGame()
     {
-     
         Application.Quit();
     }
 }

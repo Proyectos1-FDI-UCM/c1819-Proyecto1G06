@@ -6,6 +6,6 @@ public class PassiveNotReduceSpeed : MonoBehaviour, IItem {
 
 	public void PickEffect()
     {
-        GameManager.instance.player.GetComponent<PlayerMovement>().InvertCanLooseSpeed();
+        GameManager.instance.player.GetComponent<PlayerMovement>().InvertCanLoseSpeed();
     }
 }

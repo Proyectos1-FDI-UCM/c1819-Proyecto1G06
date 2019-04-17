@@ -31,8 +31,7 @@ public class ItemData : MonoBehaviour {
     {
         if (interactable.interactable)
         {
-            PlayerHealth player = other.GetComponent<PlayerHealth>();
-            if (player != null)
+            if (other.gameObject == GameManager.instance.player)
             {
                 for (int i = 0; i < effects.Length; i++)
                     effects[i].PickEffect();

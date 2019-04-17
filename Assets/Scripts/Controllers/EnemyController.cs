@@ -18,6 +18,6 @@ public class EnemyController : MonoBehaviour {
     /// </summary>
     public virtual void Sight(RaycastHit2D sight)
     {
-        playerDetected = sight.transform.GetComponent<PlayerHealth>() != null;
+        playerDetected = sight.transform == GameManager.instance.player.transform;
     }
 }

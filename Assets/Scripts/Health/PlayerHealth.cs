@@ -1,36 +1,46 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
 
-    public int maxHealth = 3;
+    public static PlayerHealth instance;
+    public int maxHealth = 4;
     public int absoluteMaxHealth = 10;
     public float invulTime = 1f;
 
     private float invulnerability;
     private UIManager ui { get { return GameManager.instance.ui; } }
-    private Animator anim;
+    private Animator anim { get { return GameManager.instance.player.GetComponent<Animator>(); } }
     int curHealth;
 
     private void Awake()
     {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else Destroy(gameObject);
+
         curHealth = maxHealth;
-        anim = GetComponent<Animator>();
-        GameManager.instance.player = gameObject;
 
         GameManager.instance.onPlayerTookDamage += TakeDamage;
         GameManager.instance.onPlayerRestoredHealth += RestoreHealth;
     }
 
-    /// <summary>
-    /// Vida inicial
-    /// </summary>
-    private void Start()
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        ui.UpdateLives(curHealth, maxHealth);
+        if (ui != null)
+            ui.UpdateLives(curHealth, maxHealth);
     }
 
+    void Start()
+    {
+        ui.UpdateLives(curHealth, maxHealth);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
     /// <summary>
     /// Baja el tiempo de invulnerabilidad
@@ -46,6 +56,8 @@ public class PlayerHealth : MonoBehaviour {
             invulnerability = 0f;
             anim.SetLayerWeight(1, 0);
         }
+
+        print(curHealth);
     }
 
     /// <summary>
@@ -62,11 +74,10 @@ public class PlayerHealth : MonoBehaviour {
 
             if (curHealth <= 0)
             {
-                curHealth = 0;
+                curHealth = maxHealth;
                 GameManager.instance.PlayerDied();
             }
         }
-       
     }
 
     /// <summary>

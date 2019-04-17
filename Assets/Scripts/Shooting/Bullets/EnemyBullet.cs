@@ -9,9 +9,7 @@ public class EnemyBullet : MonoBehaviour {
     /// </summary>
     private void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
-
-        if (playerHealth != null)
+        if (other.gameObject == GameManager.instance.player)
         {
             GameManager.instance.onPlayerTookDamage();
         }

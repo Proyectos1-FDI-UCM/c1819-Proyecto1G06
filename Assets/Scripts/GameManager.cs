@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     public delegate void OnPlayerAddedDamage(float amount);
 
     public static GameManager instance;
-
     public GameObject player;
     public UIManager ui;
     public Transform bulletPool;

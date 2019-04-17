@@ -25,7 +25,7 @@ public class Interactable : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<PlayerHealth>() != null)
+        if (collision.gameObject == GameManager.instance.player)
             interactable = true;
     }
 }
