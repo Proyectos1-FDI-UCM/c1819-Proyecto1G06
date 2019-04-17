@@ -11,6 +11,7 @@ public class CompanionCompañeroMímico : CompanionCompañeroDeAtaque
         GameManager.instance.onEffectChanged += ChangeEffect;
         GameManager.instance.onWeaponChanged += ChangeWeapon;
         GameManager.instance.onPlayerAddedDamage += AddDamage;
+        GameManager.instance.goingToLoadScene += DeleteDelegatesCM;
     }
 
     private void Start()
@@ -35,5 +36,13 @@ public class CompanionCompañeroMímico : CompanionCompañeroDeAtaque
     void AddDamage(float amount)
     {
         damage = playerShooting.baseDamage * playerShooting.damageMultiplier;
+    }
+
+    public void DeleteDelegatesCM()
+    {
+        GameManager.instance.onEffectChanged -= ChangeEffect;
+        GameManager.instance.onWeaponChanged -= ChangeWeapon;
+        GameManager.instance.onPlayerAddedDamage -= AddDamage;
+        GameManager.instance.goingToLoadScene -= DeleteDelegatesCM;
     }
 }

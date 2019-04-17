@@ -15,6 +15,7 @@ public class PassiveDamageWithMissingHealth : MonoBehaviour, IItem {
     {
         GameManager.instance.onPlayerTookDamage += PlayerChangedHealth;
         GameManager.instance.onPlayerRestoredHealth += PlayerChangedHealth;
+        GameManager.instance.goingToLoadScene += DeleteDelegatesSR;
         PlayerChangedHealth();
     } 
 
@@ -29,5 +30,12 @@ public class PassiveDamageWithMissingHealth : MonoBehaviour, IItem {
     void PlayerChangedHealth(int amount)
     {
         PlayerChangedHealth();
+    }
+
+    public void DeleteDelegatesSR()
+    {
+        GameManager.instance.onPlayerTookDamage -= PlayerChangedHealth;
+        GameManager.instance.onPlayerRestoredHealth -= PlayerChangedHealth;
+        GameManager.instance.goingToLoadScene -= DeleteDelegatesSR;
     }
 }

@@ -11,6 +11,7 @@ public class PassiveSpeedWithDamage : MonoBehaviour, IItem {
 	public void PickEffect()
     {
         GameManager.instance.onPlayerAddedDamage += AddDamageToSpeed;
+        GameManager.instance.goingToLoadScene += DeleteDelegatesAF;
         AddDamageToSpeed(0f);
     }
 
@@ -19,5 +20,11 @@ public class PassiveSpeedWithDamage : MonoBehaviour, IItem {
         GameManager.instance.player.GetComponent<PlayerMovement>().AddSpeed(- currSpeed);
         currSpeed = GameManager.instance.player.GetComponentInChildren<PlayerShooting>().baseDamage * percentageConversion;
         GameManager.instance.player.GetComponent<PlayerMovement>().AddSpeed(currSpeed);
+    }
+
+    public void DeleteDelegatesAF()
+    {
+        GameManager.instance.onPlayerAddedDamage -= AddDamageToSpeed;
+        GameManager.instance.goingToLoadScene -= DeleteDelegatesAF;
     }
 }

@@ -21,6 +21,7 @@ public class PlayerHealth : MonoBehaviour {
 
         GameManager.instance.onPlayerTookDamage += TakeDamage;
         GameManager.instance.onPlayerRestoredHealth += RestoreHealth;
+        GameManager.instance.goingToLoadScene += DeleteDelegatesHealth;
     }
 
     /// <summary>
@@ -95,5 +96,12 @@ public class PlayerHealth : MonoBehaviour {
     public int CurrentHealth()
     {
         return curHealth;
+    }
+
+    public void DeleteDelegatesHealth()
+    {
+        GameManager.instance.onPlayerTookDamage -= TakeDamage;
+        GameManager.instance.onPlayerRestoredHealth -= RestoreHealth;
+        GameManager.instance.goingToLoadScene -= DeleteDelegatesHealth;
     }
 }

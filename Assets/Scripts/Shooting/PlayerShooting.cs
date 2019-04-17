@@ -18,6 +18,7 @@ public class PlayerShooting : Shooting {
         GameManager.instance.onEffectChanged += ChangeEffect;
         GameManager.instance.onWeaponChanged += ChangeWeapon;
         GameManager.instance.onPlayerAddedDamage += AddDamage;
+        GameManager.instance.goingToLoadScene += DeleteDelegatesShooting;
         arm = GetComponent<SpriteRenderer>();
     }
 
@@ -113,5 +114,13 @@ public class PlayerShooting : Shooting {
         arm.sprite = weaponSprite;
 
         //weapon = weaponNew;
+    }
+
+    public void DeleteDelegatesShooting()
+    {
+        GameManager.instance.onEffectChanged -= ChangeEffect;
+        GameManager.instance.onWeaponChanged -= ChangeWeapon;
+        GameManager.instance.onPlayerAddedDamage -= AddDamage;
+        GameManager.instance.goingToLoadScene -= DeleteDelegatesShooting;
     }
 }

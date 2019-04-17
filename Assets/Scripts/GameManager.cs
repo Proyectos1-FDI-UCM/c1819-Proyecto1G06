@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public delegate void OnPlayerTookDamage();
     public delegate void OnPlayerRestoredHealth(int amount);
     public delegate void OnPlayerAddedDamage(float amount);
+    public delegate void GoingToLoadScene();
 
     public static GameManager instance;
 
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     public OnPlayerTookDamage onPlayerTookDamage;
     public OnPlayerRestoredHealth onPlayerRestoredHealth;
     public OnPlayerAddedDamage onPlayerAddedDamage;
+    public GoingToLoadScene goingToLoadScene;
 
     /// <summary>
     /// Singleton
@@ -55,9 +57,11 @@ public class GameManager : MonoBehaviour
 
     /// <summary>
     /// Carga la escena scene
+    /// Borra los métodos de los delegados para que se añadan en la escena
     /// </summary>
     public void LoadScene(string scene)
     {
+        if(player != null) goingToLoadScene();
         SceneManager.LoadScene(scene);
     }
 
