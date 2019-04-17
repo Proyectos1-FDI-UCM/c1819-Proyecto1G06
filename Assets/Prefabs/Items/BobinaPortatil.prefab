@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114108114942032132}
   - component: {fileID: 114284655009874114}
   - component: {fileID: 82137400454562810}
-  - component: {fileID: 95635466251133384}
+  - component: {fileID: 95020572024264168}
   m_Layer: 0
   m_Name: BobinaPortatil
   m_TagString: Untagged
@@ -39,8 +39,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1552171174136058}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0016301795, y: 0.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -166,7 +166,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &95635466251133384
+--- !u!95 &95020572024264168
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -257,7 +257,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: af86f3f5010bec84493b434c6ae2af3b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
