@@ -11,7 +11,6 @@ public class PlayerHealth : MonoBehaviour {
     public float invulTime = 1f;
 
     private float invulnerability;
-    private UIManager ui { get { return GameManager.instance.ui; } }
     private Animator anim { get { return GameManager.instance.player.GetComponent<Animator>(); } }
     int curHealth;
 
@@ -21,25 +20,23 @@ public class PlayerHealth : MonoBehaviour {
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            curHealth = maxHealth;
+
+            GameManager.instance.onPlayerTookDamage += TakeDamage;
+            GameManager.instance.onPlayerRestoredHealth += RestoreHealth;
         }
         else Destroy(gameObject);
-
-        curHealth = maxHealth;
-
-        GameManager.instance.onPlayerTookDamage += TakeDamage;
-        GameManager.instance.onPlayerRestoredHealth += RestoreHealth;
-        GameManager.instance.goingToLoadScene += DeleteDelegatesHealth;
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (ui != null)
-            ui.UpdateLives(curHealth, maxHealth);
+        if (GameManager.instance.ui != null)
+            GameManager.instance.ui.UpdateLives(curHealth, maxHealth);
     }
 
     void Start()
     {
-        ui.UpdateLives(curHealth, maxHealth);
+        GameManager.instance.ui.UpdateLives(curHealth, maxHealth);
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -48,17 +45,18 @@ public class PlayerHealth : MonoBehaviour {
     /// </summary>
     private void Update()
     {
-        if(invulnerability > 0f)
+        if (GameManager.instance.player != null)
         {
-            invulnerability -= Time.deltaTime;
+            if (invulnerability > 0f)
+            {
+                invulnerability -= Time.deltaTime;
+            }
+            else if (invulnerability < 0f)
+            {
+                invulnerability = 0f;
+                anim.SetLayerWeight(1, 0);
+            }
         }
-        else if (invulnerability < 0f)
-        {
-            invulnerability = 0f;
-            anim.SetLayerWeight(1, 0);
-        }
-
-        print(curHealth);
     }
 
     /// <summary>
@@ -71,7 +69,7 @@ public class PlayerHealth : MonoBehaviour {
             invulnerability = invulTime;    //Le hace invulnerable
             anim.SetLayerWeight(1, 1);
             curHealth--;
-            ui.UpdateLives(curHealth, maxHealth);      //Hacer que el UIManager actualice la UI
+            GameManager.instance.ui.UpdateLives(curHealth, maxHealth);      //Hacer que el UIManager actualice la UI
 
             if (curHealth <= 0)
             {
@@ -89,7 +87,7 @@ public class PlayerHealth : MonoBehaviour {
         curHealth += amount;
         if (curHealth > maxHealth) curHealth = maxHealth;
 
-        ui.UpdateLives(curHealth, maxHealth);
+        GameManager.instance.ui.UpdateLives(curHealth, maxHealth);
     }
 
     /// <summary>
@@ -101,18 +99,11 @@ public class PlayerHealth : MonoBehaviour {
         if (maxHealth > absoluteMaxHealth)
             maxHealth = absoluteMaxHealth;
 
-        ui.UpdateLives(curHealth, maxHealth);
+        GameManager.instance.ui.UpdateLives(curHealth, maxHealth);
     }
 
     public int CurrentHealth()
     {
         return curHealth;
-    }
-
-    public void DeleteDelegatesHealth()
-    {
-        GameManager.instance.onPlayerTookDamage -= TakeDamage;
-        GameManager.instance.onPlayerRestoredHealth -= RestoreHealth;
-        GameManager.instance.goingToLoadScene -= DeleteDelegatesHealth;
     }
 }

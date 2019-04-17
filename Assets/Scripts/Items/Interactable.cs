@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour {
 
-    bool _interactable;
-    public bool interactable { get; set; }
+    bool _interactable = false;
+    public bool interactable { get { return _interactable; } }
     public float interactableTime = 0.3f;
 
-    float time;
+    float time = 0;
+
+    private void Awake()
+    {
+        time = interactableTime;
+    }
 
     private void Update()
     {
@@ -19,13 +24,13 @@ public class Interactable : MonoBehaviour {
         else
         {
             time = 0;
-            interactable = true;
+            _interactable = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject == GameManager.instance.player)
-            interactable = true;
+            _interactable = true;
     }
 }

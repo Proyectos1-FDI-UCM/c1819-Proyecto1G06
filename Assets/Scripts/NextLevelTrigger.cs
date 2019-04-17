@@ -19,12 +19,9 @@ public class NextLevelTrigger : MonoBehaviour {
     /// </summary>
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (interactable.interactable)
+        if (collision.gameObject == GameManager.instance.player && interactable.interactable)
         {
-            if (collision.gameObject == GameManager.instance.player)
-            {
-                GameManager.instance.LoadScene(sceneName);
-            }
+            GameManager.instance.LoadScene(sceneName);
         }
     }
 }
