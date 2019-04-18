@@ -69,7 +69,6 @@ public class Shooting : MonoBehaviour
         {
             disarmed = true;
             disarmTimer = duration;
-            print("Uy mi arma");
         }
     }
 
@@ -77,6 +76,5 @@ public class Shooting : MonoBehaviour
     {
         disCooldown = disarmCoolodown;
         disarmed = false;
-        print("Ya estoy de vuelta");
     }
 }
