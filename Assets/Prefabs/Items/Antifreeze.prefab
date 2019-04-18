@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 114443102691049520}
   - component: {fileID: 114632258770113990}
   - component: {fileID: 82590039827638668}
-  - component: {fileID: 114796863954293584}
   - component: {fileID: 95920956920450252}
   - component: {fileID: 114534354766584584}
   m_Layer: 0
@@ -224,17 +223,6 @@ MonoBehaviour:
   type: 0
   itemName: "ANTIFREEZE\u2122"
   itemFlavor: "Arriba, abajo, al centro y pa\u2019 dentro"
---- !u!114 &114796863954293584
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1149540853266382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 215fa2256a1ae5d4fa0eb60f4200bded, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212949865711322172
 SpriteRenderer:
   m_ObjectHideFlags: 1
