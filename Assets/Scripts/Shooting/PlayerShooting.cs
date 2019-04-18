@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerShooting : Shooting {
 
     public float baseDamage = 2;
+    public float absoluteMinBaseDamage = 0.5f;
     public float damageMultiplier = 1;
     public BulletMovement[] possibleBullets;
     public SpriteRenderer body;
@@ -76,6 +77,7 @@ public class PlayerShooting : Shooting {
     public void AddDamage(float amount)
     {
         baseDamage += amount;
+        if (baseDamage < absoluteMinBaseDamage) baseDamage = absoluteMinBaseDamage;
         GameManager.instance.ui.UpdateDamage(baseDamage * damageMultiplier, damageMultiplier);
     }
 
