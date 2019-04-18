@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour {
     public static PlayerHealth instance;
     public int baseMaxHealth = 4;
     public int absoluteMaxHealth = 10;
+    public int absoluteminHealth = 0;
     public float invulTime = 1f;
 
     private float invulnerability;
@@ -93,13 +94,20 @@ public class PlayerHealth : MonoBehaviour {
     }
 
     /// <summary>
-    /// Añade amount de vida máxima, hasta absoluteMaxHealth
+    /// Añade amount de vida máxima, hasta absoluteMaxHealth, o hasta absoluteMinHealth (se muere)
     /// </summary>
     public void AddMaxHealth(int amount)
     {
         curMaxHealth += amount;
+        if (curHealth > curMaxHealth)
+            curHealth = curMaxHealth;
         if (curMaxHealth > absoluteMaxHealth)
             curMaxHealth = absoluteMaxHealth;
+        else if (curMaxHealth <= absoluteminHealth)
+        {
+            curMaxHealth = absoluteminHealth;
+            GameManager.instance.PlayerDied();
+        }
 
         GameManager.instance.ui.UpdateLives(curHealth, curMaxHealth);
     }
@@ -107,5 +115,10 @@ public class PlayerHealth : MonoBehaviour {
     public int CurrentHealth()
     {
         return curHealth;
+    }
+
+    public int CurrentMaxHealth()
+    {
+        return curMaxHealth;
     }
 }
