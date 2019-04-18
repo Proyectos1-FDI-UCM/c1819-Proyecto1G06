@@ -28,14 +28,15 @@ public class RoomManager : MonoBehaviour {
             indicator.SetActive(false);
             cont++;
         }
-        enemies.gameObject.SetActive(false);
-        doors.SetActive(false);
-        itemPos.SetActive(false);
+
         audioSource = GetComponent<AudioSource>();
     }
 
     public virtual void Start()
     {
+        enemies.gameObject.SetActive(false);
+        doors.SetActive(false);
+        itemPos.SetActive(false);
         Minimap.instance.StoreRoom(pos, boss);  //Inicializa esta habitación
     }
 

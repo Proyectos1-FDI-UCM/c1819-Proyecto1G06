@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1880040822609516}
+  m_IsPrefabAsset: 1
+--- !u!1 &1880040822609516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4674575044123736}
+  - component: {fileID: 114633709687160280}
+  m_Layer: 0
+  m_Name: RandomItemPlacer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4674575044123736
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1880040822609516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114633709687160280
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1880040822609516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8c372537ecfb9743a37f584a72a18c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsPerLevel: 4
+  items:
+  - {fileID: 1149540853266382, guid: 7bac27b92cee9fb42a4f6fca6c4306ee, type: 2}
+  - {fileID: 1552171174136058, guid: 21d3acffb1c78584f9e5d18cad156c05, type: 2}
+  - {fileID: 1098037967726406, guid: 2256a96bdf0cd0a42b0e3b7bf683365b, type: 2}
+  - {fileID: 1734267868256088, guid: fcac57bb18117f4478d0b7cda40ceefe, type: 2}
+  - {fileID: 1325731685048626, guid: db9c5cb2edb3a15439b0669d8d0662ba, type: 2}
+  - {fileID: 1748327997059320, guid: 17324529515c9c341bad0520fe5ff10f, type: 2}
+  - {fileID: 1776529477787198, guid: 6dd2cd8dd7b4bc24a923229dc4bd56ce, type: 2}
+  - {fileID: 1444048018493126, guid: 402a6894a005d79459e762a72865acf8, type: 2}
+  - {fileID: 1275289945126250, guid: a5aee1c4b9ba8e641a8bdcc380e74229, type: 2}
+  - {fileID: 1445712468109716, guid: 7e66305b7d88abf4f8de5d157e23e591, type: 2}
+  - {fileID: 1600727530575804, guid: 9952c50296ac35444bc643005c9afe7b, type: 2}
+  - {fileID: 1763037591322004, guid: d88a2a9c11991c34497dee91e4b04fcf, type: 2}
+  - {fileID: 1917376792506676, guid: ab7c69db5f268b8409ad0a3c3eeb34cc, type: 2}
+  - {fileID: 1177676581995808, guid: 0c7599721a45f564b9f9cbaa67ae52dc, type: 2}
+  - {fileID: 1786640786195680, guid: 837a085d45ec8ee4db48d540062a453e, type: 2}
+  - {fileID: 1183661220643786, guid: 26fc5a33d49c58446aff0493a9720c9d, type: 2}
+  - {fileID: 1240774914428040, guid: ee919c7bce56b884696e29dc27be1084, type: 2}
+  - {fileID: 1103217014940280, guid: ce9746c0859682240a006c031339013e, type: 2}
+  itemPositions: []
