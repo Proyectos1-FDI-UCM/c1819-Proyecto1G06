@@ -12,12 +12,18 @@ public class PassiveSpeedWithDamage : MonoBehaviour, IItem {
     {
         GameManager.instance.onPlayerAddedDamage += AddDamageToSpeed;
         GameManager.instance.goingToLoadScene += DeleteDelegatesAF;
-        AddDamageToSpeed(0f);
+        currSpeed = 0;
+        AddDamageToSpeed();
     }
 
     public void AddDamageToSpeed(float damage)
     {
-        GameManager.instance.player.GetComponent<PlayerMovement>().AddSpeed(- currSpeed);
+        AddDamageToSpeed();
+    }
+
+    public void AddDamageToSpeed()
+    {
+        GameManager.instance.player.GetComponent<PlayerMovement>().AddSpeed(-currSpeed);
         currSpeed = GameManager.instance.player.GetComponentInChildren<PlayerShooting>().baseDamage * percentageConversion;
         GameManager.instance.player.GetComponent<PlayerMovement>().AddSpeed(currSpeed);
     }

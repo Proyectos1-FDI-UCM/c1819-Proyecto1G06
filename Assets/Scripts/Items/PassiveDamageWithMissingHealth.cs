@@ -16,6 +16,7 @@ public class PassiveDamageWithMissingHealth : MonoBehaviour, IItem {
         GameManager.instance.onPlayerTookDamage += PlayerChangedHealth;
         GameManager.instance.onPlayerRestoredHealth += PlayerChangedHealth;
         GameManager.instance.goingToLoadScene += DeleteDelegatesSR;
+        curDamageBonus = 0;
         PlayerChangedHealth();
     } 
 
