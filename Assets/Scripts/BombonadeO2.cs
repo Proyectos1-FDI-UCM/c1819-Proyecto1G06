@@ -27,7 +27,7 @@ public class BombonadeO2 : MonoBehaviour {
         if (interactable.interactable)
         {
             PlayerHealth playerHealth = PlayerHealth.instance;
-            if (playerHealth.CurrentHealth() != playerHealth.maxHealth)
+            if (playerHealth.CurrentHealth() != playerHealth.baseMaxHealth)
             {
                 GameManager.instance.onPlayerRestoredHealth(amount);
                 Destroy(gameObject);
