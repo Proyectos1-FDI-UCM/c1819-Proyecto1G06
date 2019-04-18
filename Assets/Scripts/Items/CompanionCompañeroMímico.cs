@@ -8,6 +8,7 @@ public class CompanionCompañeroMímico : CompanionCompañeroDeAtaque
 
     private void Awake()
     {
+        playerShooting = GameManager.instance.player.GetComponentInChildren<PlayerShooting>();
         GameManager.instance.onEffectChanged += ChangeEffect;
         GameManager.instance.onWeaponChanged += ChangeWeapon;
         GameManager.instance.onPlayerAddedDamage += AddDamage;
@@ -16,7 +17,6 @@ public class CompanionCompañeroMímico : CompanionCompañeroDeAtaque
 
     private void Start()
     {
-        playerShooting = GameManager.instance.player.GetComponentInChildren<PlayerShooting>();
         damage = playerShooting.damageMultiplier * playerShooting.baseDamage;
         rateOfFire = playerShooting.rateOfFire;
         bulletPrefab = playerShooting.bulletPrefab;
