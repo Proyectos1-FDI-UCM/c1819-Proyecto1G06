@@ -43,6 +43,7 @@ public class TORv0Controller : EnemyController {
     {
         state = EnemyState.Idle;
         health.MakeVulnerable(state);
+        CancelInvoke("Chase");
         Invoke("Chase", Random.Range(waitRange.x, waitRange.y));
     }
 
