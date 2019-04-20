@@ -8,14 +8,8 @@ public class Impresora3DController : EnemyController {
     public int maxDronAmount = 5;
     public MicrodronHealth microdronPrefab;
 
-    Transform spawnPoint;
     float spawnCooldown;
     int dronAmount = 0;
-
-    void Awake()
-    {
-        spawnPoint = transform.GetChild(0);
-    }
 
     private void Update()
     {
@@ -47,7 +41,7 @@ public class Impresora3DController : EnemyController {
         //Crea el microdron con referencia a la impresora
         if (dronAmount < maxDronAmount && Mathf.Approximately(spawnCooldown, 0f))
         {
-            MicrodronHealth dron = Instantiate<MicrodronHealth>(microdronPrefab, spawnPoint.position, Quaternion.identity, transform.parent);
+            MicrodronHealth dron = Instantiate<MicrodronHealth>(microdronPrefab, transform.position, Quaternion.identity, transform.parent);
             dron.SetImpresora(this);
             dronAmount++;
             spawnCooldown = spawnEvery;
