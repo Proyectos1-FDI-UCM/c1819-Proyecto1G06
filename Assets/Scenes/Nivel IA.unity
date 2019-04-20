@@ -156,7 +156,7 @@ Prefab:
         type: 2}
       propertyPath: cameraPlayer
       value: 
-      objectReference: {fileID: 1268308027}
+      objectReference: {fileID: 592921717}
     - target: {fileID: 114060373616280784, guid: d397f8f1a785a474b813712b8eaf003d,
         type: 2}
       propertyPath: cameraBoss
@@ -396,6 +396,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24977787fb839504c98c80808726673e, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &592921717 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1462789363633280, guid: 24977787fb839504c98c80808726673e,
+    type: 2}
+  m_PrefabInternal: {fileID: 485714597}
 --- !u!1 &603430196
 GameObject:
   m_ObjectHideFlags: 0
@@ -2660,11 +2665,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c3d41a6f8126744ad409aec0e3c122, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1268308027 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1614320439405694, guid: 24977787fb839504c98c80808726673e,
-    type: 2}
-  m_PrefabInternal: {fileID: 485714597}
 --- !u!1001 &1346899011
 Prefab:
   m_ObjectHideFlags: 0

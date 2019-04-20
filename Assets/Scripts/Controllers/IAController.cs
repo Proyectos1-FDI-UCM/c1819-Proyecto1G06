@@ -20,7 +20,6 @@ public class IAController : MonoBehaviour {
         attacks = GetComponentsInChildren<IBossAttack1>();
         numCelulas = celulas.Length;
         SetVulnerable(celulas, screen);
-        GameManager.instance.ui.ToggleBossHealth(true);
         combinedMaxHealth = celulas[2].maxHealth + celulas[3].maxHealth;
         for(int i = 0; i < attacks.Length; i++)
         {
