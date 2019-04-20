@@ -32,6 +32,7 @@ public class PlayerHealth : MonoBehaviour {
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        curHealth = curHealth - (curMaxHealth - baseMaxHealth);
         curMaxHealth = baseMaxHealth;
         if (GameManager.instance.ui != null)
             GameManager.instance.ui.UpdateLives(curHealth, curMaxHealth);
@@ -89,8 +90,13 @@ public class PlayerHealth : MonoBehaviour {
     {
         curHealth += amount;
         if (curHealth > curMaxHealth) curHealth = curMaxHealth;
-
         GameManager.instance.ui.UpdateLives(curHealth, curMaxHealth);
+
+        if (curHealth <= 0)
+        {
+            curHealth = baseMaxHealth;
+            GameManager.instance.PlayerDied();
+        }
     }
 
     /// <summary>
@@ -99,8 +105,6 @@ public class PlayerHealth : MonoBehaviour {
     public void AddMaxHealth(int amount)
     {
         curMaxHealth += amount;
-        if (curHealth > curMaxHealth)
-            curHealth = curMaxHealth;
         if (curMaxHealth > absoluteMaxHealth)
             curMaxHealth = absoluteMaxHealth;
         else if (curMaxHealth <= absoluteminHealth)
@@ -108,7 +112,6 @@ public class PlayerHealth : MonoBehaviour {
             curMaxHealth = absoluteminHealth;
             GameManager.instance.PlayerDied();
         }
-
         GameManager.instance.ui.UpdateLives(curHealth, curMaxHealth);
     }
 
