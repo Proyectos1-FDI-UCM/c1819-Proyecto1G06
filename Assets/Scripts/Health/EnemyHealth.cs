@@ -9,7 +9,7 @@ public class EnemyHealth : MonoBehaviour {
 
     protected float curHealth;
     public float CurHealth { get { return curHealth; } }
-    Animator anim;
+    protected Animator anim;
 
     public virtual void Awake()
     {
