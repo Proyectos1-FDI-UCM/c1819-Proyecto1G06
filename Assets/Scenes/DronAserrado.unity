@@ -229,6 +229,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 212577078076543990, guid: 76384c1347308a142b46426a5423771b,
+        type: 2}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61028402697731352, guid: 76384c1347308a142b46426a5423771b,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0.0020052195
+      objectReference: {fileID: 0}
+    - target: {fileID: 61028402697731352, guid: 76384c1347308a142b46426a5423771b,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.6873071
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76384c1347308a142b46426a5423771b, type: 2}
   m_IsPrefabAsset: 0
@@ -10591,9 +10606,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: {fileID: 1252901229}
-  summonTime: 0
   doors: {fileID: 373713427}
   itemPos: {fileID: 0}
+  doorClip: {fileID: 0}
+  spawnClip: {fileID: 0}
+  enemySpawnIndicator: {fileID: 0}
   pos:
     x: 0
     y: 0

@@ -16,7 +16,7 @@ public class FollowDirection : MonoBehaviour {
     /// Se mueve hacia direction
     /// </summary>
     /// <param name="direction">La dirección</param>
-    public void MoveTowards(Vector2 direction)
+    public virtual void MoveTowards(Vector2 direction)
     {
         rb.velocity = direction.normalized * speed;
     }

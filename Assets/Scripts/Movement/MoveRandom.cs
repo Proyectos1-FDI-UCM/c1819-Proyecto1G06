@@ -7,12 +7,15 @@ public class MoveRandom : MonoBehaviour {
     public float changeDirectionEvery = 3f;     // Tiempo entre cambios de dirección
     public float speed = 2f;
 
+    FollowDirection follow;
+
     float changeDirectionCooldown = 0;
     Rigidbody2D rb;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        follow = GetComponent<FollowDirection>();
     }
 
     /// <summary>
@@ -30,7 +33,7 @@ public class MoveRandom : MonoBehaviour {
     {
         if (changeDirectionCooldown <= 0)
         {
-            MoveTowardsRandom(CalculateDirection());
+            follow.MoveTowards(CalculateDirection());
             changeDirectionCooldown = changeDirectionEvery;
         }
         else
@@ -48,13 +51,5 @@ public class MoveRandom : MonoBehaviour {
             vector2 = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
         } while (vector2.magnitude <= 0);
         return vector2;
-    }
-
-    /// <summary>
-    /// Se mueve hacia direction
-    /// </summary>
-    public void MoveTowardsRandom(Vector2 direction)
-    {
-        rb.velocity = direction * speed;
     }
 }
