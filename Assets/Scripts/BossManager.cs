@@ -9,10 +9,9 @@ public class BossManager : RoomManager {
     /// <summary>
     /// Desactiva la salida del nivel
     /// </summary>
-    public override void Start()
+    public void Start()
     {
         endTrigger.SetActive(false);
-        base.Start();
     }
 
     /// <summary>
@@ -38,7 +37,7 @@ public class BossManager : RoomManager {
     /// </summary>
     public override void DetectPlayer()
     {
-        //Minimap.instance.NewRoomExplored(pos);
+        Minimap.instance.NewRoomExplored(pos);
         if (enemies.childCount > 0 && state != RoomState.Closed)
         {
             state = RoomState.Closed;

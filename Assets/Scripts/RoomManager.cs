@@ -9,7 +9,7 @@ public class RoomManager : MonoBehaviour {
     public GameObject itemPos;
     public AudioClip doorClip, spawnClip;
     public GameObject enemySpawnIndicator;
-    //public Coord pos;
+    public Vector2Int pos;
     public bool boss = false;
 
     protected RoomState state = RoomState.NonVisited;       // Estado de la sala
@@ -35,11 +35,6 @@ public class RoomManager : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
     }
 
-    public virtual void Start()
-    {
-        //Minimap.instance.StoreRoom(pos, boss);  //Inicializa esta habitación
-    }
-
     /// <summary>
     /// Al morir los enemigos, cambia de estado
     /// </summary>
@@ -60,7 +55,7 @@ public class RoomManager : MonoBehaviour {
     /// </summary>
     public virtual void DetectPlayer()
     {
-        //Minimap.instance.NewRoomExplored(pos);
+        Minimap.instance.NewRoomExplored(pos);
         if (enemies.childCount > 0 && state != RoomState.Closed)
         {
             state = RoomState.Closed;

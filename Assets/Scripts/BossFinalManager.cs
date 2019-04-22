@@ -11,7 +11,6 @@ public class BossFinalManager : RoomManager {
     {
         if (state != RoomState.Closed)
         {
-            //Minimap.instance.NewRoomExplored(pos);
             state = RoomState.Closed;
             enemies.gameObject.SetActive(true);
             GameManager.instance.ui.ToggleBossHealth(true);

@@ -4,19 +4,10 @@ Este es el Proyecto 1 del grupo 06 18/19.
 
 ## Sobre esta rama
 
-Esta es la rama principal, donde está la última versión estable del proyecto.
+Esta es la rama random, donde está la generación aleatoria de niveles.
 
 ## Cambios
 
-- Actualizado el sprite del jugador.
-- Añadido al Voluntario.
-- Añadido el nivel 2.
-- Añadida la torreta láser.
-- Añadida escena de la I.A., células y sus comportamientos.
-- Añadido el dron blindado con su comportamiento.
-- Añadidos los objetos Lente de Refuerzo, Lente convergente, Bobina Portátil y Dron Volador.
-- Implementados los objetos de arriba en el Nivel 2.
-- Implementados cambios propuestos durante la evaluación informal del 10-04-2019.
-- Implementados sonidos de habitaciones y de objetos.
-- Creados diversos objetos.
-- Creado Seein' Red, Antifreeze, compañero mímico, compañero de ataque, pastilla de azúcar y pastilla extraña.
+- Creada generación aleatoria.
+- Actualizado el minimapa para que la soporte.
+- Creada escena en la que se generan niveles aleatorios.
