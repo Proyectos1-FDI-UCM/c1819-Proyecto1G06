@@ -11,6 +11,8 @@ public class MkIController : EnemyController
     private Shooting shooting;
     GameObject weapon;
     Vector2 laserHitPos = Vector2.zero;
+    Rigidbody2D rb;
+    Animator anim;
 
     private void Awake()
     {
@@ -18,6 +20,8 @@ public class MkIController : EnemyController
         followDirection = GetComponent<FollowDirection>();
         shooting = transform.GetChild(0).GetComponent<Shooting>();
         weapon = transform.GetChild(0).gameObject;
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     /// <summary>
@@ -29,6 +33,7 @@ public class MkIController : EnemyController
         {
             case EnemyState.Fleeing:
                 followDirection.MoveTowards((transform.position - player.transform.position).normalized);
+                anim.SetFloat("Velocity", rb.velocity.magnitude);
                 break;
             case EnemyState.Shooting:
                 lr.SetPosition(0, weapon.transform.position);
