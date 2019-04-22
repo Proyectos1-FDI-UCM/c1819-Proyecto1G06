@@ -2,18 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public struct Coord
-{
-    public int x, y;
-
-    public Coord(int x, int y)
-    {
-        this.x = x;
-        this.y = y;
-    }
-}
-
 public enum RoomMap { Nonexistant, NotSeen, NonVisited, Visited, Current }  //Nonexistant significa que no hay habitación
 public enum ItemMap { None, Health, Item }  //Items en la habitación, no en uso
 
@@ -38,8 +26,6 @@ public class Minimap : MonoBehaviour {
 
     public static Minimap instance;
 
-    public int width, heigth;
-
     RoomMapInfo[,] map;
 
     /// <summary>
@@ -54,11 +40,9 @@ public class Minimap : MonoBehaviour {
             DontDestroyOnLoad(gameObject);
         }
         else Destroy(gameObject);
-
-        InitializeMap();
     }
 
-    public void Start()
+    public void UpdateMapUI()
     {
         GameManager.instance.ui.UpdateMap(map);
     }
@@ -68,7 +52,7 @@ public class Minimap : MonoBehaviour {
     /// </summary>
     /// <param name="pos">La posición de la habitación</param>
     /// <param name="boss">Si es una habitación de boss</param>
-    public void StoreRoom(Coord pos, bool boss)
+    public void StoreRoom(Vector2Int pos, bool boss)
     {
         map[pos.y, pos.x] = new RoomMapInfo(RoomMap.NotSeen, ItemMap.None, boss);
     }
@@ -76,13 +60,13 @@ public class Minimap : MonoBehaviour {
     /// <summary>
     /// Inicializa la matriz del mapa
     /// </summary>
-    public void InitializeMap()
+    public void InitializeMap(Vector2Int size)
     {
-        map = new RoomMapInfo[heigth, width];
+        map = new RoomMapInfo[size.y, size.x];
 
-        for (int fila = 0; fila < heigth; fila++)
+        for (int fila = 0; fila < size.y; fila++)
         {
-            for (int col = 0; col < width; col++)
+            for (int col = 0; col < size.x; col++)
             {
                 map[fila, col] = new RoomMapInfo(RoomMap.Nonexistant, ItemMap.None, false);
             }
@@ -94,7 +78,7 @@ public class Minimap : MonoBehaviour {
     /// </summary>
     /// <param name="pos">La posición de la habitación</param>
     /// <param name="item">El carácter que identifica al ítem</param>
-    public void ItemExists(Coord pos, char item)
+    public void ItemExists(Vector2Int pos, char item)
     {
         switch (item)
         {
@@ -114,7 +98,7 @@ public class Minimap : MonoBehaviour {
     /// Actualiza el estado de la habitación
     /// </summary>
     /// <param name="pos">La posición de la habitación</param>
-    void UpdateRoomState(Coord pos)
+    void UpdateRoomState(Vector2Int pos)
     {
         switch (map[pos.y, pos.x].vision)
         {
@@ -131,13 +115,13 @@ public class Minimap : MonoBehaviour {
     /// Comprueba las habitaciones adyacentes y les actualiza el estado.
     /// </summary>
     /// <param name="pos"></param>
-    public void NewRoomExplored(Coord pos)
+    public void NewRoomExplored(Vector2Int pos)
     {
         map[pos.y, pos.x].vision = RoomMap.Current;
-        if (pos.x + 1 < map.GetLength(1)) UpdateRoomState(new Coord(pos.x + 1, pos.y));
-        if (pos.y + 1 < map.GetLength(0)) UpdateRoomState(new Coord(pos.x, pos.y + 1));
-        if (pos.x > 0) UpdateRoomState(new Coord(pos.x - 1, pos.y));
-        if (pos.y > 0) UpdateRoomState(new Coord(pos.x, pos.y - 1));
-        GameManager.instance.ui.UpdateMap(map);
+        if (pos.x + 1 < map.GetLength(1)) UpdateRoomState(new Vector2Int(pos.x + 1, pos.y));
+        if (pos.y + 1 < map.GetLength(0)) UpdateRoomState(new Vector2Int(pos.x, pos.y + 1));
+        if (pos.x > 0) UpdateRoomState(new Vector2Int(pos.x - 1, pos.y));
+        if (pos.y > 0) UpdateRoomState(new Vector2Int(pos.x, pos.y - 1));
+        UpdateMapUI();
     }
 }

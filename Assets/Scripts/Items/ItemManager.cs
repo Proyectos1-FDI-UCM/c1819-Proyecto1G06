@@ -78,7 +78,6 @@ public class ItemManager : MonoBehaviour {
     /// </summary>
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Minimap.instance.InitializeMap();
         ApplyItemEffects();
         GameManager.instance.ui.UpdateItems(GetItemSprites(itemList));       
     }

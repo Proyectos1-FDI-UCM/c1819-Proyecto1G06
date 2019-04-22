@@ -89,17 +89,17 @@ public class UIManager : MonoBehaviour
                 switch(map[fil, col].vision)
                 {
                     case RoomMap.Current:
-                        texture.SetPixel(col, map.GetLength(0) - fil - 1, new Color32(165, 165, 78, 255));
+                        texture.SetPixel(col, fil, new Color32(165, 165, 78, 255));
                         break;
                     case RoomMap.Visited:
-                        texture.SetPixel(col, map.GetLength(0) - fil - 1, new Color32(127, 127, 127, 255));
+                        texture.SetPixel(col, fil, new Color32(127, 127, 127, 255));
                         break;
                     case RoomMap.NonVisited:
-                        texture.SetPixel(col, map.GetLength(0) - fil - 1, new Color32(76, 76, 76, 255));
+                        texture.SetPixel(col, fil, new Color32(76, 76, 76, 255));
                         break;
                     case RoomMap.Nonexistant:
                     case RoomMap.NotSeen:
-                        texture.SetPixel(col, map.GetLength(0) - fil - 1, new Color32(255, 255, 255, 0));
+                        texture.SetPixel(col, fil, new Color32(255, 255, 255, 0));
                         break;
                 }               
             }

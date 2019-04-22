@@ -52,7 +52,11 @@ public class RandomLevelAlgorithm : MonoBehaviour
 
         public static bool operator==(Room room1, Room room2)
         {
-            if(ReferenceEquals(room1, null) || ReferenceEquals(room2, null))
+            if (ReferenceEquals(room1, null) && ReferenceEquals(room2, null))
+            {
+                return true;
+            }
+            if (ReferenceEquals(room1, null) || ReferenceEquals(room2, null))
             {
                 return false;
             }
@@ -61,10 +65,6 @@ public class RandomLevelAlgorithm : MonoBehaviour
 
         public static bool operator!=(Room room1, Room room2)
         {
-            if (ReferenceEquals(room1, null) && ReferenceEquals(room2, null))
-            {
-                return false;
-            }
             return !(room1 == room2);
         }
 
@@ -74,9 +74,9 @@ public class RandomLevelAlgorithm : MonoBehaviour
         }
     }
 
-    public int numberOfRooms = 0;
-    public float baseChanceToClose = 0.15f;
-    public float distanceModifierToClose = 0.10f;
+    [Range(2, 200)]public int numberOfRooms = 0;
+    [Range(0f, 1f)]public float baseChanceToClose = 0.15f;
+    [Range(0f, 1f)]public float distanceModifierToClose = 0.10f;
 
     List<Room> rooms;
 
@@ -85,6 +85,15 @@ public class RandomLevelAlgorithm : MonoBehaviour
     private void Start()
     {
         CreateMap();
+        Vector2Int mapSize = GetMapSize();
+        Minimap.instance.InitializeMap(mapSize);
+        Vector2Int minimapOffset = MinimapOffset();
+        foreach(Room room in rooms)
+        {
+            // Hay que hacer un offset para que las habitaciones quepan en el minimapa
+            Minimap.instance.StoreRoom(room.position + minimapOffset, false);
+        }
+        Minimap.instance.UpdateMapUI();
     }
 
     /// <summary>
@@ -94,11 +103,46 @@ public class RandomLevelAlgorithm : MonoBehaviour
     {
         availablePositions = new List<Vector2Int>();
         InsertBaseRooms();
-        int i = 0;
+        int i = 2;
         while(i < numberOfRooms)
         {
             if (InsertRoom()) i++;
         }
+    }
+
+    /// <summary>
+    /// Devuelve el tamaño del mapa creado
+    /// </summary>
+    public Vector2Int GetMapSize()
+    {
+        if (rooms.Count == 0) return new Vector2Int(-1, -1);
+        int maxX = 0, maxY = 0, minX = 0, minY = 0;
+        foreach (Room room in rooms)
+        {
+            if (room.position.x > maxX) maxX = room.position.x;
+            else if (room.position.x < minX) minX = room.position.x;
+            if (room.position.y > maxY) maxY = room.position.y;
+            else if (room.position.y < minY) minY = room.position.y;
+        }
+
+        return new Vector2Int(Mathf.Abs(minX) + maxX + 1, Mathf.Abs(minY) + maxY + 1);
+    }
+
+    /// <summary>
+    /// Offset para que en el minimapa no hayan posiciones negativas
+    /// </summary>
+    Vector2Int MinimapOffset()
+    {
+        if (rooms.Count == 0) return new Vector2Int(0, 0);
+        int minX = 0, minY = 0;
+
+        foreach (Room room in rooms)
+        {
+            if (room.position.x < minX) minX = room.position.x;
+            if (room.position.y < minY) minY = room.position.y;
+        }
+
+        return new Vector2Int(Mathf.Abs(minX), Mathf.Abs(minY));
     }
 
     /// <summary>
@@ -229,21 +273,43 @@ public class RandomLevelAlgorithm : MonoBehaviour
     }
 
     /// <summary>
+    /// Abre los caminos adyacentes de una habitación de rooms
+    /// </summary>
+    /// <returns>true si ha abierto al menos 1, false si no</returns>
+    bool OpenRandomPath()
+    {
+        Vector2Int pos = rooms[Random.Range(0, rooms.Count)].position;
+        int openPaths = availablePositions.Count;
+        AddAdjacentPositions(pos);
+        return availablePositions.Count > openPaths;
+    }
+
+    /// <summary>
     /// Crea una habitación en la primera posición libre de availablePositions si puede
     /// </summary>
     /// <returns>true si la crea, false si no</returns>
     bool InsertRoom()
     {
         bool insertedRoom = false;
-        Vector2Int pos = availablePositions[0];
+        Vector2Int pos;
 
+        if (availablePositions.Count <= 0)
+        {
+            bool pathOpened = false;
+            do
+            {
+                pathOpened = OpenRandomPath();
+            } while (!pathOpened);
+        }
+
+        pos = availablePositions[0];
         // Solo cierra un camino si el número de posibilidades para avanzar es mayor de 1
-        if (availablePositions.Count < 2 || !ClosePath(pos))
+        if (CheckIfValidPosition(pos) && (availablePositions.Count < 2 || !ClosePath(pos)))
         {
             Room room = new Room(pos);
-            AddAdjacentPositions(pos);
             ConnectRoomToAdjacent(ref room);
             rooms.Add(room);
+            AddAdjacentPositions(pos);
             insertedRoom = true;
         }
 
