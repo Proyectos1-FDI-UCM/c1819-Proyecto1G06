@@ -5,11 +5,14 @@ using UnityEngine;
 public class MkIShooting : Shooting {
 
     Animator anim;
+    AudioSource audioSource;
+    public AudioClip shootClip;
     protected bool shooting = false;    //Indica si está disparando, evita que se activa varias veces el trigger
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public virtual void Start()
@@ -38,8 +41,9 @@ public class MkIShooting : Shooting {
     {
         if (shooting == false && shootCooldown == 0 && !disarmed)
         {
-            anim.SetTrigger("Shoot");
+            anim.SetTrigger("Shoot");         
             shooting = true;
+            audioSource.PlayOneShot(shootClip);
         }
     }
 

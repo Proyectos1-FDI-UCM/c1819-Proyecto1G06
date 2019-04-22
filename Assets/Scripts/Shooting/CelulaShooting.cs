@@ -7,6 +7,16 @@ public class CelulaShooting : Shooting {
     public int numBalas = 6;
     [Tooltip("Ángulo de barrido, en radianes")]/*[Range(0, Mathf.PI * 2)]*/ public float limitAngle = Mathf.PI / 3;
 
+    public AudioClip shootClip;
+
+    AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+
     public override void Update()
     {
         base.Update();
@@ -23,7 +33,9 @@ public class CelulaShooting : Shooting {
             ResetCooldown();
 
             float currAngle = -limitAngle;
-            
+
+            audioSource.PlayOneShot(shootClip);
+
             for(int i = 0; i < numBalas; i++)
             {
                 BulletMovement newBullet = Instantiate<BulletMovement>(bulletPrefab, shootingPoint.position, Quaternion.identity, bulletPool);

@@ -15,6 +15,8 @@ public class Megalaser : MonoBehaviour, IBossAttack1 {
     bool check = false;
     Animator anim;
     RaycastHit2D hit;
+    AudioSource audioSource;
+    public AudioClip laserClip;
 
     public float attackTime = 5;
     public float AttackTime
@@ -30,6 +32,7 @@ public class Megalaser : MonoBehaviour, IBossAttack1 {
         lr = GetComponent<LineRenderer>();
         follow = GetComponent<FollowDirection>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -91,5 +94,6 @@ public class Megalaser : MonoBehaviour, IBossAttack1 {
     public void ToggleAttack(bool active)
     {
         this.enabled = active;
+        audioSource.PlayOneShot(laserClip);
     }
 }
