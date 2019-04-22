@@ -8,5 +8,5 @@ Esta es la rama principal, donde está la última versión estable del proyecto.
 
 ## Cambios
 
--Añadidos los tilemaps a los niveles 1, 2 e IA.
--Cambiadas salas defectuosas de los niveles 1 y 2.
+- Añadidas animaciones del Dron Aserrado.
+- Añadidas animaciones del Tirador MkI.
