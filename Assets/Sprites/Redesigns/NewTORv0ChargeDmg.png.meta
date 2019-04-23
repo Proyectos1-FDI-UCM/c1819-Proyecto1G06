@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 67c93f7ac5ef50a428a8c69bf615966a
+guid: 3fc34264d536d4443ad552a950525d17
 TextureImporter:
   fileIDToRecycleName:
-    21300000: NewTORv0Charge_0
-    21300002: NewTORv0Charge_1
-    21300004: NewTORv0Charge_2
+    21300000: NewTORv0ChargeDmg_0
+    21300002: NewTORv0ChargeDmg_1
+    21300004: NewTORv0ChargeDmg_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -87,7 +87,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NewTORv0Charge_0
+      name: NewTORv0ChargeDmg_0
       rect:
         serializedVersion: 2
         x: 0
@@ -101,13 +101,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 450629fe6a4b63c419abe0680e7ed33b
+      spriteID: e6d51e14c847a9e45acb5b6959792e63
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NewTORv0Charge_1
+      name: NewTORv0ChargeDmg_1
       rect:
         serializedVersion: 2
         x: 64
@@ -121,13 +121,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8551bd1cc133174f8e3e32e6357262c
+      spriteID: 15f88e84c63921449b0f8ba2f3d26c4c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NewTORv0Charge_2
+      name: NewTORv0ChargeDmg_2
       rect:
         serializedVersion: 2
         x: 128
@@ -141,7 +141,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05b9216b67f23ec4c8d475407ce72dbe
+      spriteID: 8dc817e36361a3d41b422cd2547fba79
       vertices: []
       indices: 
       edges: []
@@ -149,7 +149,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8a711429f4ee9c2409b5fec52924c2f9
+    spriteID: 76c54282452a6e84ab1f25c7e57b98d8
     vertices: []
     indices: 
     edges: []

@@ -1,10 +1,15 @@
 fileFormatVersion: 2
-guid: 67c93f7ac5ef50a428a8c69bf615966a
+guid: 18e6f98d794178047b5a52d39d74e832
 TextureImporter:
   fileIDToRecycleName:
-    21300000: NewTORv0Charge_0
-    21300002: NewTORv0Charge_1
-    21300004: NewTORv0Charge_2
+    21300000: NewTORv0WarningDmg_0
+    21300002: NewTORv0WarningDmg_1
+    21300004: NewTORv0WarningDmg_2
+    21300006: NewTORv0WarningDmg_3
+    21300008: NewTORv0WarningDmg_4
+    21300010: NewTORv0WarningDmg_5
+    21300012: NewTORv0WarningDmg_6
+    21300014: NewTORv0WarningDmg_7
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -48,7 +53,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -87,7 +92,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NewTORv0Charge_0
+      name: NewTORv0WarningDmg_0
       rect:
         serializedVersion: 2
         x: 0
@@ -101,13 +106,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 450629fe6a4b63c419abe0680e7ed33b
+      spriteID: f2f937e8d127bd04a914be1f63ab4f06
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NewTORv0Charge_1
+      name: NewTORv0WarningDmg_1
       rect:
         serializedVersion: 2
         x: 64
@@ -121,13 +126,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8551bd1cc133174f8e3e32e6357262c
+      spriteID: aecd7664b7858ba468db8307e37c8224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NewTORv0Charge_2
+      name: NewTORv0WarningDmg_2
       rect:
         serializedVersion: 2
         x: 128
@@ -141,7 +146,107 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05b9216b67f23ec4c8d475407ce72dbe
+      spriteID: b03f0d78347a33c4d8894c68a779f598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewTORv0WarningDmg_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4375, y: 0.515625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4624f7976ff4287489233344ccd30ce8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewTORv0WarningDmg_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4375, y: 0.515625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 593d6381d8f72b044b09962c32be5683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewTORv0WarningDmg_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4375, y: 0.515625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c07bf0802aeebb040a688ef2a01fe08b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewTORv0WarningDmg_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4375, y: 0.515625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98f96dce8a62ff64f8e23e210ed43445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewTORv0WarningDmg_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4375, y: 0.515625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45d057cd24762484792b1f0d6fe9ebc9
       vertices: []
       indices: 
       edges: []
@@ -149,7 +254,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8a711429f4ee9c2409b5fec52924c2f9
+    spriteID: c8124e49a87357f41a8bf8266250f84a
     vertices: []
     indices: 
     edges: []
