@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class RandomLevelAlgorithm : MonoBehaviour
 {
-    [Range(2, 200)]public int numberOfRooms = 0;
-    [Range(0f, 1f)]public float baseChanceToClose = 0.15f;
-    [Range(0f, 1f)]public float distanceModifierToClose = 0.10f;
+    [Range(2, 200)]public int numberOfRooms = 15;
+    [Range(0f, 1f)]public float baseChanceToClose = 0.6f;
+    [Range(0f, 1f)]public float distanceModifierToClose = 0.03f;
+    public enum RoomBossEntrance { Up, Down, Left, Right }
+    public RoomBossEntrance roomBossEntrance = RoomBossEntrance.Up;
 
     List<Room> rooms;
-
     List<Vector2Int> availablePositions;
+    List<Room> unselectableRoomsByBoss;
 
     private void Awake()
     {
@@ -39,6 +41,11 @@ public class RandomLevelAlgorithm : MonoBehaviour
         {
             if (InsertRoom()) i++;
         }
+
+        unselectableRoomsByBoss = new List<Room>();
+        bool insertedRoomBoss = false;
+        do { insertedRoomBoss = InsertBossRoom(); }
+        while (!insertedRoomBoss);
     }
 
     /// <summary>
@@ -237,14 +244,67 @@ public class RandomLevelAlgorithm : MonoBehaviour
         // Solo cierra un camino si el número de posibilidades para avanzar es mayor de 1
         if (CheckIfValidPosition(pos) && (availablePositions.Count < 2 || !ClosePath(pos)))
         {
-            Room room = new Room(pos);
-            ConnectRoomToAdjacent(ref room);
-            rooms.Add(room);
+            PlaceRoom(pos);
             AddAdjacentPositions(pos);
             insertedRoom = true;
         }
 
         availablePositions.RemoveAt(0); // La posición se ha comprobado ya, se elimina
         return insertedRoom;
+    }
+
+    private void PlaceRoom(Vector2Int pos)
+    {
+        Room room = new Room(pos);
+        ConnectRoomToAdjacent(ref room);
+        rooms.Add(room);
+        print(room.ToString());
+    }
+
+    bool InsertBossRoom()
+    {
+        bool insertedRoom = false;
+        int maxDistanceToCenter = 0;
+        Room mostDistantRoom = new Room(0, 0);
+
+        // Busca la habitación más alejada de la inicial
+        foreach(Room room in rooms)
+        {
+            if (!unselectableRoomsByBoss.Contains(room) && Mathf.Abs(room.distanceFromStart) > Mathf.Abs(maxDistanceToCenter))
+            {
+                maxDistanceToCenter = room.distanceFromStart;
+                mostDistantRoom = room;
+            }
+        }
+
+        // Intenta colocar la habitación teniendo en cuentra su entrada
+        switch (roomBossEntrance)
+        {
+            case RoomBossEntrance.Up:
+                insertedRoom = PlaceRoomIfValidPos(mostDistantRoom.position + Vector2Int.down);
+                break;
+            case RoomBossEntrance.Down:
+                insertedRoom = PlaceRoomIfValidPos(mostDistantRoom.position + Vector2Int.up);
+                break;
+            case RoomBossEntrance.Left:
+                insertedRoom = PlaceRoomIfValidPos(mostDistantRoom.position + Vector2Int.right);
+                break;
+            case RoomBossEntrance.Right:
+                insertedRoom = PlaceRoomIfValidPos(mostDistantRoom.position + Vector2Int.left);
+                break;
+        }
+
+        if (!insertedRoom) unselectableRoomsByBoss.Add(mostDistantRoom);
+        return insertedRoom;
+    }
+
+    private bool PlaceRoomIfValidPos(Vector2Int pos)
+    {
+        if (CheckIfValidPosition(pos))
+        {
+            PlaceRoom(pos);
+            return true;
+        }
+        else return false;
     }
 }

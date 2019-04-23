@@ -56,6 +56,7 @@ MonoBehaviour:
     type: 2}
   possibleRooms:
   - {fileID: 1235603338594990, guid: 16f2f621d1bf85c49b0ebd1e03006ebf, type: 2}
+  roomBoss: {fileID: 1290849736154652, guid: b53228210a77d0248a886e6be24fc0d0, type: 2}
 --- !u!114 &114816590616212758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,3 +71,4 @@ MonoBehaviour:
   numberOfRooms: 15
   baseChanceToClose: 0.6
   distanceModifierToClose: 0.03
+  roomBossEntrance: 2
