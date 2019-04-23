@@ -26,9 +26,9 @@ GameObject:
   - component: {fileID: 114294718363252252}
   - component: {fileID: 114796805681108984}
   - component: {fileID: 114749002085145298}
-  - component: {fileID: 114238606498955626}
   - component: {fileID: 114635376744371748}
   - component: {fileID: 95520636120528814}
+  - component: {fileID: 114349468826195096}
   m_Layer: 10
   m_Name: DronAserrado
   m_TagString: Untagged
@@ -81,10 +81,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.041524887, y: 0.0507524}
+  m_Offset: {x: 0.0020052195, y: -0.0031175017}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.4375, y: 0.4921875}
     oldSize: {x: 1, y: 1}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
@@ -92,7 +92,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8015051, y: 0.6015048}
+  m_Size: {x: 0.6873071, y: 0.4120313}
   m_EdgeRadius: 0
 --- !u!95 &95520636120528814
 Animator:
@@ -112,18 +112,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114238606498955626
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1653411378832456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27d53b47349551c43b545f474ee8adc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
 --- !u!114 &114294718363252252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -149,6 +137,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackAmount: 5
+--- !u!114 &114349468826195096
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1653411378832456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05294a7d0bd819f4ba50aa6581a3729a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!114 &114635376744371748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -219,7 +219,7 @@ SpriteRenderer:
   m_SortingLayerID: 304624265
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 35d4b6e81b774ce42be8779ce432e6cf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3fd2bbcac34b8c04ab72e70173ebabb1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

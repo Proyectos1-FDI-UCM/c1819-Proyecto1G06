@@ -22,13 +22,13 @@ GameObject:
   - component: {fileID: 212845042604686470}
   - component: {fileID: 114024225311399932}
   - component: {fileID: 114510348455442614}
-  - component: {fileID: 114916668153115544}
   - component: {fileID: 114895594380406182}
   - component: {fileID: 114214366883053416}
   - component: {fileID: 50132953649348864}
-  - component: {fileID: 61115297307538126}
   - component: {fileID: 114598512494616646}
   - component: {fileID: 95333149217199488}
+  - component: {fileID: 61369866307979184}
+  - component: {fileID: 114079631406313466}
   m_Layer: 14
   m_Name: Microdron
   m_TagString: Untagged
@@ -69,7 +69,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61115297307538126
+--- !u!61 &61369866307979184
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,18 +81,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00805074, y: 0}
+  m_Offset: {x: -0.0078125, y: 0.0078125}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5078125, y: 0.4921875}
+    oldSize: {x: 2.6666667, y: 2.6666667}
     newSize: {x: 0.5, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.39534009, y: 0.5}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!95 &95333149217199488
 Animator:
@@ -123,6 +123,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a1517675cab3049ad42e057183254d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114079631406313466
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1903149187923030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05294a7d0bd819f4ba50aa6581a3729a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
 --- !u!114 &114214366883053416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -172,18 +184,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackAmount: 5
---- !u!114 &114916668153115544
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1903149187923030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27d53b47349551c43b545f474ee8adc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
 --- !u!212 &212845042604686470
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -216,10 +216,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5022e27481d9c684ea5f408d7e3dd2b0, type: 3}
+  m_SortingLayerID: 304624265
+  m_SortingLayer: 1
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: a3efb66bf49bb5c488bb1fc581ac8dbf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

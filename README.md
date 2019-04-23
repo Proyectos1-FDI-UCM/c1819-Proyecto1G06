@@ -21,5 +21,4 @@ Esta es la rama principal, donde está la última versión estable del proyecto.
 - Creados diversos objetos.
 - Creado Seein' Red, Antifreeze, compañero mímico, compañero de ataque, pastilla de azúcar y pastilla extraña.
 - Actualizado las habitaciones del nivel 2.
-
-
+- Actualizados los sprites de los enemigos del nivel 1.
