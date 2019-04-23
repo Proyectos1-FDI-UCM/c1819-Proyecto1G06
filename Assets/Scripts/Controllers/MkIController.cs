@@ -33,7 +33,6 @@ public class MkIController : EnemyController
         {
             case EnemyState.Fleeing:
                 followDirection.MoveTowards((transform.position - player.transform.position).normalized);
-                anim.SetFloat("Velocity", rb.velocity.magnitude);
                 break;
             case EnemyState.Shooting:
                 lr.SetPosition(0, weapon.transform.position);
@@ -42,6 +41,8 @@ public class MkIController : EnemyController
                 shooting.Shoot();
                 break;
         }
+
+        anim.SetFloat("Velocity", rb.velocity.magnitude);
     }
 
     /// <summary>

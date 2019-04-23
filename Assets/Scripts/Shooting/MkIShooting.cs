@@ -8,10 +8,12 @@ public class MkIShooting : Shooting {
 
     Animator anim;
     protected bool shooting = false;    //Indica si está disparando, evita que se activa varias veces el trigger
+    SpriteRenderer sprite;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     public virtual void Start()
@@ -35,11 +37,13 @@ public class MkIShooting : Shooting {
             // Hacer que no tenga un movimiento poco natural
             transform.localScale = new Vector3(-1, 1, 1);
             body.localScale = new Vector3(1, 1, 1);
+            sprite.flipY = true;
         }
         else
         {
             transform.localScale = new Vector3(1, 1, 1);
             body.localScale = new Vector3(-1, 1, 1);
+            sprite.flipY = false;
         }
 
         transform.eulerAngles = new Vector3(0, 0, angle);
