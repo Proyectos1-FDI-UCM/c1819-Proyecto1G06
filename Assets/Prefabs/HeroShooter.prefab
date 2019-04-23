@@ -188,7 +188,7 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.05, y: 0}
   m_EdgeRadius: 0.25
   m_Points:
   - {x: 0.044850037, y: 0.3338371}
@@ -263,6 +263,7 @@ MonoBehaviour:
   maxVelocity: 7
   VelocityToAccelerationRatio: 0.21428572
   maxAbsoluteVelocity: 12
+  minAbsoluteVelocity: 4
 --- !u!212 &212152949152580146
 SpriteRenderer:
   m_ObjectHideFlags: 1

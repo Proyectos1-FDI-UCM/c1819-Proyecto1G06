@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IAController : MonoBehaviour {
 
-    public CelulaHealth[] celulas;
+    public CelulaHealth[] celulas;  // top, top, bot, bot
     public IAScreenHealth screen;
 
     IBossAttack1[] attacks;

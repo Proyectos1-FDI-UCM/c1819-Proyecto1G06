@@ -60,7 +60,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void LoadScene(string scene)
     {
-        if(player != null) goingToLoadScene();
+        if (goingToLoadScene != null)
+            goingToLoadScene();
         SceneManager.LoadScene(scene);
     }
 

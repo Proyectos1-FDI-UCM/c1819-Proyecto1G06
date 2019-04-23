@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class MkIShooting : Shooting {
 
+    public Transform body;
+
     Animator anim;
     protected bool shooting = false;    //Indica si está disparando, evita que se activa varias veces el trigger
+    SpriteRenderer sprite;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     public virtual void Start()
@@ -25,8 +29,22 @@ public class MkIShooting : Shooting {
         Vector2 lookDirection = player.position - transform.position;
         float angle = Mathf.Atan(lookDirection.y / lookDirection.x) * (180 / Mathf.PI) + (lookDirection.x < 0f ? 180f : 0f);
 
-        if (angle > 90 || angle < -90) GetComponent<SpriteRenderer>().flipY = true; // Hacer que no tenga un movimiento poco natural
-        else GetComponent<SpriteRenderer>().flipY = false;
+        Vector2 bodyLookDir = player.position - body.position;
+        float bodyAngle = Mathf.Atan(bodyLookDir.y / bodyLookDir.x) * (180 / Mathf.PI) + (bodyLookDir.x < 0f ? 180f : 0f);
+
+        if (bodyAngle > 90 || bodyAngle < -90)
+        {
+            // Hacer que no tenga un movimiento poco natural
+            transform.localScale = new Vector3(-1, 1, 1);
+            body.localScale = new Vector3(1, 1, 1);
+            sprite.flipY = true;
+        }
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+            body.localScale = new Vector3(-1, 1, 1);
+            sprite.flipY = false;
+        }
 
         transform.eulerAngles = new Vector3(0, 0, angle);
     }

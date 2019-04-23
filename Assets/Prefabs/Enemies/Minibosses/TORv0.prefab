@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 40
+  damagedTime: 0.1
 --- !u!114 &114366957913073536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitRange: {x: 1, y: 3}
+  chaseTime: 3
 --- !u!114 &114552786260213272
 MonoBehaviour:
   m_ObjectHideFlags: 1
