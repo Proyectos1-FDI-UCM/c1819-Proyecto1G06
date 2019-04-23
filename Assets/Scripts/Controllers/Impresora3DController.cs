@@ -8,13 +8,13 @@ public class Impresora3DController : EnemyController {
     public int maxDronAmount = 5;
     public MicrodronHealth microdronPrefab;
 
-    Transform spawnPoint;
+    Animator anim;
     float spawnCooldown;
     int dronAmount = 0;
 
-    void Awake()
+    private void Awake()
     {
-        spawnPoint = transform.GetChild(0);
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -22,9 +22,13 @@ public class Impresora3DController : EnemyController {
         switch (state)
         {
             //Cuando está en el estado Shooting crea microdrones
-            case EnemyState.Shooting:   
-                SpawnCooldown();        
-                SpawnMicrodron();       
+            case EnemyState.Shooting:
+                SpawnCooldown();
+                if (dronAmount < maxDronAmount && Mathf.Approximately(spawnCooldown, 0f))
+                {
+                    spawnCooldown = spawnEvery;
+                    anim.SetTrigger("Spawn");
+                }
                 break;
         }
     }
@@ -42,16 +46,12 @@ public class Impresora3DController : EnemyController {
     }
 
 
-    void SpawnMicrodron()
+    public void SpawnMicrodron()
     {
         //Crea el microdron con referencia a la impresora
-        if (dronAmount < maxDronAmount && Mathf.Approximately(spawnCooldown, 0f))
-        {
-            MicrodronHealth dron = Instantiate<MicrodronHealth>(microdronPrefab, spawnPoint.position, Quaternion.identity, transform.parent);
-            dron.SetImpresora(this);
-            dronAmount++;
-            spawnCooldown = spawnEvery;
-        }
+        MicrodronHealth dron = Instantiate<MicrodronHealth>(microdronPrefab, transform.position, Quaternion.identity, transform.parent);
+        dron.SetImpresora(this);
+        dronAmount++;
     }
 
     /// <summary>
