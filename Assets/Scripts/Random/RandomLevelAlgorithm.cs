@@ -258,7 +258,6 @@ public class RandomLevelAlgorithm : MonoBehaviour
         Room room = new Room(pos);
         ConnectRoomToAdjacent(ref room);
         rooms.Add(room);
-        print(room.ToString());
     }
 
     bool InsertBossRoom()
