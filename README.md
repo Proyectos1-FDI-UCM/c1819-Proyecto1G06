@@ -10,3 +10,5 @@ Esta es la rama principal, donde está la última versión estable del proyecto.
 
 - Añadidos sonidos de de disparo al jugador, MKI, MKII, torreta de artillería, Voluntario e IA.
 - Añadidos sonidos de láser a la torreta láser y a la IA.
+- Cambiados los pitch de los disparos de los enemigos.
+- Añadido sonido a la bofetada Voluntario.

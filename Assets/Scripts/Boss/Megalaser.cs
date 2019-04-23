@@ -77,7 +77,7 @@ public class Megalaser : MonoBehaviour, IBossAttack1 {
         if(hit.transform == player)
         {
             GameManager.instance.onPlayerTookDamage();
-        }
+        }        
     }
 
     private void OnDisable()
@@ -89,11 +89,11 @@ public class Megalaser : MonoBehaviour, IBossAttack1 {
     public void StartChecking()
     {
         check = true;
+        audioSource.PlayOneShot(laserClip);
     }
 
     public void ToggleAttack(bool active)
     {
-        this.enabled = active;
-        audioSource.PlayOneShot(laserClip);
+        this.enabled = active;       
     }
 }
