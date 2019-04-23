@@ -51,9 +51,18 @@ public class TORv0Controller : EnemyController {
     /// </summary>
     void Chase()
     {
-        follow.MoveTowards((player.transform.position - transform.position).normalized);
         anim.SetTrigger("Chase");
         state = EnemyState.Chasing;
+    }
+
+    public void Move()
+    {
+        Vector3 dir = (player.transform.position - transform.position).normalized;
+        follow.MoveTowards(dir);
+        if (dir.x > 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        } else GetComponent<SpriteRenderer>().flipX = false;
     }
 
     /// <summary>
