@@ -53,7 +53,6 @@ GameObject:
   - component: {fileID: 212470829437291178}
   - component: {fileID: 61243193986625612}
   - component: {fileID: 50401999264976534}
-  - component: {fileID: 114249930116049910}
   - component: {fileID: 114037521663318560}
   - component: {fileID: 114776123238108194}
   - component: {fileID: 114943798387335756}
@@ -61,6 +60,7 @@ GameObject:
   - component: {fileID: 114595337557102302}
   - component: {fileID: 114713752958614688}
   - component: {fileID: 95889404627030890}
+  - component: {fileID: 114106750613468258}
   m_Layer: 10
   m_Name: DronBlindado
   m_TagString: Untagged
@@ -141,18 +141,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01578249, y: -0.0789125}
+  m_Offset: {x: 0.0027524233, y: 0.0274975}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.484375, y: 0.5234375}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9556509, y: 0.797825}
+  m_Size: {x: 1.3726044, y: 0.8282278}
   m_EdgeRadius: 0
 --- !u!95 &95889404627030890
 Animator:
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Amigo: {fileID: 0}
   FollowPoint: {fileID: 4021247240638074}
---- !u!114 &114249930116049910
+--- !u!114 &114106750613468258
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1762776325543048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27d53b47349551c43b545f474ee8adc7, type: 3}
+  m_Script: {fileID: 11500000, guid: 05294a7d0bd819f4ba50aa6581a3729a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
@@ -305,7 +305,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: de46925ea5dc6b640bb8900ca3bbe129, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a92bcd51908a1da48b3e5034b2b5f494, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
