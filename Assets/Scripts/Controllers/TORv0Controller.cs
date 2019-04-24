@@ -5,11 +5,13 @@ using UnityEngine;
 public class TORv0Controller : EnemyController {
 
     public Vector2 waitRange;       //Los dos números que delimitan el tiempo que tendrá que esperar el TORv0
+    public AudioClip whistleClip;
 
     TORv0Health health;
     FollowDirection follow;
     Rigidbody2D rb;
     Animator anim;
+    AudioSource audioSource;
 
 	void Awake()
     {
@@ -17,6 +19,7 @@ public class TORv0Controller : EnemyController {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         health = GetComponent<TORv0Health>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Start()
@@ -33,7 +36,7 @@ public class TORv0Controller : EnemyController {
         rb.velocity = Vector2.zero;
         state = EnemyState.Stunned;
         anim.SetTrigger("Stunned");
-        health.MakeVulnerable(state);
+        health.MakeVulnerable(state);        
     }
 
     /// <summary>
@@ -42,9 +45,10 @@ public class TORv0Controller : EnemyController {
     void UnStun()
     {
         state = EnemyState.Idle;
+        audioSource.PlayOneShot(whistleClip);
         health.MakeVulnerable(state);
         CancelInvoke("Chase");
-        Invoke("Chase", Random.Range(waitRange.x, waitRange.y));
+        Invoke("Chase", Random.Range(waitRange.x, waitRange.y));       
     }
 
     /// <summary>

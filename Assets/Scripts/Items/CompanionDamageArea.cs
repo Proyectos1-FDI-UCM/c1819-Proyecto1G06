@@ -6,6 +6,9 @@ public class CompanionDamageArea : MonoBehaviour {
 
     public float timeBetweenDamage;
     public float Damage;
+    public AudioClip elcetricityClip;
+
+    AudioSource audioSource;
 
     float timer;
 
@@ -13,6 +16,7 @@ public class CompanionDamageArea : MonoBehaviour {
     {
         GetComponent<FollowTarget>().target = GameManager.instance.player.transform;
         timer = timeBetweenDamage;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -22,6 +26,7 @@ public class CompanionDamageArea : MonoBehaviour {
         {
             health.TakeDamage(Damage);
             timer = timeBetweenDamage;
+            audioSource.PlayOneShot(elcetricityClip);
         }
     }
 

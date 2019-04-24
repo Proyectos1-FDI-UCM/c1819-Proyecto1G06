@@ -194,11 +194,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
-    - target: {fileID: 82871010548439604, guid: 6dd2cd8dd7b4bc24a923229dc4bd56ce,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dd2cd8dd7b4bc24a923229dc4bd56ce, type: 2}
   m_IsPrefabAsset: 0
@@ -415,11 +410,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 82745211697556080, guid: 7e66305b7d88abf4f8de5d157e23e591,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e66305b7d88abf4f8de5d157e23e591, type: 2}
   m_IsPrefabAsset: 0
@@ -470,29 +460,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 837a085d45ec8ee4db48d540062a453e, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &993057473 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1786640786195680, guid: 837a085d45ec8ee4db48d540062a453e,
-    type: 2}
-  m_PrefabInternal: {fileID: 993057472}
---- !u!95 &993057474
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 993057473}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ec3888bceeeabb64b9fcf29982705923, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1080915407
 Prefab:
   m_ObjectHideFlags: 0
@@ -531,11 +498,6 @@ Prefab:
     - target: {fileID: 4447280777597410, guid: fcac57bb18117f4478d0b7cda40ceefe, type: 2}
       propertyPath: m_RootOrder
       value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 82406733028164096, guid: fcac57bb18117f4478d0b7cda40ceefe,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcac57bb18117f4478d0b7cda40ceefe, type: 2}
@@ -796,11 +758,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 82340130676937214, guid: a5aee1c4b9ba8e641a8bdcc380e74229,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5aee1c4b9ba8e641a8bdcc380e74229, type: 2}
   m_IsPrefabAsset: 0
@@ -968,11 +925,6 @@ Prefab:
     - target: {fileID: 4776590209383884, guid: 21d3acffb1c78584f9e5d18cad156c05, type: 2}
       propertyPath: m_RootOrder
       value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 82137400454562810, guid: 21d3acffb1c78584f9e5d18cad156c05,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21d3acffb1c78584f9e5d18cad156c05, type: 2}
@@ -1162,11 +1114,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 82943938341115192, guid: 26fc5a33d49c58446aff0493a9720c9d,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26fc5a33d49c58446aff0493a9720c9d, type: 2}
   m_IsPrefabAsset: 0
@@ -1292,16 +1239,6 @@ Prefab:
     - target: {fileID: 4870470834636088, guid: 2256a96bdf0cd0a42b0e3b7bf683365b, type: 2}
       propertyPath: m_RootOrder
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 82122249762511162, guid: 2256a96bdf0cd0a42b0e3b7bf683365b,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114739227301111056, guid: 2256a96bdf0cd0a42b0e3b7bf683365b,
-        type: 2}
-      propertyPath: itemFlavor
-      value: "Te sientes... \xBFrenovado?"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2256a96bdf0cd0a42b0e3b7bf683365b, type: 2}

@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1444048018493126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.389, z: 0}
+  m_LocalPosition: {x: 4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -223,6 +223,7 @@ MonoBehaviour:
   type: 0
   itemName: JETPACK
   itemFlavor: Siguiendo los pasos de Franchesco
+  pickClip: {fileID: 8300000, guid: 6b2945c90796a2c45bf26effb9885fff, type: 3}
 --- !u!212 &212988650453029286
 SpriteRenderer:
   m_ObjectHideFlags: 1
