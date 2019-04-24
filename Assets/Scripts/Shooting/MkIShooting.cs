@@ -8,7 +8,7 @@ public class MkIShooting : Shooting {
 
     Animator anim;
     protected bool shooting = false;    //Indica si está disparando, evita que se activa varias veces el trigger
-    SpriteRenderer sprite;
+    protected SpriteRenderer sprite;
 
     private void Awake()
     {
