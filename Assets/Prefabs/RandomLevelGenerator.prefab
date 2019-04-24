@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4345401611518814}
   - component: {fileID: 114816590616212758}
   - component: {fileID: 114796849486478482}
+  - component: {fileID: 114994763788838006}
   m_Layer: 0
   m_Name: RandomLevelGenerator
   m_TagString: Untagged
@@ -66,6 +67,7 @@ MonoBehaviour:
   - {fileID: 1055968829257008, guid: 1c626e30f21d1424fac17a8430b61ceb, type: 2}
   - {fileID: 1260381515774246, guid: 52ea14e9bfbe2e840b0752e39333d159, type: 2}
   roomBoss: {fileID: 1290849736154652, guid: b53228210a77d0248a886e6be24fc0d0, type: 2}
+  itemPositionSprite: {fileID: 21300000, guid: c382afb58ea7412458e0a128f27508a6, type: 3}
 --- !u!114 &114816590616212758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -80,4 +82,39 @@ MonoBehaviour:
   numberOfRooms: 15
   baseChanceToClose: 0.6
   distanceModifierToClose: 0.03
+  numberOfItems: 3
+  bossDropItem: 1
+  numberOfHealth: 3
+  droppedHealthByboss: 2
   roomBossEntrance: 2
+--- !u!114 &114994763788838006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1704355935591576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8c372537ecfb9743a37f584a72a18c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 1149540853266382, guid: 7bac27b92cee9fb42a4f6fca6c4306ee, type: 2}
+  - {fileID: 1552171174136058, guid: 21d3acffb1c78584f9e5d18cad156c05, type: 2}
+  - {fileID: 1098037967726406, guid: 2256a96bdf0cd0a42b0e3b7bf683365b, type: 2}
+  - {fileID: 1734267868256088, guid: fcac57bb18117f4478d0b7cda40ceefe, type: 2}
+  - {fileID: 1325731685048626, guid: db9c5cb2edb3a15439b0669d8d0662ba, type: 2}
+  - {fileID: 1748327997059320, guid: 17324529515c9c341bad0520fe5ff10f, type: 2}
+  - {fileID: 1776529477787198, guid: 6dd2cd8dd7b4bc24a923229dc4bd56ce, type: 2}
+  - {fileID: 1444048018493126, guid: 402a6894a005d79459e762a72865acf8, type: 2}
+  - {fileID: 1275289945126250, guid: a5aee1c4b9ba8e641a8bdcc380e74229, type: 2}
+  - {fileID: 1445712468109716, guid: 7e66305b7d88abf4f8de5d157e23e591, type: 2}
+  - {fileID: 1600727530575804, guid: 9952c50296ac35444bc643005c9afe7b, type: 2}
+  - {fileID: 1763037591322004, guid: d88a2a9c11991c34497dee91e4b04fcf, type: 2}
+  - {fileID: 1917376792506676, guid: ab7c69db5f268b8409ad0a3c3eeb34cc, type: 2}
+  - {fileID: 1177676581995808, guid: 0c7599721a45f564b9f9cbaa67ae52dc, type: 2}
+  - {fileID: 1786640786195680, guid: 837a085d45ec8ee4db48d540062a453e, type: 2}
+  - {fileID: 1183661220643786, guid: 26fc5a33d49c58446aff0493a9720c9d, type: 2}
+  - {fileID: 1240774914428040, guid: ee919c7bce56b884696e29dc27be1084, type: 2}
+  - {fileID: 1103217014940280, guid: ce9746c0859682240a006c031339013e, type: 2}
+  health: {fileID: 1072724266990498, guid: 18646ba3c09265e4e83ac2fabb7682f3, type: 2}

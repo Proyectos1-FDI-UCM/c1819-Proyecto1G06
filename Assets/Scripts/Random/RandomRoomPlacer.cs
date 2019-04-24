@@ -7,20 +7,28 @@ public class RandomRoomPlacer : MonoBehaviour
     public GameObject startingRoom;
     public GameObject[] possibleRooms;
     public GameObject roomBoss;
+    public Sprite itemPositionSprite;
+
+    RandomItemPlacer randomItemPlacer;
 
     enum Door { North, South, East, West}
 
-    public void PlaceRooms(List<Room> map, Vector2Int offset)
+    private void Awake()
     {
-        PlaceRoom(map[0], startingRoom, offset);
-        for(int i = 1; i < map.Count - 1; i++)
-        {
-            PlaceRoom(map[i], possibleRooms[Random.Range(0, possibleRooms.Length)], offset);
-        }
-        PlaceRoom(map[map.Count - 1], roomBoss, offset);
+        randomItemPlacer = GetComponent<RandomItemPlacer>();
     }
 
-    void PlaceRoom(Room room, GameObject go, Vector2Int offset)
+    public void PlaceRooms(List<Room> map, Vector2Int offset, List<Vector2Int> items)
+    {
+        PlaceRoom(map[0], startingRoom, offset, items);
+        for(int i = 1; i < map.Count - 1; i++)
+        {
+            PlaceRoom(map[i], possibleRooms[Random.Range(0, possibleRooms.Length)], offset, items);
+        }
+        PlaceRoom(map[map.Count - 1], roomBoss, offset, items);
+    }
+
+    void PlaceRoom(Room room, GameObject go, Vector2Int offset, List<Vector2Int> items)
     {
         RoomManager instance = Instantiate<GameObject>(go, (Vector2)room.position * 30f, Quaternion.identity).GetComponent<RoomManager>();
         Transform door;
@@ -29,6 +37,11 @@ public class RandomRoomPlacer : MonoBehaviour
         if (!room.leftDoor && (door = GetDoor(Door.West, instance.doors.transform))) door.parent = instance.transform;
         if (!room.rightDoor && (door = GetDoor(Door.East, instance.doors.transform))) door.parent = instance.transform;
         instance.pos = room.position + offset;
+        if (items.Contains(instance.pos - offset))
+        {
+            instance.itemPos.AddComponent<SpriteRenderer>().sprite = itemPositionSprite;
+            randomItemPlacer.PlaceItem(instance.itemPos.transform);
+        }
     }
 
     Transform GetDoor(Door door, Transform doors)

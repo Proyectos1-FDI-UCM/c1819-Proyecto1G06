@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public UIManager ui;
     public Transform bulletPool;
     public string activeScene { get { return SceneManager.GetActiveScene().name; } }
+    public List<GameObject> spawnedItems;
 
     public OnEffectChanged onEffectChanged;
     public OnWeaponChanged onWeaponChanged;

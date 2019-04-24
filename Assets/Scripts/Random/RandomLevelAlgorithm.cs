@@ -7,12 +7,18 @@ public class RandomLevelAlgorithm : MonoBehaviour
     [Range(2, 200)]public int numberOfRooms = 15;
     [Range(0f, 1f)]public float baseChanceToClose = 0.6f;
     [Range(0f, 1f)]public float distanceModifierToClose = 0.03f;
+    [Range(0, 6)]public int numberOfItems = 3;
+    public bool bossDropItem = true;
+    [Range(0, 8)]public int numberOfHealth = 3;
+    [Range(0, 3)]public int droppedHealthByboss = 2;
     public enum RoomBossEntrance { Up, Down, Left, Right }
-    public RoomBossEntrance roomBossEntrance = RoomBossEntrance.Up;
+    public RoomBossEntrance roomBossEntrance = RoomBossEntrance.Up; 
 
     List<Room> rooms;
     List<Vector2Int> availablePositions;
     List<Room> unselectableRoomsByBoss;
+    List<Vector2Int> items;
+    List<Vector2Int> health;
 
     private void Awake()
     {
@@ -26,7 +32,7 @@ public class RandomLevelAlgorithm : MonoBehaviour
             Minimap.instance.StoreRoom(room.position + minimapOffset, false);
         }
         Minimap.instance.UpdateMapUI();
-        GetComponent<RandomRoomPlacer>().PlaceRooms(rooms, minimapOffset);
+        GetComponent<RandomRoomPlacer>().PlaceRooms(rooms, minimapOffset, items);
     }
 
     /// <summary>
@@ -46,6 +52,53 @@ public class RandomLevelAlgorithm : MonoBehaviour
         bool insertedRoomBoss = false;
         do { insertedRoomBoss = InsertBossRoom(); }
         while (!insertedRoomBoss);
+
+        items = new List<Vector2Int>();
+        health = new List<Vector2Int>();
+        PlaceItems();
+        //PlaceHealth();
+    }
+
+    void PlaceItems()
+    {
+        int i = 0;
+        while (i < numberOfItems)
+        {
+            Vector2Int mapSize = GetMapSize();
+            Vector2Int randomPos = new Vector2Int(Random.Range(-mapSize.x / 2, mapSize.x / 2), Random.Range(-mapSize.y / 2, mapSize.y / 2));
+            Room randomRoom = new Room(randomPos);
+            if (rooms.Contains(randomRoom) && !items.Contains(randomPos) && !health.Contains(randomPos))
+            {
+                items.Add(randomPos);
+                i++;
+            }
+        }
+
+        if (bossDropItem)
+        {
+            items.Add(rooms[rooms.Count - 1].position);
+        }
+    }
+
+    void PlaceHealth()
+    {
+        int i = 0;
+        while (i < numberOfHealth)
+        {
+            Vector2Int mapSize = GetMapSize();
+            Vector2Int randomPos = new Vector2Int(Random.Range(-mapSize.x / 2, mapSize.x / 2), Random.Range(-mapSize.x / 2, mapSize.x / 2));
+            Room randomRoom = new Room(randomPos);
+            if (rooms.Contains(randomRoom) && !items.Contains(randomPos) && !health.Contains(randomPos))
+            {
+                health.Add(randomPos);
+                i++;
+            }
+        }
+
+        for (i = 0; i < droppedHealthByboss; i++)
+        {
+            health.Add(rooms[rooms.Count - 1].position);
+        }
     }
 
     /// <summary>
@@ -253,6 +306,9 @@ public class RandomLevelAlgorithm : MonoBehaviour
         return insertedRoom;
     }
 
+    /// <summary>
+    /// Coloca una habitación en la posición pos y la conecta a sus adyacentes
+    /// </summary>
     private void PlaceRoom(Vector2Int pos)
     {
         Room room = new Room(pos);
@@ -260,6 +316,10 @@ public class RandomLevelAlgorithm : MonoBehaviour
         rooms.Add(room);
     }
 
+    /// <summary>
+    /// Coloca la habitación del boss en la posición más distante de la inicial posible con la dirección dada
+    /// </summary>
+    /// <returns>true si la crea, false si no</returns>
     bool InsertBossRoom()
     {
         bool insertedRoom = false;
@@ -297,6 +357,10 @@ public class RandomLevelAlgorithm : MonoBehaviour
         return insertedRoom;
     }
 
+    /// <summary>
+    /// Coloca una habitación si pos es una posición válida
+    /// </summary>
+    /// <returns>true si ha podido, false si no</returns>
     private bool PlaceRoomIfValidPos(Vector2Int pos)
     {
         if (CheckIfValidPosition(pos))
