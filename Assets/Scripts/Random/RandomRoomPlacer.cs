@@ -38,7 +38,6 @@ public class RandomRoomPlacer : MonoBehaviour
             }
             if (i < rooms.Length)
             {
-                print(i);
                 rooms[i].itemPos.AddComponent<SpriteRenderer>().sprite = itemPositionSprite;
                 randomItemPlacer.PlaceItem(rooms[i].itemPos.transform);
             }
@@ -53,7 +52,6 @@ public class RandomRoomPlacer : MonoBehaviour
             }
             if (i < rooms.Length)
             {
-                print(i);
                 randomItemPlacer.PlaceHealth(rooms[i].itemPos.transform);
             }
         }

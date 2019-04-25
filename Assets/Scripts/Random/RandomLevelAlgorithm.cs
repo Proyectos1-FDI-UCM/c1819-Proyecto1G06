@@ -20,7 +20,7 @@ public class RandomLevelAlgorithm : MonoBehaviour
     List<Vector2Int> items;
     List<Vector2Int> health;
 
-    private void Awake()
+    private void Start()
     {
         CreateMap();
         Vector2Int mapSize = GetMapSize();
