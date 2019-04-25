@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 61198272176995212}
   - component: {fileID: 114228399867026244}
   - component: {fileID: 95702780332830176}
+  - component: {fileID: 82954736944652960}
   m_Layer: 10
   m_Name: IAScreen
   m_TagString: Untagged
@@ -1004,6 +1005,101 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9114156, y: 2}
   m_EdgeRadius: 0
+--- !u!82 &82954736944652960
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1736240499782636}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: cbcc363e3e98aba45a1cd3b1a5d9f260, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 0.75
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95189576753308276
 Animator:
   serializedVersion: 3
@@ -1125,6 +1221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 4126039065986252}
   movingTime: 5
+  laserClip: {fileID: 0}
   attackTime: 10
 --- !u!114 &114071298259725198
 MonoBehaviour:
@@ -1142,8 +1239,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 114601551365168386, guid: ea3a8e0ac88aff64d9a48f455bb945fb,
     type: 2}
   disarmable: 1
+  disarmCoolodown: 3
   numBalas: 7
   limitAngle: 60
+  shootClip: {fileID: 0}
 --- !u!114 &114102277335939668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1157,6 +1256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 75
   damagedTime: 0.1
+  damageClip: {fileID: 0}
 --- !u!114 &114132320675142308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1170,6 +1270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 75
   damagedTime: 0.1
+  damageClip: {fileID: 0}
 --- !u!114 &114134128080613690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1186,8 +1287,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 114601551365168386, guid: ea3a8e0ac88aff64d9a48f455bb945fb,
     type: 2}
   disarmable: 1
+  disarmCoolodown: 3
   numBalas: 7
   limitAngle: 60
+  shootClip: {fileID: 0}
 --- !u!114 &114173372682395022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1216,6 +1319,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 114601551365168386, guid: ea3a8e0ac88aff64d9a48f455bb945fb,
     type: 2}
   disarmable: 1
+  disarmCoolodown: 3
   deviation: 0.3
   shootingPoints:
   - {fileID: 4591407515804678}
@@ -1226,6 +1330,7 @@ MonoBehaviour:
   - {fileID: 4917335926484302}
   - {fileID: 4055365876040508}
   - {fileID: 4225527119991268}
+  shootClip: {fileID: 0}
   attackTime: 5
 --- !u!114 &114227604394496662
 MonoBehaviour:
@@ -1241,6 +1346,7 @@ MonoBehaviour:
   shootingPoint: {fileID: 4126039065986252}
   followPoint: {fileID: 4285194378818462}
   attackTime: 10
+  laserClip: {fileID: 0}
 --- !u!114 &114228399867026244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1254,6 +1360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   damagedTime: 0.1
+  damageClip: {fileID: 8300000, guid: cbcc363e3e98aba45a1cd3b1a5d9f260, type: 3}
 --- !u!114 &114231730135826676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1282,6 +1389,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 114601551365168386, guid: e538aa515f3cc674d81613d55200e58f,
     type: 2}
   disarmable: 1
+  disarmCoolodown: 3
   deviation: 0
   shootingPoints:
   - {fileID: 4591407515804678}
@@ -1292,6 +1400,7 @@ MonoBehaviour:
   - {fileID: 4917335926484302}
   - {fileID: 4055365876040508}
   - {fileID: 4225527119991268}
+  shootClip: {fileID: 0}
   attackTime: 5
 --- !u!114 &114368274868053068
 MonoBehaviour:
@@ -1334,6 +1443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 75
   damagedTime: 0.1
+  damageClip: {fileID: 0}
 --- !u!114 &114797889726739840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1350,8 +1460,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 114601551365168386, guid: ea3a8e0ac88aff64d9a48f455bb945fb,
     type: 2}
   disarmable: 1
+  disarmCoolodown: 3
   numBalas: 7
   limitAngle: 60
+  shootClip: {fileID: 0}
 --- !u!114 &114816169695800138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1368,8 +1480,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 114601551365168386, guid: ea3a8e0ac88aff64d9a48f455bb945fb,
     type: 2}
   disarmable: 1
+  disarmCoolodown: 3
   numBalas: 7
   limitAngle: 60
+  shootClip: {fileID: 0}
 --- !u!114 &114919733479133918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1410,6 +1524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 75
   damagedTime: 0.1
+  damageClip: {fileID: 0}
 --- !u!120 &120696513816015962
 LineRenderer:
   m_ObjectHideFlags: 1

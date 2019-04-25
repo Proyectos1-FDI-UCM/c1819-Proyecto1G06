@@ -9,12 +9,15 @@ public class EnemyHealth : MonoBehaviour {
 
     protected float curHealth;
     public float CurHealth { get { return curHealth; } }
+    public AudioClip damageClip;
     Animator anim;
+    AudioSource audioSource;
 
     public virtual void Awake()
     {
         curHealth = maxHealth;
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     /// <summary>
@@ -25,6 +28,7 @@ public class EnemyHealth : MonoBehaviour {
         anim.SetLayerWeight(1, 1);
         curHealth -= amount;
         Invoke("ResetLayerWeight", damagedTime);
+        audioSource.PlayOneShot(damageClip);
 
         if (curHealth <= 0)
         {

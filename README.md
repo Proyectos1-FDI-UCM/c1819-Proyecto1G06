@@ -15,4 +15,5 @@ Esta es la rama principal, donde está la última versión estable del proyecto.
 - Añadido sonido al TorV0.
 - Añadido sonido de recogida a los objetos.
 - Añadido sonido de electricidad a la bobina portátil.
-- Añadido sonido de daño y muerte al jugador.  
+- Añadido sonido de daño y muerte al jugador.
+- Añadido sonido de daño a los enemigos.  
