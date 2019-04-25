@@ -18,17 +18,46 @@ public class RandomRoomPlacer : MonoBehaviour
         randomItemPlacer = GetComponent<RandomItemPlacer>();
     }
 
-    public void PlaceRooms(List<Room> map, Vector2Int offset, List<Vector2Int> items)
+    public void PlaceRooms(List<Room> map, Vector2Int offset, List<Vector2Int> items, List<Vector2Int> health)
     {
-        PlaceRoom(map[0], startingRoom, offset, items);
-        for(int i = 1; i < map.Count - 1; i++)
+        RoomManager[] rooms = new RoomManager[map.Count];
+
+        rooms[0] = PlaceRoom(map[0], startingRoom, offset, items, health);
+        for(int i = 1; i < rooms.Length - 1; i++)
         {
-            PlaceRoom(map[i], possibleRooms[Random.Range(0, possibleRooms.Length)], offset, items);
+            rooms[i] = PlaceRoom(map[i], possibleRooms[Random.Range(0, possibleRooms.Length)], offset, items, health);
         }
-        PlaceRoom(map[map.Count - 1], roomBoss, offset, items);
+        rooms[rooms.Length - 1] = PlaceRoom(map[map.Count - 1], roomBoss, offset, items, health);
+
+        foreach(Vector2Int itemPos in items)
+        {
+            int i = 0;
+            while(i < rooms.Length && rooms[i].pos != itemPos + offset)
+            {
+                i++;
+            }
+            if (i < rooms.Length)
+            {
+                rooms[i].itemPos.AddComponent<SpriteRenderer>().sprite = itemPositionSprite;
+                randomItemPlacer.PlaceItem(rooms[i].itemPos.transform);
+            }
+        }
+
+        foreach(Vector2Int healthPos in health)
+        {
+            int i = 0;
+            while (i < rooms.Length && rooms[i].pos != healthPos + offset)
+            {
+                i++;
+            }
+            if (i < rooms.Length)
+            {
+                randomItemPlacer.PlaceHealth(rooms[i].itemPos.transform);
+            }
+        }
     }
 
-    void PlaceRoom(Room room, GameObject go, Vector2Int offset, List<Vector2Int> items)
+    RoomManager PlaceRoom(Room room, GameObject go, Vector2Int offset, List<Vector2Int> items, List<Vector2Int> health)
     {
         RoomManager instance = Instantiate<GameObject>(go, (Vector2)room.position * 30f, Quaternion.identity).GetComponent<RoomManager>();
         Transform door;
@@ -37,11 +66,8 @@ public class RandomRoomPlacer : MonoBehaviour
         if (!room.leftDoor && (door = GetDoor(Door.West, instance.doors.transform))) door.parent = instance.transform;
         if (!room.rightDoor && (door = GetDoor(Door.East, instance.doors.transform))) door.parent = instance.transform;
         instance.pos = room.position + offset;
-        if (items.Contains(instance.pos - offset))
-        {
-            instance.itemPos.AddComponent<SpriteRenderer>().sprite = itemPositionSprite;
-            randomItemPlacer.PlaceItem(instance.itemPos.transform);
-        }
+
+        return instance;
     }
 
     Transform GetDoor(Door door, Transform doors)

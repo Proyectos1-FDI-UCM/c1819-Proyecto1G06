@@ -10,7 +10,7 @@ public class Room
     {
         get
         {
-            return position.x + position.y;
+            return Mathf.Abs(position.x) + Mathf.Abs(position.y);
         }
     }
 
