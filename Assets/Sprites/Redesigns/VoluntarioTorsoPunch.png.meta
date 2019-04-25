@@ -1,10 +1,12 @@
 fileFormatVersion: 2
-guid: d00f24dcb0a6ac144955ed90fa811de2
+guid: b58c49313caf8214b95881b36beb74f5
 TextureImporter:
   fileIDToRecycleName:
-    21300000: voluntarioGunSheet_0
-    21300002: voluntarioGunSheet_1
-    21300004: voluntarioGunSheet_2
+    21300000: VoluntarioTorsoPunch_0
+    21300002: VoluntarioTorsoPunch_1
+    21300004: VoluntarioTorsoPunch_2
+    21300006: VoluntarioTorsoPunch_3
+    21300008: VoluntarioTorsoPunch_4
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -46,7 +48,7 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 9
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -87,7 +89,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: voluntarioGunSheet_0
+      name: VoluntarioTorsoPunch_0
       rect:
         serializedVersion: 2
         x: 0
@@ -95,19 +97,19 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.28933328, y: 0.5}
+      pivot: {x: 0.4921875, y: 0.46875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b9b4e0a8e8e75c4e947bd0c86afee0e
+      spriteID: 6eebccc2fae7a174a9381f3426088a04
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: voluntarioGunSheet_1
+      name: VoluntarioTorsoPunch_1
       rect:
         serializedVersion: 2
         x: 64
@@ -115,19 +117,19 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.28933328, y: 0.5}
+      pivot: {x: 0.4921875, y: 0.46875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e5d36e9d474dfe45813d501841a6edb
+      spriteID: 800dfcd0a21261c429457fd742cc9aec
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: voluntarioGunSheet_2
+      name: VoluntarioTorsoPunch_2
       rect:
         serializedVersion: 2
         x: 128
@@ -135,13 +137,53 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.28933328, y: 0.5}
+      pivot: {x: 0.4921875, y: 0.46875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d49bb5549576b840a957ca052e9344f
+      spriteID: 5a99fec373847fd4f91e213ed672d028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VoluntarioTorsoPunch_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4921875, y: 0.46875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e63a8392e28bea4cab8d5ad12a5b802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VoluntarioTorsoPunch_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4921875, y: 0.46875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 056100a945dfe9442ad52aa9726b8c50
       vertices: []
       indices: 
       edges: []
@@ -149,7 +191,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1df5f25e1b71a854b90c5af6a00ee50e
+    spriteID: a39cc6de162430248b83dd824e24751c
     vertices: []
     indices: 
     edges: []

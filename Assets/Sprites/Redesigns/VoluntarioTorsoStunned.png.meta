@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: d00f24dcb0a6ac144955ed90fa811de2
+guid: d1bc7ca4ec7de604e8c1eab7b2e8f3a7
 TextureImporter:
   fileIDToRecycleName:
-    21300000: voluntarioGunSheet_0
-    21300002: voluntarioGunSheet_1
-    21300004: voluntarioGunSheet_2
+    21300000: VoluntarioTorsoStunned_0
+    21300002: VoluntarioTorsoStunned_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -46,7 +45,7 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 9
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -87,7 +86,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: voluntarioGunSheet_0
+      name: VoluntarioTorsoStunned_0
       rect:
         serializedVersion: 2
         x: 0
@@ -95,19 +94,19 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.28933328, y: 0.5}
+      pivot: {x: 0.4921875, y: 0.46875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b9b4e0a8e8e75c4e947bd0c86afee0e
+      spriteID: 7539c950158b56f47a3e293b290496ee
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: voluntarioGunSheet_1
+      name: VoluntarioTorsoStunned_1
       rect:
         serializedVersion: 2
         x: 64
@@ -115,33 +114,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.28933328, y: 0.5}
+      pivot: {x: 0.4921875, y: 0.46875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e5d36e9d474dfe45813d501841a6edb
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: voluntarioGunSheet_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.28933328, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d49bb5549576b840a957ca052e9344f
+      spriteID: 3be8f88e3efff4a4496108c835ce31cd
       vertices: []
       indices: 
       edges: []
@@ -149,7 +128,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1df5f25e1b71a854b90c5af6a00ee50e
+    spriteID: 35141b8d8cccce341ad2d88dedbb95d0
     vertices: []
     indices: 
     edges: []
