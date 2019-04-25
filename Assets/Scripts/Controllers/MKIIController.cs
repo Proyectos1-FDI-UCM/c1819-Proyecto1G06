@@ -8,11 +8,15 @@ public class MKIIController : EnemyController {
 
     private FollowDirection followDirection;
     private Shooting shooting;
+    Rigidbody2D rb;
+    Animator anim;
 
     private void Awake()
     {
         followDirection = GetComponent<FollowDirection>();
         shooting = transform.GetChild(0).GetComponent<Shooting>();
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     /// <summary>
@@ -30,6 +34,8 @@ public class MKIIController : EnemyController {
                 shooting.Shoot();
                 break;
         }
+
+        anim.SetFloat("Velocity", rb.velocity.magnitude);
     }
 
     /// <summary>
