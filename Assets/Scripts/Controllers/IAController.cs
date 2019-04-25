@@ -25,6 +25,7 @@ public class IAController : MonoBehaviour {
         {
             attacks[i].ToggleAttack(false);
         }
+        curAttack = Random.Range(0, attacks.Length);
     }
 
     void Update()
