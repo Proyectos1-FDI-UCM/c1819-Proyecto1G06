@@ -442,13 +442,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1586197101574878}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4392233005062506}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4357861784239390
 Transform:
   m_ObjectHideFlags: 1
@@ -595,13 +595,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1166296467786976}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -15, z: 0}
   m_LocalScale: {x: 1.0000005, y: 1.0000005, z: 1}
   m_Children: []
   m_Father: {fileID: 4392233005062506}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4694551446220234
 Transform:
   m_ObjectHideFlags: 1
@@ -792,18 +792,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: 0}
+  m_Offset: {x: 0, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0.5}
-    oldSize: {x: 1, y: 2}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 2, y: 1}
     newSize: {x: 0.64, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
 --- !u!61 &61226922637062156
 BoxCollider2D:
@@ -842,18 +842,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: 0}
+  m_Offset: {x: 0.5, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0.5}
-    oldSize: {x: 1, y: 2}
+    pivot: {x: 0, y: 0.25}
+    oldSize: {x: 1, y: 4}
     newSize: {x: 0.64, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 3}
   m_EdgeRadius: 0
 --- !u!61 &61416545954619060
 BoxCollider2D:
@@ -917,18 +917,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0.5}
-    oldSize: {x: 1, y: 2}
+    pivot: {x: 0.5, y: 0.6666667}
+    oldSize: {x: 2, y: 3}
     newSize: {x: 0.64, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!61 &61881889890145082
 BoxCollider2D:
@@ -945,8 +945,8 @@ BoxCollider2D:
   m_Offset: {x: 0.5, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0.5}
-    oldSize: {x: 1, y: 2}
+    pivot: {x: 0, y: 0.25}
+    oldSize: {x: 1, y: 4}
     newSize: {x: 0.64, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1982,10 +1982,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3dbb9e1ea963f9240859c90f4dc67cca, type: 3}
+  m_SortingLayerID: -201777491
+  m_SortingLayer: 3
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: f057588e5d0bed04e97077a43a8c9022, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2028,10 +2028,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3dbb9e1ea963f9240859c90f4dc67cca, type: 3}
+  m_SortingLayerID: -201777491
+  m_SortingLayer: 3
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: f057588e5d0bed04e97077a43a8c9022, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2215,7 +2215,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3dbb9e1ea963f9240859c90f4dc67cca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eeddb48c9badb484c9243b1badc10583, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2261,7 +2261,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3dbb9e1ea963f9240859c90f4dc67cca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59cc8fa2aeceae347b944e3ec95d9b00, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9230,16 +9230,16 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -2, y: 11, z: 0}
+  - first: {x: 0, y: 10, z: 0}
     second:
-      m_TileIndex: 35
-      m_TileSpriteIndex: 35
+      m_TileIndex: 45
+      m_TileSpriteIndex: 38
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -1, y: 11, z: 0}
+  - first: {x: 1, y: 10, z: 0}
     second:
       m_TileIndex: 30
       m_TileSpriteIndex: 30
@@ -9248,7 +9248,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 0, y: 11, z: 0}
+  - first: {x: 2, y: 10, z: 0}
     second:
       m_TileIndex: 29
       m_TileSpriteIndex: 27
@@ -9257,7 +9257,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 1, y: 11, z: 0}
+  - first: {x: 3, y: 10, z: 0}
     second:
       m_TileIndex: 25
       m_TileSpriteIndex: 25
@@ -9266,7 +9266,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 2, y: 11, z: 0}
+  - first: {x: 4, y: 10, z: 0}
     second:
       m_TileIndex: 33
       m_TileSpriteIndex: 33
