@@ -23,8 +23,9 @@ public class EnemyHealth : MonoBehaviour {
     public virtual void TakeDamage(float amount)
     {
         anim.SetLayerWeight(1, 1);
-        curHealth -= amount;
         Invoke("ResetLayerWeight", damagedTime);
+
+        curHealth -= amount;
 
         if (curHealth <= 0)
         {

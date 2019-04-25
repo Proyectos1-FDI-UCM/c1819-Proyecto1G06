@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class VoluntarioHealth : BossHealth {
 
+    public VoluntarioLegs legs;
+
     VoluntarioController controller;
 
     private void Start()
@@ -18,6 +20,7 @@ public class VoluntarioHealth : BossHealth {
     {
         if (controller.BulletHit())
         {
+            legs.GetDamaged();
             base.TakeDamage(amount);
         }
     }
