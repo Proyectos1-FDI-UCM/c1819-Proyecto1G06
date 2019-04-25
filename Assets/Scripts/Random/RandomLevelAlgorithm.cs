@@ -64,7 +64,7 @@ public class RandomLevelAlgorithm : MonoBehaviour
         int i = 0;
         while (i < numberOfItems)
         {
-            Room randomRoom = rooms[Random.Range(0, rooms.Count)];
+            Room randomRoom = rooms[Random.Range(1, rooms.Count - 1)];
             if (!items.Contains(randomRoom.position) && !health.Contains(randomRoom.position))
             {
                 items.Add(randomRoom.position);
@@ -83,7 +83,7 @@ public class RandomLevelAlgorithm : MonoBehaviour
         int i = 0;
         while (i < numberOfHealth)
         {
-            Room randomRoom = rooms[Random.Range(0, rooms.Count)];
+            Room randomRoom = rooms[Random.Range(1, rooms.Count - 1)];
             if (!items.Contains(randomRoom.position) && !health.Contains(randomRoom.position))
             {
                 health.Add(randomRoom.position);

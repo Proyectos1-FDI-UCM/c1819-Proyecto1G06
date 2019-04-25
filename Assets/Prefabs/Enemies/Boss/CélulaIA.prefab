@@ -78,7 +78,7 @@ Animator:
   m_GameObject: {fileID: 1205609683257420}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f553a2525fd43804a8f62a0d291e9b57, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -103,8 +103,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 114601551365168386, guid: ea3a8e0ac88aff64d9a48f455bb945fb,
     type: 2}
   disarmable: 1
+  disarmCoolodown: 3
   numBalas: 10
-  limitAngle: 60
+  limitAngle: 1.0466666
 --- !u!114 &114393722670221724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -117,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 75
+  damagedTime: 0.1
 --- !u!212 &212459835010107730
 SpriteRenderer:
   m_ObjectHideFlags: 1

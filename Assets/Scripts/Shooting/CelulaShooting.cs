@@ -27,7 +27,7 @@ public class CelulaShooting : Shooting {
             for(int i = 0; i < numBalas; i++)
             {
                 BulletMovement newBullet = Instantiate<BulletMovement>(bulletPrefab, shootingPoint.position, Quaternion.identity, bulletPool);
-                newBullet.Rotate(transform.right + new Vector3(currAngle == 0 ? 0 : Mathf.Cos(currAngle), Mathf.Sin(currAngle), 0));
+                newBullet.Rotate(transform.right + new Vector3(Mathf.Cos(currAngle), Mathf.Sin(currAngle), 0));
                 currAngle += limitAngle * 2 / numBalas;
             }
         }
