@@ -48,7 +48,9 @@ public class Impresora3DController : EnemyController {
 
     public void SpawnMicrodron()
     {
+
         //Crea el microdron con referencia a la impresora
+        spawnCooldown = spawnEvery;
         MicrodronHealth dron = Instantiate<MicrodronHealth>(microdronPrefab, transform.position, Quaternion.identity, transform.parent);
         dron.SetImpresora(this);
         dronAmount++;
