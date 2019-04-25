@@ -32,7 +32,7 @@ public class RandomLevelAlgorithm : MonoBehaviour
             Minimap.instance.StoreRoom(room.position + minimapOffset, false);
         }
         Minimap.instance.UpdateMapUI();
-        GetComponent<RandomRoomPlacer>().PlaceRooms(rooms, minimapOffset, items);
+        GetComponent<RandomRoomPlacer>().PlaceRooms(rooms, minimapOffset, items, health);
     }
 
     /// <summary>
@@ -56,7 +56,7 @@ public class RandomLevelAlgorithm : MonoBehaviour
         items = new List<Vector2Int>();
         health = new List<Vector2Int>();
         PlaceItems();
-        //PlaceHealth();
+        PlaceHealth();
     }
 
     void PlaceItems()
@@ -64,12 +64,10 @@ public class RandomLevelAlgorithm : MonoBehaviour
         int i = 0;
         while (i < numberOfItems)
         {
-            Vector2Int mapSize = GetMapSize();
-            Vector2Int randomPos = new Vector2Int(Random.Range(-mapSize.x / 2, mapSize.x / 2), Random.Range(-mapSize.y / 2, mapSize.y / 2));
-            Room randomRoom = new Room(randomPos);
-            if (rooms.Contains(randomRoom) && !items.Contains(randomPos) && !health.Contains(randomPos))
+            Room randomRoom = rooms[Random.Range(0, rooms.Count)];
+            if (!items.Contains(randomRoom.position) && !health.Contains(randomRoom.position))
             {
-                items.Add(randomPos);
+                items.Add(randomRoom.position);
                 i++;
             }
         }
@@ -85,12 +83,10 @@ public class RandomLevelAlgorithm : MonoBehaviour
         int i = 0;
         while (i < numberOfHealth)
         {
-            Vector2Int mapSize = GetMapSize();
-            Vector2Int randomPos = new Vector2Int(Random.Range(-mapSize.x / 2, mapSize.x / 2), Random.Range(-mapSize.x / 2, mapSize.x / 2));
-            Room randomRoom = new Room(randomPos);
-            if (rooms.Contains(randomRoom) && !items.Contains(randomPos) && !health.Contains(randomPos))
+            Room randomRoom = rooms[Random.Range(0, rooms.Count)];
+            if (!items.Contains(randomRoom.position) && !health.Contains(randomRoom.position))
             {
-                health.Add(randomPos);
+                health.Add(randomRoom.position);
                 i++;
             }
         }

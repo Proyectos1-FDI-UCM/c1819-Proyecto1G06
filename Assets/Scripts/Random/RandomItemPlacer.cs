@@ -19,7 +19,13 @@ public class RandomItemPlacer : MonoBehaviour {
 
     public void PlaceHealth(Transform parent)
     {
+        Vector3 spawnPos = parent.position;
+        if (parent.childCount > 0)
+        {
+            spawnPos = parent.position + Vector3.right * parent.childCount * 2f;
+        }
 
+        Instantiate<GameObject>(health, spawnPos, Quaternion.identity, parent);
     }
 
     bool CheckIfSpawnedItem(GameObject item)

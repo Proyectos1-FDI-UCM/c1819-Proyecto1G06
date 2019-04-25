@@ -62,11 +62,12 @@ public class Minimap : MonoBehaviour {
     /// </summary>
     public void InitializeMap(Vector2Int size)
     {
-        map = new RoomMapInfo[size.y, size.x];
+        int squareSize = Mathf.Max(size.x, size.y);
+        map = new RoomMapInfo[squareSize, squareSize];
 
-        for (int fila = 0; fila < size.y; fila++)
+        for (int fila = 0; fila < squareSize; fila++)
         {
-            for (int col = 0; col < size.x; col++)
+            for (int col = 0; col < squareSize; col++)
             {
                 map[fila, col] = new RoomMapInfo(RoomMap.Nonexistant, ItemMap.None, false);
             }
