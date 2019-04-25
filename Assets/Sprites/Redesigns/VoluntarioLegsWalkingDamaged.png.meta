@@ -1,9 +1,11 @@
 fileFormatVersion: 2
-guid: 39388014181e10c46902a00bff644964
+guid: 9214aacd20f01ae4f94b007eaf14f691
 TextureImporter:
   fileIDToRecycleName:
-    21300000: VoluntarioTorsoStunnedDmg_0
-    21300002: VoluntarioTorsoStunnedDmg_1
+    21300000: VoluntarioLegsWalkingDamaged_0
+    21300002: VoluntarioLegsWalkingDamaged_1
+    21300004: VoluntarioLegsWalkingDamaged_2
+    21300006: VoluntarioLegsWalkingDamaged_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -45,11 +47,11 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
+  alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -86,7 +88,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: VoluntarioTorsoStunnedDmg_0
+      name: VoluntarioLegsWalkingDamaged_0
       rect:
         serializedVersion: 2
         x: 0
@@ -100,13 +102,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b89783dbcb277c41a67f2f4e417af99
+      spriteID: 70e631cbc9829a8498cf5d334d80c02b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VoluntarioTorsoStunnedDmg_1
+      name: VoluntarioLegsWalkingDamaged_1
       rect:
         serializedVersion: 2
         x: 64
@@ -120,7 +122,47 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 593c04524fdb3c047b8e67688f9ef683
+      spriteID: 669523d9d97513849967e23042b7d176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VoluntarioLegsWalkingDamaged_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4921875, y: 0.46875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816921de9cdbdef49a19c3ca2ac928bd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VoluntarioLegsWalkingDamaged_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4921875, y: 0.46875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a869a50a27d4d3047a399dc1bc18e3ee
       vertices: []
       indices: 
       edges: []
@@ -128,7 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5c23e5707c767e74095f5561102e7b29
+    spriteID: 46b2773106fc10d43a7b5213902091a5
     vertices: []
     indices: 
     edges: []
