@@ -9,7 +9,7 @@ public class EnemyContact : MonoBehaviour {
     /// <summary>
     /// Al entrar en contacto con el jugador, le resta vida y le empuja
     /// </summary>
-    void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionStay2D(Collision2D other)
     {
         Knockback knockback = other.gameObject.GetComponent<Knockback>();
 
