@@ -21,8 +21,7 @@ public class PlayerHealth : MonoBehaviour {
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            curHealth = baseMaxHealth;
-            curMaxHealth = baseMaxHealth;
+            ResetHealth();
 
             GameManager.instance.onPlayerTookDamage += TakeDamage;
             GameManager.instance.onPlayerRestoredHealth += RestoreHealth;
@@ -30,7 +29,7 @@ public class PlayerHealth : MonoBehaviour {
         else Destroy(gameObject);
     }
 
-    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    public void OnSceneLoaded()
     {
         curHealth = curHealth - (curMaxHealth - baseMaxHealth);
         curMaxHealth = baseMaxHealth;
@@ -41,7 +40,6 @@ public class PlayerHealth : MonoBehaviour {
     void Start()
     {
         GameManager.instance.ui.UpdateLives(curHealth, curMaxHealth);
-        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     /// <summary>
@@ -123,5 +121,14 @@ public class PlayerHealth : MonoBehaviour {
     public int CurrentMaxHealth()
     {
         return curMaxHealth;
+    }
+
+    /// <summary>
+    /// Pone la vida máxima actual a la base y recupera toda la vida al jugador
+    /// </summary>
+    public void ResetHealth()
+    {
+        curHealth = baseMaxHealth;
+        curMaxHealth = baseMaxHealth;
     }
 }

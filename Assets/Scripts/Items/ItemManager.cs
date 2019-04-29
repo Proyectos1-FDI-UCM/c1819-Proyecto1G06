@@ -42,11 +42,6 @@ public class ItemManager : MonoBehaviour {
         else Destroy(gameObject);       
     }
 
-    private void Start()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
     /// <summary>
     /// Añade item a la lista de items después de asegurarse de que cabe
     /// </summary>
@@ -76,7 +71,7 @@ public class ItemManager : MonoBehaviour {
     /// <summary>
     /// ¡YAY, sé usar eventos! Al cargar una escena, aplica los efectos de los objetos
     /// </summary>
-    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    public void OnSceneLoaded()
     {
         ApplyItemEffects();
         GameManager.instance.ui.UpdateItems(GetItemSprites(itemList));       

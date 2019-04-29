@@ -23,7 +23,6 @@ public class IAScreenHealth : EnemyHealth {
 
     public override void Die()
     {
-        ItemManager.instance.DeleteItems();
-        GameManager.instance.LoadScene("Menu");
+        GameManager.instance.LoadMenu();
     }
 }

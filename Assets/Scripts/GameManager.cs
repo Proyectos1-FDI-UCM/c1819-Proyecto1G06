@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneloaded;
         }
         else Destroy(gameObject);
     }
@@ -71,9 +73,16 @@ public class GameManager : MonoBehaviour
         LoadMenu();
     }
 
-    void LoadMenu()
+    public void LoadMenu()
     {
         ItemManager.instance.DeleteItems();
+        PlayerHealth.instance.ResetHealth();
         LoadScene("Menu");
+    }
+
+    public void OnSceneloaded(Scene scene, LoadSceneMode mode)
+    {
+        PlayerHealth.instance.OnSceneLoaded();
+        ItemManager.instance.OnSceneLoaded();
     }
 }
