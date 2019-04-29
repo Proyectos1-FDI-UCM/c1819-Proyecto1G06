@@ -24,7 +24,6 @@ public class EnemySpawning : MonoBehaviour, IBossAttack1 {
     /// </summary>
     void Spawn()
     {
-        print("Spawn");
         for(int i = 0; i < numSpawns; i++)
         {
             Transform usedSpawnPoint = spawnPoints[Random.Range(0, spawnPointsSize)];
