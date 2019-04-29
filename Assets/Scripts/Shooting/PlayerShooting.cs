@@ -108,7 +108,7 @@ public class PlayerShooting : Shooting {
                 break;
             case (Weapons.ReactorCinético):
                 rateOfFire = 5f;
-                damageMultiplier = 0.75f;
+                damageMultiplier = 0.5f;
                 break;
         }
 
