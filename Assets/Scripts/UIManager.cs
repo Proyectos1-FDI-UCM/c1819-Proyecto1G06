@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
     public Image[] curLives = new Image[10];
     public Image[] maxLives = new Image[10];
     public RawImage mapRaw;
-    public Text damage, speed, multiplier;
+    public Text damage, speed, multiplier, dmgadd, spdadd;
     public Text itemName, itemDesc;
     public Image bossHealthBack, bossHealth;
     public RectTransform itemListHolder;
@@ -192,4 +192,50 @@ public class UIManager : MonoBehaviour
         itemName.text = "";
         itemDesc.text = "";
     }
+
+    public void TextAddDmg(float dmg)
+    {
+        if(dmg >= 0)
+        {
+            dmgadd.color = Color.green;
+            dmgadd.text = "+" + dmg.ToString("F2");
+        }
+        else
+        {
+            dmgadd.color = Color.red;
+            dmgadd.text = dmg.ToString("F2");
+        }
+
+        CancelInvoke("DisableAddDmg");
+        Invoke("DisableAddDmg", displayTime);
+    }
+
+    private void DisableAddDmg()
+    {
+        dmgadd.text = "";
+    }
+
+    public void TextAddSpeed(float speed)
+    {
+        if (speed >= 0)
+        {
+            spdadd.color = Color.green;
+            spdadd.text = "+" + speed.ToString("F2");
+        }
+        else
+        {
+            spdadd.color = Color.red;
+            spdadd.text = speed.ToString("F2");
+        }
+
+        CancelInvoke("DisableAddSpeed");
+        Invoke("DisableAddSpeed", displayTime);
+    }
+
+    private void DisableAddSpeed()
+    {
+        spdadd.text = "";
+    }
+
+
 }

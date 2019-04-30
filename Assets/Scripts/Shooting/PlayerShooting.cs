@@ -79,6 +79,7 @@ public class PlayerShooting : Shooting {
         baseDamage += amount;
         if (baseDamage < absoluteMinBaseDamage) baseDamage = absoluteMinBaseDamage;
         GameManager.instance.ui.UpdateDamage(baseDamage * damageMultiplier, damageMultiplier);
+        GameManager.instance.ui.TextAddDmg(damageMultiplier * amount);
     }
 
     /// <summary>

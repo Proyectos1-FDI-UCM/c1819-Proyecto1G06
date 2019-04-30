@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         GameManager.instance.player = gameObject;
+        GameManager.instance.onPlayerAddedSpeed += AddSpeed;
     }
 
     private void Start()
@@ -83,6 +84,7 @@ public class PlayerMovement : MonoBehaviour {
         if (maxVelocity < minAbsoluteVelocity) maxVelocity = minAbsoluteVelocity;
         accelerationMultiplier = maxVelocity * VelocityToAccelerationRatio;
         GameManager.instance.ui.UpdateSpeed(maxVelocity);
+        GameManager.instance.ui.TextAddSpeed(amount);
     }
 
     public void InvertCanLoseSpeed()

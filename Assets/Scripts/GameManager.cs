@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public delegate void OnPlayerTookDamage();
     public delegate void OnPlayerRestoredHealth(int amount);
     public delegate void OnPlayerAddedDamage(float amount);
+    public delegate void OnPlayerAddedSpeed(float amount);
     public delegate void GoingToLoadScene();
 
     public static GameManager instance;
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     public OnPlayerTookDamage onPlayerTookDamage;
     public OnPlayerRestoredHealth onPlayerRestoredHealth;
     public OnPlayerAddedDamage onPlayerAddedDamage;
+    public OnPlayerAddedSpeed onPlayerAddedSpeed;
     public GoingToLoadScene goingToLoadScene;
 
     /// <summary>
