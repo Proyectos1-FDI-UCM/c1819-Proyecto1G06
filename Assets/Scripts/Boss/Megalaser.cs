@@ -52,7 +52,7 @@ public class Megalaser : MonoBehaviour, IBossAttack1 {
             {
                 follow.HardStop();
             }
-            else follow.MoveTowards(- new Vector2(transform.position.x, 0) + new Vector2(player.transform.position.x, 0));
+            else follow.MoveTowards(-new Vector2(transform.position.x, 0) + new Vector2(player.transform.position.x, 0));
         }
         else if (!shot)
         {
@@ -64,7 +64,10 @@ public class Megalaser : MonoBehaviour, IBossAttack1 {
             lr.SetPosition(0, shootingPoint.position);
             lr.SetPosition(1, new Vector2(shootingPoint.position.x, -100));
         }
-        else if(check) CheckCollisions();
+        else if (check)
+        {
+            CheckCollisions();
+        }
 
     }
 
@@ -81,6 +84,7 @@ public class Megalaser : MonoBehaviour, IBossAttack1 {
     {
         lr.enabled = false;
         anim.SetBool("Laser", false);
+        check = false;
     }
 
     public void StartChecking()
