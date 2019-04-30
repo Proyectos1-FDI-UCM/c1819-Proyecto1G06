@@ -11,7 +11,7 @@ public class RandomItemPlacer : MonoBehaviour {
     public void PlaceItem(Transform parent)
     {
         int rnd;
-        do rnd = Random.Range(0, items.Length - 1);
+        do rnd = Random.Range(0, items.Length);
         while (CheckIfSpawnedItem(items[rnd]));
         GameObject item = Instantiate(items[rnd], parent);
         GameManager.instance.spawnedItems.Add(item);

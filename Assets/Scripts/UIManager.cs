@@ -165,14 +165,17 @@ public class UIManager : MonoBehaviour
     public void UpdateItems(Sprite[] sprites)
     {
         int i = 0;
-        for(; i < sprites.Length; i++)
+        while(i < sprites.Length)
         {
-            Transform child = itemListHolder.GetChild(i);
-            child.gameObject.SetActive(true);
-            child.GetComponent<Image>().sprite = sprites[i];
+            if (sprites[i] != null)
+            {
+                Transform child = itemListHolder.GetChild(lastItemListSlot);
+                child.gameObject.SetActive(true);
+                child.GetComponent<Image>().sprite = sprites[i];
+            }
+            i++;
+            lastItemListSlot = i;
         }
-
-        lastItemListSlot = i;
     }
 
     public void DisplayItemText(string name, string desc)
