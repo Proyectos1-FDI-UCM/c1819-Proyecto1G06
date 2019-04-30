@@ -5,15 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class RandomItemPlacer : MonoBehaviour {
 
-    public GameObject[] items;
-    public GameObject health;
+    public ItemData[] items;
+    public BombonadeO2 health;
 
     public void PlaceItem(Transform parent)
     {
         int rnd;
         do rnd = Random.Range(0, items.Length);
         while (CheckIfSpawnedItem(items[rnd]));
-        GameObject item = Instantiate(items[rnd], parent);
+        ItemData item = Instantiate(items[rnd], parent);
         GameManager.instance.spawnedItems.Add(item);
     }
 
@@ -25,18 +25,18 @@ public class RandomItemPlacer : MonoBehaviour {
             spawnPos = parent.position + Vector3.right * parent.childCount * 2f;
         }
 
-        Instantiate<GameObject>(health, spawnPos, Quaternion.identity, parent);
+        Instantiate<BombonadeO2>(health, spawnPos, Quaternion.identity, parent);
     }
 
-    bool CheckIfSpawnedItem(GameObject item)
+    bool CheckIfSpawnedItem(ItemData item)
     {
         bool check = false;
         int i = 0;
-        List<GameObject> spawnedItems = GameManager.instance.spawnedItems;
+        List<ItemData> spawnedItems = GameManager.instance.spawnedItems;
 
         while(i < spawnedItems.Count && !check)
         {
-            if (spawnedItems.Contains(item)) check = true;
+            if (spawnedItems[i].itemName == item.itemName) check = true;
             i++;
         }
 
