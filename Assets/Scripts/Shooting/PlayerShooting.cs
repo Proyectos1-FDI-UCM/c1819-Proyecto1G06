@@ -99,7 +99,7 @@ public class PlayerShooting : Shooting {
         switch (weaponNew)
         {
             case (Weapons.Default):
-                rateOfFire = 0.5f;
+                rateOfFire = 2f;
                 damageMultiplier = 1f;
                 break;
             case (Weapons.LenteConvergente):
