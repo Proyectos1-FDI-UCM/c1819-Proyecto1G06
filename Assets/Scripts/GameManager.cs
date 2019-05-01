@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
 
     public void OnSceneloaded(Scene scene, LoadSceneMode mode)
     {
-        PlayerHealth.instance.OnSceneLoaded();
-        ItemManager.instance.OnSceneLoaded();
+        if(PlayerHealth.instance != null) PlayerHealth.instance.OnSceneLoaded();
+        if(ItemManager.instance != null) ItemManager.instance.OnSceneLoaded();
     }
 }
