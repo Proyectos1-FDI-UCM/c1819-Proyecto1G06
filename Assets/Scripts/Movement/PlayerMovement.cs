@@ -96,5 +96,6 @@ public class PlayerMovement : MonoBehaviour {
     public void DeleteDelegatesMovement()
     {
         GameManager.instance.onPlayerAddedSpeed -= AddSpeed;
+        GameManager.instance.goingToLoadScene -= DeleteDelegatesMovement;
     }
 }
