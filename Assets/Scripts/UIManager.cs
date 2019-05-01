@@ -195,19 +195,25 @@ public class UIManager : MonoBehaviour
 
     public void TextAddDmg(float dmg)
     {
-        if(dmg >= 0)
-        {
-            dmgadd.color = Color.green;
-            dmgadd.text = "+" + dmg.ToString("F2");
-        }
-        else
-        {
-            dmgadd.color = Color.red;
-            dmgadd.text = dmg.ToString("F2");
-        }
+        float num = dmg;
+        if (dmgadd.text != "") num += float.Parse(dmgadd.text);
 
-        CancelInvoke("DisableAddDmg");
-        Invoke("DisableAddDmg", displayTime);
+        if (Mathf.Abs(num) > 0.009)
+        {
+            if (num >= 0)
+            {
+                dmgadd.color = Color.green;
+                dmgadd.text = "+" + num.ToString("F2");
+            }
+            else
+            {
+                dmgadd.color = Color.red;
+                dmgadd.text = num.ToString("F2");
+            }
+
+            CancelInvoke("DisableAddDmg");
+            Invoke("DisableAddDmg", displayTime);
+        }
     }
 
     private void DisableAddDmg()
@@ -217,19 +223,25 @@ public class UIManager : MonoBehaviour
 
     public void TextAddSpeed(float speed)
     {
-        if (speed >= 0)
-        {
-            spdadd.color = Color.green;
-            spdadd.text = "+" + speed.ToString("F2");
-        }
-        else
-        {
-            spdadd.color = Color.red;
-            spdadd.text = speed.ToString("F2");
-        }
+        float num = speed * 3 / 7;
+        if (spdadd.text != "") num += float.Parse(spdadd.text);
 
-        CancelInvoke("DisableAddSpeed");
-        Invoke("DisableAddSpeed", displayTime);
+        if(Mathf.Abs(num) > 0.009)
+        {
+            if (num >= 0)
+            {
+                spdadd.color = Color.green;
+                spdadd.text = "+" + num.ToString("F2");
+            }
+            else
+            {
+                spdadd.color = Color.red;
+                spdadd.text = num.ToString("F2");
+            }
+
+            CancelInvoke("DisableAddSpeed");
+            Invoke("DisableAddSpeed", displayTime);
+        }
     }
 
     private void DisableAddSpeed()

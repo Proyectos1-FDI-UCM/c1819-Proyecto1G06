@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour {
         anim = GetComponent<Animator>();
         GameManager.instance.player = gameObject;
         GameManager.instance.onPlayerAddedSpeed += AddSpeed;
+        GameManager.instance.goingToLoadScene += DeleteDelegatesMovement;
     }
 
     private void Start()
@@ -83,12 +84,17 @@ public class PlayerMovement : MonoBehaviour {
         if (maxVelocity > maxAbsoluteVelocity) maxVelocity = maxAbsoluteVelocity;
         if (maxVelocity < minAbsoluteVelocity) maxVelocity = minAbsoluteVelocity;
         accelerationMultiplier = maxVelocity * VelocityToAccelerationRatio;
-        GameManager.instance.ui.UpdateSpeed(maxVelocity);
         GameManager.instance.ui.TextAddSpeed(amount);
+        GameManager.instance.ui.UpdateSpeed(maxVelocity);
     }
 
     public void InvertCanLoseSpeed()
     {
         canLoseSpeed = !canLoseSpeed;
+    }
+
+    public void DeleteDelegatesMovement()
+    {
+        GameManager.instance.onPlayerAddedSpeed -= AddSpeed;
     }
 }

@@ -10,8 +10,9 @@ public class PlayerHealth : MonoBehaviour {
     public int absoluteMaxHealth = 10;
     public int absoluteminHealth = 0;
     public float invulTime = 1f;
+    public float invulnerability { get { return _invulnerability; } }
 
-    private float invulnerability;
+    private float _invulnerability;
     private Animator anim { get { return GameManager.instance.player.GetComponent<Animator>(); } }
     int curHealth, curMaxHealth;
 
@@ -49,13 +50,13 @@ public class PlayerHealth : MonoBehaviour {
     {
         if (GameManager.instance.player != null)
         {
-            if (invulnerability > 0f)
+            if (_invulnerability > 0f)
             {
-                invulnerability -= Time.deltaTime;
+                _invulnerability -= Time.deltaTime;
             }
-            else if (invulnerability < 0f)
+            else if (_invulnerability < 0f)
             {
-                invulnerability = 0f;
+                _invulnerability = 0f;
                 anim.SetLayerWeight(1, 0);
             }
         }
@@ -66,9 +67,9 @@ public class PlayerHealth : MonoBehaviour {
     /// </summary>
     public void TakeDamage()
     {
-        if (invulnerability == 0f)  //Mientras no sea invulnerable
+        if (_invulnerability == 0f)  //Mientras no sea invulnerable
         {
-            invulnerability = invulTime;    //Le hace invulnerable
+            _invulnerability = invulTime;    //Le hace invulnerable
             anim.SetLayerWeight(1, 1);
             curHealth--;
             GameManager.instance.ui.UpdateLives(curHealth, curMaxHealth);      //Hacer que el UIManager actualice la UI

@@ -13,7 +13,7 @@ public class EnemyContact : MonoBehaviour {
     {
         Knockback knockback = other.gameObject.GetComponent<Knockback>();
 
-        if(other.gameObject == GameManager.instance.player)
+        if(other.gameObject == GameManager.instance.player && PlayerHealth.instance.invulnerability == 0f)
         {
             GameManager.instance.onPlayerTookDamage();
             if(knockback != null)
