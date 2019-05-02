@@ -5,7 +5,6 @@ using UnityEngine;
 public class ControlsScreenController : MonoBehaviour {
 
     Animator anim;
-    public TextMesh UpText, DownText, LeftText, RightText, ShootText;
 
     private void Awake()
     {
