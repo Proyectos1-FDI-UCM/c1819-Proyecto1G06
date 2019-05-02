@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114810007963717822}
   - component: {fileID: 61830716733600934}
   - component: {fileID: 114805501439273880}
-  - component: {fileID: 82103810945675384}
+  - component: {fileID: 82648251089629324}
   m_Layer: 11
   m_Name: "TanqueDeEnerg\xEDa"
   m_TagString: Untagged
@@ -65,11 +65,11 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!82 &82103810945675384
+--- !u!82 &82648251089629324
 AudioSource:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,12 +81,12 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: a30024a9a0136264ab5fee596dd7bf9c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1.3
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 256
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

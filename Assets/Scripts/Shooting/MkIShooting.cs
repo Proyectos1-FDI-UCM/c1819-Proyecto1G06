@@ -7,13 +7,16 @@ public class MkIShooting : Shooting {
     public Transform body;
 
     Animator anim;
-    protected bool shooting = false;    //Indica si está disparando, evita que se active varias veces el trigger
+    AudioSource audioSource;
+    public AudioClip shootClip;
+    protected bool shooting = false;    //Indica si está disparando, evita que se activa varias veces el trigger
     protected SpriteRenderer sprite;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public virtual void Start()
@@ -56,8 +59,9 @@ public class MkIShooting : Shooting {
     {
         if (shooting == false && shootCooldown == 0 && !disarmed)
         {
-            anim.SetTrigger("Shoot");
+            anim.SetTrigger("Shoot");         
             shooting = true;
+            audioSource.PlayOneShot(shootClip);
         }
     }
 

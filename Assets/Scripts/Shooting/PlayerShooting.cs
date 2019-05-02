@@ -10,9 +10,11 @@ public class PlayerShooting : Shooting {
     public BulletMovement[] possibleBullets;
     public SpriteRenderer body;
     public SpriteRenderer effectArm;
+    public AudioClip shootClip;
     //Weapons weapon; //Arma, de momento sin usar
 
     SpriteRenderer arm;
+    AudioSource audioSource;
 
     private void Awake()
     {
@@ -21,6 +23,7 @@ public class PlayerShooting : Shooting {
         GameManager.instance.onPlayerAddedDamage += AddDamage;
         GameManager.instance.goingToLoadScene += DeleteDelegatesShooting;
         arm = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Start()
@@ -69,6 +72,7 @@ public class PlayerShooting : Shooting {
         BulletMovement newBullet = Instantiate<BulletMovement>(bulletPrefab, shootingPoint.position, Quaternion.identity, bulletPool);
         newBullet.GetComponent<PlayerBullet>().Damage = baseDamage * damageMultiplier;
         newBullet.Rotate(transform.right);
+        audioSource.PlayOneShot(shootClip);
     }
 
     /// <summary>

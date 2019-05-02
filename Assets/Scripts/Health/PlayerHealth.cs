@@ -13,6 +13,9 @@ public class PlayerHealth : MonoBehaviour {
     public float invulnerability { get { return _invulnerability; } }
 
     private float _invulnerability;
+    public AudioClip damageClip, healClip, deathClip;
+
+    AudioSource audioSource;
     private Animator anim { get { return GameManager.instance.player.GetComponent<Animator>(); } }
     int curHealth, curMaxHealth;
 
@@ -40,6 +43,7 @@ public class PlayerHealth : MonoBehaviour {
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         GameManager.instance.ui.UpdateLives(curHealth, curMaxHealth);
     }
 
@@ -73,11 +77,13 @@ public class PlayerHealth : MonoBehaviour {
             anim.SetLayerWeight(1, 1);
             curHealth--;
             GameManager.instance.ui.UpdateLives(curHealth, curMaxHealth);      //Hacer que el UIManager actualice la UI
+            audioSource.PlayOneShot(damageClip);
 
             if (curHealth <= 0)
             {
                 curHealth = baseMaxHealth;
                 GameManager.instance.PlayerDied();
+                audioSource.PlayOneShot(deathClip);
             }
         }
     }
@@ -96,6 +102,7 @@ public class PlayerHealth : MonoBehaviour {
             curHealth = baseMaxHealth;
             GameManager.instance.PlayerDied();
         }
+        audioSource.PlayOneShot(healClip);
     }
 
     /// <summary>

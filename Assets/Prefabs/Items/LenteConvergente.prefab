@@ -77,7 +77,7 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1275289945126250}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a30024a9a0136264ab5fee596dd7bf9c, type: 3}
@@ -224,6 +224,7 @@ MonoBehaviour:
   type: 2
   itemName: LENTE CONVERGENTE
   itemFlavor: "\xA1BOOM, headshot!"
+  pickClip: {fileID: 8300000, guid: 6b2945c90796a2c45bf26effb9885fff, type: 3}
 --- !u!212 &212624123429853608
 SpriteRenderer:
   m_ObjectHideFlags: 1

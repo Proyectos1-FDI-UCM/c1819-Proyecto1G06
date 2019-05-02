@@ -6,6 +6,14 @@ public class BulletStorm : Shooting, IBossAttack1
 {
     public float deviation = 0.3f;
     public Transform[] shootingPoints;
+    public AudioClip shootClip;
+
+    AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     float[] shootCooldowns;
 
@@ -32,6 +40,7 @@ public class BulletStorm : Shooting, IBossAttack1
         ResetCooldown(i);
         BulletMovement newBullet = Instantiate<BulletMovement>(bulletPrefab, shootingPoints[i].position, Quaternion.identity, bulletPool);
         newBullet.Rotate(shootingPoints[i].right + new Vector3(Random.Range(-deviation / 2, deviation / 2), Random.Range(-deviation / 2, deviation / 2), 0));
+        audioSource.PlayOneShot(shootClip);
     }
 
     /// <summary>

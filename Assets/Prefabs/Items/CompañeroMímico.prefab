@@ -62,7 +62,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.3333334, y: 1.3333334}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   type: 0
   itemName: "COMPA\xD1ERO M\xCDMICO"
   itemFlavor: Dos cabezas disparan mejor que una
+  pickClip: {fileID: 8300000, guid: 6b2945c90796a2c45bf26effb9885fff, type: 3}
 --- !u!114 &114474330154487454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -258,7 +259,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f4aa2f31a5013c144913b165a236e654, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9dd095df098f391478e0055637c31364, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
