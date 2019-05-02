@@ -5724,8 +5724,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: -11, y: 9, z: 0}
     second:
-      m_TileIndex: 33
-      m_TileSpriteIndex: 31
+      m_TileIndex: 31
+      m_TileSpriteIndex: 30
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -5841,8 +5841,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 9, y: 9, z: 0}
     second:
-      m_TileIndex: 33
-      m_TileSpriteIndex: 31
+      m_TileIndex: 27
+      m_TileSpriteIndex: 27
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -5850,8 +5850,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: -11, y: 10, z: 0}
     second:
-      m_TileIndex: 33
-      m_TileSpriteIndex: 31
+      m_TileIndex: 0
+      m_TileSpriteIndex: 26
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -5967,8 +5967,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 9, y: 10, z: 0}
     second:
-      m_TileIndex: 33
-      m_TileSpriteIndex: 31
+      m_TileIndex: 34
+      m_TileSpriteIndex: 34
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -6354,8 +6354,8 @@ Tilemap:
       m_ColliderType: 1
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 5e20694768606e14b9617517543e5438, type: 2}
   - m_RefCount: 9
     m_Data: {fileID: 11400000, guid: ecedadd857d42584d8d68f7be7c25877, type: 2}
   - m_RefCount: 9
@@ -6408,7 +6408,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 101d3e6b76cb36b4b8be50aa4d5bdb54, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: faf586f8f7f4fa74da7eb5e32971f90f, type: 2}
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 9328d5a2428d2c3408e795e6ad4eb33d, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 487ec2a4bd4ba314b983c8f9e451eca6, type: 2}
@@ -6416,12 +6416,14 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: d941da0bc2a0ed04497e81f8ee5317ae, type: 2}
   - m_RefCount: 10
     m_Data: {fileID: 11400000, guid: cf616a0052523c64e9fda10a1df486eb, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 48a38e5fec513a44ca15229565a2374b, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: e32509aa3754dbf43b5d992a58e02b1b, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: e32509aa3754dbf43b5d992a58e02b1b, type: 2}
-  - m_RefCount: 4
-    m_Data: {fileID: 11400000, guid: c403f7c9fed04df41938fa35c608ac0b, type: 2}
+    m_Data: {fileID: 11400000, guid: d7b4e6a1505af294cbb50eb5ee446b41, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 10
     m_Data: {fileID: 21300316, guid: d6a391d6ea7f1e54f8cf9ad527fee153, type: 3}
@@ -6475,22 +6477,24 @@ Tilemap:
     m_Data: {fileID: 21300312, guid: d6a391d6ea7f1e54f8cf9ad527fee153, type: 3}
   - m_RefCount: 9
     m_Data: {fileID: 21300294, guid: d6a391d6ea7f1e54f8cf9ad527fee153, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 2
+  - m_RefCount: 1
+    m_Data: {fileID: 21300422, guid: d6a391d6ea7f1e54f8cf9ad527fee153, type: 3}
+  - m_RefCount: 3
     m_Data: {fileID: 21300094, guid: d6a391d6ea7f1e54f8cf9ad527fee153, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300318, guid: d6a391d6ea7f1e54f8cf9ad527fee153, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300288, guid: d6a391d6ea7f1e54f8cf9ad527fee153, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300006, guid: d6a391d6ea7f1e54f8cf9ad527fee153, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 4
-    m_Data: {fileID: 21300030, guid: d6a391d6ea7f1e54f8cf9ad527fee153, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300064, guid: d6a391d6ea7f1e54f8cf9ad527fee153, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300426, guid: d6a391d6ea7f1e54f8cf9ad527fee153, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300440, guid: d6a391d6ea7f1e54f8cf9ad527fee153, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 255
     m_Data:
