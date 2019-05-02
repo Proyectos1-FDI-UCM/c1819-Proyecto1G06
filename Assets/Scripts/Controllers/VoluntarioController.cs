@@ -37,6 +37,7 @@ public class VoluntarioController : EnemyController {
     /// </summary>
     private void Update()
     {
+        print(shooting.GetShooting());
         if (!stunned)
         {
             switch (state)
