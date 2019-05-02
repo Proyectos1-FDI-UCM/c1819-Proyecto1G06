@@ -148,6 +148,11 @@ public class VoluntarioController : EnemyController {
         shooting.Shot();
     }
 
+    public void ShootCounter()
+    {
+        shooting.ShotCounter();
+    }
+
     public void ResetShootCooldown()
     {
         shooting.ResetCooldown();

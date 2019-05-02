@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d53b47349551c43b545f474ee8adc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
+  speed: 3
 --- !u!114 &114267644073437488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -501,6 +501,8 @@ MonoBehaviour:
   disarmCoolodown: 3
   body: {fileID: 4999959572300696}
   shootClip: {fileID: 8300000, guid: 1396d4fbbd47def4e8ae43bc3b2c4aa6, type: 3}
+  voluntarioCounterBullet: {fileID: 114601551365168386, guid: a5dee1f7489b13642a18523f19ebf00f,
+    type: 2}
 --- !u!114 &114808434159946022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -516,7 +518,7 @@ MonoBehaviour:
   meleeDistance: 2.5
   meleeCooldown: 2
   stunCooldown: 3
-  counterCooldown: 1.5
+  counterCooldown: 1
 --- !u!114 &114888341890440242
 MonoBehaviour:
   m_ObjectHideFlags: 1
