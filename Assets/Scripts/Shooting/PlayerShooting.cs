@@ -16,7 +16,7 @@ public class PlayerShooting : Shooting {
     SpriteRenderer arm;
     AudioSource audioSource;
 
-    private void Awake()
+    public override void Awake()
     {
         GameManager.instance.onEffectChanged += ChangeEffect;
         GameManager.instance.onWeaponChanged += ChangeWeapon;

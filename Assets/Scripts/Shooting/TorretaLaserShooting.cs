@@ -13,7 +13,7 @@ public class TorretaLaserShooting : MkIShooting {
 
     public override void Update()
     {
-        if (!shooting)
+        if (!shooting && controller.GetPlayerDetected())
         {
             Vector2 lookDirection = player.position - transform.position;
             float angle = Mathf.Atan(lookDirection.y / lookDirection.x) * (180 / Mathf.PI) + (lookDirection.x < 0f ? 180f : 0f);

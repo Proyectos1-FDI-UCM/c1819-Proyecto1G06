@@ -17,6 +17,12 @@ public class Shooting : MonoBehaviour
     protected bool disarmed = false;
     protected float disarmTimer = 0f;
     protected float disCooldown = 0f;
+    protected EnemyController controller;
+
+    public virtual void Awake()
+    {
+        controller = GetComponentInParent<EnemyController>();
+    }
 
     public virtual void Update()
     {

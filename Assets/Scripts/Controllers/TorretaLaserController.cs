@@ -14,8 +14,16 @@ public class TorretaLaserController : TorretaController {
 
     private void Update()
     {
-        lr.SetPosition(0, shooting.shootingPoint.transform.position);
-        lr.SetPosition(1, Physics2D.Raycast(shooting.shootingPoint.transform.position, shooting.transform.right, Mathf.Infinity, LayerMask.GetMask("Player", "Environment")).point);
+        if (playerDetected)
+        {
+            lr.SetPosition(0, shooting.shootingPoint.transform.position);
+            lr.SetPosition(1, Physics2D.Raycast(shooting.shootingPoint.transform.position, shooting.transform.right, Mathf.Infinity, LayerMask.GetMask("Player", "Environment")).point);
+            lr.enabled = true;
+        }
+        else
+        {
+            lr.enabled = false;
+        }
         switch (state)
         {
             case EnemyState.Shooting:
