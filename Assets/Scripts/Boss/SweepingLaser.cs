@@ -20,12 +20,9 @@ public class SweepingLaser : MonoBehaviour, IBossAttack1 {
 
     public AudioClip laserClip;
 
-    AudioSource audioSource;
-
     void Awake()
     {
         lr = GetComponent<LineRenderer>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     void OnEnable()
@@ -35,7 +32,6 @@ public class SweepingLaser : MonoBehaviour, IBossAttack1 {
         lr.widthMultiplier = 1f;
         lr.SetPosition(0, shootingPoint.position);
         lr.SetPosition(1, followPoint.position);
-        audioSource.PlayOneShot(laserClip);
     }
 
     public virtual void Update()

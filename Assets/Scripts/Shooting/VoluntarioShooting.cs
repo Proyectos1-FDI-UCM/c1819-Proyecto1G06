@@ -12,6 +12,7 @@ public class VoluntarioShooting : MkIShooting
         ResetCooldown();
         BulletMovement newBullet = Instantiate<BulletMovement>(bulletPrefab, shootingPoint.position, Quaternion.identity, bulletPool);
         newBullet.Rotate(transform.right);
+        audioSource.PlayOneShot(shootClip);
     }
 
     public void StopShooting()

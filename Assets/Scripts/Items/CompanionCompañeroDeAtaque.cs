@@ -6,6 +6,7 @@ public class CompanionCompañeroDeAtaque : Shooting {
 
     Transform target;
     public float damage = 1;
+    public AudioClip shootClip;
 
     public override void Update()
     {
@@ -32,6 +33,7 @@ public class CompanionCompañeroDeAtaque : Shooting {
             BulletMovement newBullet = Instantiate<BulletMovement>(bulletPrefab, shootingPoint.position, Quaternion.identity, bulletPool);
             newBullet.GetComponent<PlayerBullet>().Damage = damage;
             newBullet.Rotate(target.position - transform.position);
+            GetComponent<AudioSource>().PlayOneShot(shootClip);
         }
     }
 }

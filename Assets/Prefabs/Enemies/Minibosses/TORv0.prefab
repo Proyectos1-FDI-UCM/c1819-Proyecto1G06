@@ -102,10 +102,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c0b352bb9b549404ba08d9f01c020707, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 091d1b6e95cd27e4485701ebca2edc1a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 0.75
+  m_Volume: 0.2
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -220,6 +220,7 @@ MonoBehaviour:
   maxHealth: 40
   damagedTime: 0.1
   damageClip: {fileID: 8300000, guid: cbcc363e3e98aba45a1cd3b1a5d9f260, type: 3}
+  deathClip: {fileID: 8300000, guid: 5b8e85e2b601dd14f89ab229d7d0a778, type: 3}
 --- !u!114 &114366957913073536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,7 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitRange: {x: 1, y: 3}
   chaseTime: 3
-  whistleClip: {fileID: 8300000, guid: c0b352bb9b549404ba08d9f01c020707, type: 3}
+  mooClip: {fileID: 8300000, guid: 091d1b6e95cd27e4485701ebca2edc1a, type: 3}
 --- !u!114 &114552786260213272
 MonoBehaviour:
   m_ObjectHideFlags: 1

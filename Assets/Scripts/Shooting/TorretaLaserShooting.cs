@@ -38,8 +38,7 @@ public class TorretaLaserShooting : MkIShooting {
             transform.eulerAngles = new Vector3(0, 0, angle);
         }
         if (damaging)
-        {
-           
+        {           
             RaycastHit2D hit = Physics2D.Raycast(shootingPoint.position, transform.right, Mathf.Infinity, LayerMask.GetMask("Environment", "Player"));
             if (hit.transform == player)
             {
@@ -51,6 +50,7 @@ public class TorretaLaserShooting : MkIShooting {
     public void StartDamaging()
     {
         damaging = true;
+        audioSource.PlayOneShot(shootClip);
     }
 
     public void StopDamaging()

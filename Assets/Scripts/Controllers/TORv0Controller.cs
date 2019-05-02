@@ -6,7 +6,7 @@ public class TORv0Controller : EnemyController {
 
     public Vector2 waitRange;       //Los dos números que delimitan el tiempo que tendrá que esperar el TORv0
     public float chaseTime = 3f;
-    public AudioClip whistleClip;
+    public AudioClip mooClip;
 
     TORv0Health health;
     FollowDirection follow;
@@ -62,7 +62,6 @@ public class TORv0Controller : EnemyController {
     {        
         state = EnemyState.Idle;      
         health.MakeVulnerable(state);
-        audioSource.PlayOneShot(whistleClip);
         CancelInvoke("Chase");      
         Invoke("Chase", Random.Range(waitRange.x, waitRange.y));       
     }
@@ -72,6 +71,7 @@ public class TORv0Controller : EnemyController {
     /// </summary>
     void Chase()
     {
+        audioSource.PlayOneShot(mooClip);
         _chaseTime = chaseTime;
         anim.SetTrigger("Chase");
         state = EnemyState.Chasing;

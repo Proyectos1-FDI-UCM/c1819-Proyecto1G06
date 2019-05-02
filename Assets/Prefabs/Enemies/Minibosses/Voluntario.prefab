@@ -200,7 +200,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7d9f860cf34cd24448dc4856718f416a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -294,8 +294,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1396d4fbbd47def4e8ae43bc3b2c4aa6, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
   m_Pitch: 0.5
   Loop: 0
   Mute: 0
@@ -339,7 +339,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d53b47349551c43b545f474ee8adc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
+  speed: 3
 --- !u!114 &114267644073437488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -469,8 +469,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 75
   damagedTime: 0.1
-  legs: {fileID: 114888341890440242}
   damageClip: {fileID: 8300000, guid: cbcc363e3e98aba45a1cd3b1a5d9f260, type: 3}
+  deathClip: {fileID: 8300000, guid: 5b8e85e2b601dd14f89ab229d7d0a778, type: 3}
+  legs: {fileID: 114888341890440242}
 --- !u!114 &114535276127985160
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4885939323046370}
   - component: {fileID: 212634319011499422}
   - component: {fileID: 61286455120032630}
-  - component: {fileID: 114676898445117512}
   - component: {fileID: 114411255842666962}
   - component: {fileID: 114343631374838566}
   - component: {fileID: 114241608436321356}
@@ -84,7 +83,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a30024a9a0136264ab5fee596dd7bf9c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1.3
   Loop: 0
   Mute: 0
@@ -128,7 +127,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.75
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -239,18 +238,6 @@ MonoBehaviour:
   itemName: MEGA ARMADURA
   itemFlavor: "Es incluso m\xE1s pesada de lo que parece"
   pickClip: {fileID: 8300000, guid: 6b2945c90796a2c45bf26effb9885fff, type: 3}
---- !u!114 &114676898445117512
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1600727530575804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c82e6b49127b1e4cbf096c203b09968, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactableTime: 0.3
 --- !u!212 &212634319011499422
 SpriteRenderer:
   m_ObjectHideFlags: 1

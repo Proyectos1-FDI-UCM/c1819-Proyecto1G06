@@ -7,7 +7,7 @@ public class MkIShooting : Shooting {
     public Transform body;
 
     Animator anim;
-    AudioSource audioSource;
+    protected AudioSource audioSource;
     public AudioClip shootClip;
     protected bool shooting = false;    //Indica si está disparando, evita que se activa varias veces el trigger
     protected SpriteRenderer sprite;
@@ -60,8 +60,7 @@ public class MkIShooting : Shooting {
         if (shooting == false && shootCooldown == 0 && !disarmed)
         {
             anim.SetTrigger("Shoot");         
-            shooting = true;
-            audioSource.PlayOneShot(shootClip);
+            shooting = true;           
         }
     }
 
@@ -73,6 +72,7 @@ public class MkIShooting : Shooting {
         ResetCooldown();
         BulletMovement newBullet = Instantiate<BulletMovement>(bulletPrefab, shootingPoint.position, Quaternion.identity, bulletPool);
         newBullet.Rotate(transform.right);
+        audioSource.PlayOneShot(shootClip);
         shooting = false;
     }
 

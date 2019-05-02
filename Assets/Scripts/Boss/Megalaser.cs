@@ -92,12 +92,16 @@ public class Megalaser : MonoBehaviour, IBossAttack1 {
 
     public void StartChecking()
     {
-        check = true;
-        audioSource.PlayOneShot(laserClip);
+        check = true;       
     }
 
     public void ToggleAttack(bool active)
     {
-        this.enabled = active;       
+        this.enabled = active;
+    }
+
+    public void PlayClip()
+    {
+        audioSource.PlayOneShot(laserClip);
     }
 }

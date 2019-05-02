@@ -10,7 +10,7 @@ public class EnemyHealth : MonoBehaviour {
     protected float curHealth;
     public float CurHealth { get { return curHealth; } }
     protected Animator anim;
-    public AudioClip damageClip;
+    public AudioClip damageClip, deathClip;
     AudioSource audioSource;
 
     public virtual void Awake()
@@ -26,8 +26,7 @@ public class EnemyHealth : MonoBehaviour {
     public virtual void TakeDamage(float amount)
     {
         anim.SetLayerWeight(1, 1);
-        Invoke("ResetLayerWeight", damagedTime);
-        audioSource.PlayOneShot(damageClip);
+        Invoke("ResetLayerWeight", damagedTime);       
 
         curHealth -= amount;
 
@@ -36,6 +35,8 @@ public class EnemyHealth : MonoBehaviour {
             curHealth = 0;
             Die();
         }
+        else
+            audioSource.PlayOneShot(damageClip);
     }
 
     /// <summary>
@@ -43,6 +44,7 @@ public class EnemyHealth : MonoBehaviour {
     /// </summary>
     public virtual void Die()
     {
+        audioSource.PlayOneShot(deathClip);
         SendMessageUpwards("EnemyDied", transform, SendMessageOptions.DontRequireReceiver);
         Destroy(gameObject);
     }

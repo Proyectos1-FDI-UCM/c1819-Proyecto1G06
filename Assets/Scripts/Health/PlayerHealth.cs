@@ -94,7 +94,11 @@ public class PlayerHealth : MonoBehaviour {
     public void RestoreHealth(int amount)
     {
         curHealth += amount;
-        if (curHealth > curMaxHealth) curHealth = curMaxHealth;
+        if (curHealth > curMaxHealth)
+        {
+            curHealth = curMaxHealth;
+            audioSource.PlayOneShot(healClip);
+        }
         GameManager.instance.ui.UpdateLives(curHealth, curMaxHealth);
 
         if (curHealth <= 0)
@@ -102,7 +106,6 @@ public class PlayerHealth : MonoBehaviour {
             curHealth = baseMaxHealth;
             GameManager.instance.PlayerDied();
         }
-        audioSource.PlayOneShot(healClip);
     }
 
     /// <summary>
