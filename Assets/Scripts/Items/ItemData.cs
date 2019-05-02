@@ -11,12 +11,15 @@ public class ItemData : MonoBehaviour {
     public IItem[] effects { get { return GetComponents<IItem>(); } }
     public ObjectType type;
     public string itemName, itemFlavor;
+    public AudioClip pickClip;
 
     Interactable interactable;
+    AudioSource audioSource;
 
     private void Awake()
     {
         interactable = GetComponent<Interactable>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -41,6 +44,7 @@ public class ItemData : MonoBehaviour {
                 GameManager.instance.ui.DisplayItemText(itemName, itemFlavor);
                 for (int i = 0; i < effects.Length; i++)
                     effects[i].PickEffect();
+                audioSource.PlayOneShot(pickClip);
             }
         }
     }

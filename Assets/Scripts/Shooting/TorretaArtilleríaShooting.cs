@@ -5,6 +5,13 @@ using UnityEngine;
 public class TorretaArtilleríaShooting : Shooting {
 
     public SpriteRenderer neck;
+    public AudioClip shootClip;
+    AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void Start()
     {
@@ -30,5 +37,12 @@ public class TorretaArtilleríaShooting : Shooting {
             neck.flipX = true;
         }
         transform.eulerAngles = new Vector3(0, 0, angle);
+    }
+
+    public override void Shoot()
+    {
+        base.Shoot();
+        if (shootCooldown <= 0)
+        audioSource.PlayOneShot(shootClip);
     }
 }

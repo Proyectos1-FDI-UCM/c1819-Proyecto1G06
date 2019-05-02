@@ -78,7 +78,7 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1240774914428040}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a30024a9a0136264ab5fee596dd7bf9c, type: 3}
@@ -224,6 +224,7 @@ MonoBehaviour:
   type: 0
   itemName: REACTOR MEJORADO ILEGALMENTE
   itemFlavor: Parece haber fallos de compatibilidad
+  pickClip: {fileID: 8300000, guid: 6b2945c90796a2c45bf26effb9885fff, type: 3}
 --- !u!114 &114665915786414872
 MonoBehaviour:
   m_ObjectHideFlags: 1

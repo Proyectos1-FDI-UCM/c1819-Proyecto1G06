@@ -83,7 +83,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a30024a9a0136264ab5fee596dd7bf9c, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: -1
-  heal: 0
+  heal: 1
 --- !u!114 &114110182328891200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,6 +226,7 @@ MonoBehaviour:
   type: 0
   itemName: "PASTILLA EXTRA\xD1A"
   itemFlavor: No te ha sentado del todo bien
+  pickClip: {fileID: 8300000, guid: 6b2945c90796a2c45bf26effb9885fff, type: 3}
 --- !u!114 &114437944559382536
 MonoBehaviour:
   m_ObjectHideFlags: 1

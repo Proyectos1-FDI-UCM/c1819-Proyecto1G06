@@ -6,10 +6,12 @@ public class TORv0Controller : EnemyController {
 
     public Vector2 waitRange;       //Los dos números que delimitan el tiempo que tendrá que esperar el TORv0
     public float chaseTime = 3f;
+    public AudioClip whistleClip;
 
     TORv0Health health;
     FollowDirection follow;
     Animator anim;
+    AudioSource audioSource;
 
     float _chaseTime;
 
@@ -18,6 +20,7 @@ public class TORv0Controller : EnemyController {
         follow = GetComponent<FollowDirection>();
         anim = GetComponent<Animator>();
         health = GetComponent<TORv0Health>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Start()
@@ -49,18 +52,19 @@ public class TORv0Controller : EnemyController {
         follow.HardStop();
         state = EnemyState.Stunned;
         anim.SetTrigger("Stunned");
-        health.MakeVulnerable(state);
+        health.MakeVulnerable(state);        
     }
 
     /// <summary>
     /// Cambia estado y animacón, le hace invulnerable y hace que embista de nuevo en entre waitRange.x y waitRange.y segundos.
     /// </summary>
     void UnStun()
-    {
-        state = EnemyState.Idle;
+    {        
+        state = EnemyState.Idle;      
         health.MakeVulnerable(state);
-        CancelInvoke("Chase");
-        Invoke("Chase", Random.Range(waitRange.x, waitRange.y));
+        audioSource.PlayOneShot(whistleClip);
+        CancelInvoke("Chase");      
+        Invoke("Chase", Random.Range(waitRange.x, waitRange.y));       
     }
 
     /// <summary>

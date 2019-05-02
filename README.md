@@ -23,3 +23,4 @@ Esta es la rama principal, donde está la última versión estable del proyecto.
 - Modificado el aspecto de las habitaciones.
 - Creada generación aleatoria.
 - Actualizados sprites y animaciones de los enemigos del nivel 1.
+- Añadidos sonidos.

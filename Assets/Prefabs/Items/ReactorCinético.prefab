@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114590883708480122}
   - component: {fileID: 61509658371892882}
   - component: {fileID: 82996570671099000}
-  - component: {fileID: 95715076239830976}
+  - component: {fileID: 95897358246397160}
   m_Layer: 11
   m_Name: "ReactorCin\xE9tico"
   m_TagString: Untagged
@@ -166,7 +166,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &95715076239830976
+--- !u!95 &95897358246397160
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -224,6 +224,7 @@ MonoBehaviour:
   type: 2
   itemName: "REACTOR CIN\xC9TICO"
   itemFlavor: Fuego de cobertura
+  pickClip: {fileID: 8300000, guid: 6b2945c90796a2c45bf26effb9885fff, type: 3}
 --- !u!212 &212087209970684002
 SpriteRenderer:
   m_ObjectHideFlags: 1
