@@ -123,7 +123,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1565099917645788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.42, y: -0.01, z: 0}
+  m_LocalPosition: {x: -0.449, y: -0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4450168919313366}
@@ -469,8 +469,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 75
   damagedTime: 0.1
-  legs: {fileID: 114888341890440242}
   damageClip: {fileID: 8300000, guid: cbcc363e3e98aba45a1cd3b1a5d9f260, type: 3}
+  legs: {fileID: 114888341890440242}
 --- !u!114 &114535276127985160
 MonoBehaviour:
   m_ObjectHideFlags: 1
