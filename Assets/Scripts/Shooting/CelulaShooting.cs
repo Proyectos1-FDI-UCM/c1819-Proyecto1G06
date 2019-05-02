@@ -11,8 +11,9 @@ public class CelulaShooting : Shooting {
 
     AudioSource audioSource;
 
-    private void Awake()
+    public override void Awake()
     {
+        base.Awake();
         audioSource = GetComponent<AudioSource>();
     }
 

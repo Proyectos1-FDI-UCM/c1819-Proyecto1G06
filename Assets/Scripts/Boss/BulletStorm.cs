@@ -10,8 +10,9 @@ public class BulletStorm : Shooting, IBossAttack1
 
     AudioSource audioSource;
 
-    private void Awake()
+    public override void Awake()
     {
+        base.Awake();
         audioSource = GetComponent<AudioSource>();
     }
 
