@@ -6,8 +6,9 @@ public class CompanionCompañeroMímico : CompanionCompañeroDeAtaque
 {
     PlayerShooting playerShooting;
 
-    private void Awake()
+    public override void Awake()
     {
+        base.Awake();
         playerShooting = GameManager.instance.player.GetComponentInChildren<PlayerShooting>();
         GameManager.instance.onEffectChanged += ChangeEffect;
         GameManager.instance.onWeaponChanged += ChangeWeapon;

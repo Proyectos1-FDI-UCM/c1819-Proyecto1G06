@@ -7,14 +7,17 @@ public class Impresora3DController : EnemyController {
     public float spawnEvery = 5f;
     public int maxDronAmount = 5;
     public MicrodronHealth microdronPrefab;
+    public AudioClip printClip;
 
     float spawnCooldown;
     int dronAmount = 0;
     Animator anim;
+    AudioSource audioSource;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -48,7 +51,6 @@ public class Impresora3DController : EnemyController {
 
     public void SpawnMicrodron()
     {
-
         //Crea el microdron con referencia a la impresora
         spawnCooldown = spawnEvery;
         MicrodronHealth dron = Instantiate<MicrodronHealth>(microdronPrefab, transform.position, Quaternion.identity, transform.parent);
@@ -74,5 +76,10 @@ public class Impresora3DController : EnemyController {
             spawnCooldown -= Time.deltaTime;
         }
         else spawnCooldown = 0;
+    }
+
+    public void PlayClip()
+    {
+        audioSource.PlayOneShot(printClip);
     }
 }

@@ -8,9 +8,10 @@ public class TorretaArtilleríaShooting : Shooting {
     public AudioClip shootClip;
     AudioSource audioSource;
 
-    private void Awake()
+    public override void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        base.Awake();
     }
 
     public void Start()
@@ -23,20 +24,23 @@ public class TorretaArtilleríaShooting : Shooting {
     /// </summary>  
     public override void Update ()
     {
-        Vector2 lookDirection = (player.position) - transform.position;
-        float angle = Mathf.Atan(lookDirection.y / lookDirection.x) * (180 / Mathf.PI) + (lookDirection.x < 0f ? 180f : 0f);
+        if (controller.GetPlayerDetected())
+        {
+            Vector2 lookDirection = (player.position) - transform.position;
+            float angle = Mathf.Atan(lookDirection.y / lookDirection.x) * (180 / Mathf.PI) + (lookDirection.x < 0f ? 180f : 0f);
 
-        if (angle > 90 || angle < -90)  // Hacer que no tenga un movimiento poco natural
-        {
-            GetComponent<SpriteRenderer>().flipY = true;
-            neck.flipX = false;
+            if (angle > 90 || angle < -90)  // Hacer que no tenga un movimiento poco natural
+            {
+                GetComponent<SpriteRenderer>().flipY = true;
+                neck.flipX = false;
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().flipY = false;
+                neck.flipX = true;
+            }
+            transform.eulerAngles = new Vector3(0, 0, angle);
         }
-        else
-        {
-            GetComponent<SpriteRenderer>().flipY = false;
-            neck.flipX = true;
-        }
-        transform.eulerAngles = new Vector3(0, 0, angle);
     }
 
     public override void Shoot()

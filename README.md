@@ -4,7 +4,7 @@ Este es el Proyecto 1 del grupo 06 18/19.
 
 ## Sobre esta rama
 
-Esta es la rama principal, donde está la última versión estable del proyecto.
+Esta es la rama master, donde está la última versión estable del proyecto.
 
 ## Cambios
 
@@ -24,3 +24,7 @@ Esta es la rama principal, donde está la última versión estable del proyecto.
 - Creada generación aleatoria.
 - Actualizados sprites y animaciones de los enemigos del nivel 1.
 - Añadidos sonidos.
+- Creada terminal para ver los controles.
+- Cambiados sonidos de recibir daño y de puñetazo del TORv0.
+- Añadido sonido de impresión a la impresora 3D.
+

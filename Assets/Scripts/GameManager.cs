@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             SceneManager.sceneLoaded += OnSceneloaded;
+            spawnedItems = new List<ItemData>();
         }
         else Destroy(gameObject);
     }

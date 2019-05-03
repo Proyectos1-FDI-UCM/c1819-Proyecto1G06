@@ -10,11 +10,9 @@ public class MoveRandom : MonoBehaviour {
     FollowDirection follow;
 
     float changeDirectionCooldown = 0;
-    Rigidbody2D rb;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
         follow = GetComponent<FollowDirection>();
     }
 

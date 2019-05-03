@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 82207653007314134}
   - component: {fileID: 114343173193787512}
   - component: {fileID: 95238855619506414}
+  - component: {fileID: 114676898445117512}
   m_Layer: 11
   m_Name: Mega Armadura
   m_TagString: Untagged
@@ -208,7 +209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c82e6b49127b1e4cbf096c203b09968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactableTime: 0.3
 --- !u!114 &114343631374838566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -238,6 +238,17 @@ MonoBehaviour:
   itemName: MEGA ARMADURA
   itemFlavor: "Es incluso m\xE1s pesada de lo que parece"
   pickClip: {fileID: 8300000, guid: 6b2945c90796a2c45bf26effb9885fff, type: 3}
+--- !u!114 &114676898445117512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1600727530575804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c82e6b49127b1e4cbf096c203b09968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212634319011499422
 SpriteRenderer:
   m_ObjectHideFlags: 1

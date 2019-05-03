@@ -37,7 +37,6 @@ public class VoluntarioController : EnemyController {
     /// </summary>
     private void Update()
     {
-        print(shooting.GetShooting());
         if (!stunned)
         {
             switch (state)
@@ -147,6 +146,11 @@ public class VoluntarioController : EnemyController {
     public void Shoot()
     {
         shooting.Shot();
+    }
+
+    public void ShootCounter()
+    {
+        shooting.ShotCounter();
     }
 
     public void ResetShootCooldown()
