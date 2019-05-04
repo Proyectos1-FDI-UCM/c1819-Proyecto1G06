@@ -13,11 +13,11 @@ public class ControlsScreenController : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        anim.SetBool("ShowControls", true);
+        if(collision.GetComponent<PlayerMovement>() != null) anim.SetBool("ShowControls", true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        anim.SetBool("ShowControls", false);
+        if (collision.GetComponent<PlayerMovement>() != null) anim.SetBool("ShowControls", false);
     }
 }
