@@ -15,7 +15,6 @@ public class MKIIShooting : MkIShooting
         BulletMovement newBullet = Instantiate<BulletMovement>(bulletPrefab, shootingPoint.position, Quaternion.identity, bulletPool);
         newBullet.Rotate(transform.right + new Vector3(Random.Range(-deviation / 2, deviation / 2), Random.Range(-deviation / 2, deviation / 2), 0));
         audioSource.PlayOneShot(shootClip);
-        shooting = false;
-        
+        shooting = false;     
     }
 }
