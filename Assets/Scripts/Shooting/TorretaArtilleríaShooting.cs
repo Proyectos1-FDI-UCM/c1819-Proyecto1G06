@@ -41,6 +41,7 @@ public class TorretaArtilleríaShooting : Shooting {
             }
             transform.eulerAngles = new Vector3(0, 0, angle);
         }
+        DisarmCD();
     }
 
     public override void Shoot()

@@ -54,6 +54,7 @@ public class MkIShooting : Shooting {
 
             transform.eulerAngles = new Vector3(0, 0, angle);
         }
+        DisarmCD();
     }
 
     /// <summary>

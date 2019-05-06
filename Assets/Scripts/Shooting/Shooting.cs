@@ -10,6 +10,7 @@ public class Shooting : MonoBehaviour
     public BulletMovement bulletPrefab;             //Script del movimiento de la bala
     public bool disarmable = true;                  //Si puede ser desarmado
     public float disarmCoolodown = 3;
+    public ParticleSystem particles;
 
     protected float shootCooldown = 0f;             //Tiempo hasta la siguiente bala
     protected Transform player { get { return GameManager.instance.player.transform; } }
@@ -27,6 +28,7 @@ public class Shooting : MonoBehaviour
     public virtual void Update()
     {
         Cooldown();
+        DisarmCD();
     }
 
     /// <summary>
@@ -39,13 +41,16 @@ public class Shooting : MonoBehaviour
             if (shootCooldown > 0f) shootCooldown -= Time.deltaTime;        //Se reduce si no es 0
             else shootCooldown = 0f;
         }
+    }
 
+    public void DisarmCD()
+    {
         if (disarmTimer > 0f) disarmTimer -= Time.deltaTime;
         else if (disarmTimer < 0f) disarmTimer = 0f;
         else if (disarmed) Rearm();
 
-        if (disCooldown > 0f) disarmTimer -= Time.deltaTime;
-        else if (disCooldown < 0f) disarmTimer = 0f;
+        if (disCooldown > 0f) disCooldown -= Time.deltaTime;
+        else if (disCooldown < 0f) disCooldown = 0f;
     }
 
     /// <summary>
@@ -75,6 +80,8 @@ public class Shooting : MonoBehaviour
         {
             disarmed = true;
             disarmTimer = duration;
+            ParticleSystem disarmedParticles = Instantiate<ParticleSystem>(particles, transform.position, Quaternion.identity, transform);
+            Destroy(disarmedParticles, duration);
         }
     }
 
