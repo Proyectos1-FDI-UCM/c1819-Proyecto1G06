@@ -55,7 +55,7 @@ public class RoomManager : MonoBehaviour {
     /// </summary>
     public virtual void DetectPlayer()
     {
-        Minimap.instance.NewRoomExplored(pos);
+        //Minimap.instance.NewRoomExplored(pos);
         if (enemies.childCount > 0 && state != RoomState.Closed)
         {
             state = RoomState.Closed;
