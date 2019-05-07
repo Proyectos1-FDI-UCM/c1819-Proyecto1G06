@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     public OnPlayerAddedSpeed onPlayerAddedSpeed;
     public GoingToLoadScene goingToLoadScene;
 
+    public GameObject TORv0Items, VoluntarioItems;
+
     /// <summary>
     /// Singleton
     /// </summary>
@@ -50,6 +52,18 @@ public class GameManager : MonoBehaviour
         {
             LoadMenu();
         }
+
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            if (TORv0Items == null) TORv0Items = GameObject.Find("TORv0Items");
+            TORv0Items.transform.position = new Vector3(4f, 4f);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            if (VoluntarioItems == null) VoluntarioItems = GameObject.Find("VoluntarioItems");
+            VoluntarioItems.transform.position = new Vector3(4f, 0);
+        }
     }
 
     /// <summary>
@@ -68,6 +82,7 @@ public class GameManager : MonoBehaviour
     {
         if (goingToLoadScene != null)
             goingToLoadScene();
+        if(PlayerHealth.instance != null) PlayerHealth.instance.RestoreHealth(PlayerHealth.instance.CurrentMaxHealth());
         SceneManager.LoadScene(scene);
     }
 

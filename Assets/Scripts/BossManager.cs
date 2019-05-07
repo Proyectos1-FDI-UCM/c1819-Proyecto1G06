@@ -37,7 +37,7 @@ public class BossManager : RoomManager {
     /// </summary>
     public override void DetectPlayer()
     {
-        Minimap.instance.NewRoomExplored(pos);
+        //Minimap.instance.NewRoomExplored(pos);
         if (enemies.childCount > 0 && state != RoomState.Closed)
         {
             state = RoomState.Closed;
