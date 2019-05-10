@@ -8,9 +8,14 @@ html,body {
 body {
   padding-bottom: 1rem;
   color: #5a5a5a;
+  background-image: url(../img/Background.jpg);
 }
 
-
+.layout {
+	margin-left: 15%;
+	margin-right: 15%;
+	background-color: #87A9D8FF;
+}
 
 
 /* CUSTOMIZE THE HEADER
@@ -27,6 +32,7 @@ img.img-header {
 /* Center align the text within the three columns below the carousel */
 .marketing {
   margin-top: 1rem;
+  /*background-color: gray;*/
 }
 
 .marketing h2 {
