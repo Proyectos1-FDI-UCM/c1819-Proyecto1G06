@@ -28,6 +28,7 @@ public class RandomRoomPlacer : MonoBehaviour
             rooms[i] = PlaceRoom(map[i], possibleRooms[Random.Range(0, possibleRooms.Length)], offset, items, health);
         }
         rooms[rooms.Length - 1] = PlaceRoom(map[map.Count - 1], roomBoss, offset, items, health);
+        rooms[rooms.Length - 1].boss = true;
 
         foreach(Vector2Int itemPos in items)
         {

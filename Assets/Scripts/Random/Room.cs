@@ -13,17 +13,20 @@ public class Room
             return Mathf.Abs(position.x) + Mathf.Abs(position.y);
         }
     }
+    public bool boss;
 
-    public Room(Vector2Int pos)
+    public Room(Vector2Int pos, bool boss)
     {
         leftDoor = rightDoor = upDoor = downDoor = false;
         position = pos;
+        this.boss = boss;
     }
 
-    public Room(int x, int y)
+    public Room(int x, int y, bool boss)
     {
         leftDoor = rightDoor = upDoor = downDoor = false;
         position = new Vector2Int(x, y);
+        this.boss = boss;
     }
 
     /// <summary>
@@ -68,6 +71,6 @@ public class Room
 
     public override string ToString()
     {
-        return "Position: " + position.ToString() + " Doors: u" + upDoor + " d" + downDoor + " l" + leftDoor + " r" + rightDoor;
+        return "Position: " + position.ToString() + " Doors: u" + upDoor + " d" + downDoor + " l" + leftDoor + " r" + rightDoor + "Boss: " + boss;
     }
 }

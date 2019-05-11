@@ -29,7 +29,7 @@ public class RandomLevelAlgorithm : MonoBehaviour
         foreach(Room room in rooms)
         {
             // Hay que hacer un offset para que las habitaciones quepan en el minimapa
-            Minimap.instance.StoreRoom(room.position + minimapOffset, false);
+            Minimap.instance.StoreRoom(room.position + minimapOffset, room.boss);
         }
         Minimap.instance.UpdateMapUI();
         GetComponent<RandomRoomPlacer>().PlaceRooms(rooms, minimapOffset, items, health);
@@ -138,8 +138,8 @@ public class RandomLevelAlgorithm : MonoBehaviour
     void InsertBaseRooms()
     {
         rooms = new List<Room>();
-        Room startingRoom = new Room(0, 0);
-        Room nextRoom = new Room(1, 0);
+        Room startingRoom = new Room(0, 0, false);
+        Room nextRoom = new Room(1, 0, false);
         ConnectRooms(ref startingRoom, ref nextRoom);
         rooms.Add(startingRoom);
         rooms.Add(nextRoom);
@@ -211,22 +211,22 @@ public class RandomLevelAlgorithm : MonoBehaviour
     /// </summary>
     bool CheckIfValidPosition(Vector2Int pos)
     {
-        if(rooms.Contains(new Room(pos.x, pos.y))) return false;
+        if(rooms.Contains(new Room(pos.x, pos.y, false))) return false;
 
         int adjacentRooms = 0;
-        if(rooms.Contains(new Room(pos.x + 1, pos.y)))
+        if(rooms.Contains(new Room(pos.x + 1, pos.y, false)))
         {
             adjacentRooms++;
         }
-        if(rooms.Contains(new Room(pos.x - 1, pos.y)))
+        if(rooms.Contains(new Room(pos.x - 1, pos.y, false)))
         {
             adjacentRooms++;
         }
-        if(rooms.Contains(new Room(pos.x, pos.y + 1)))
+        if(rooms.Contains(new Room(pos.x, pos.y + 1, false)))
         {
             adjacentRooms++;
         }
-        if(rooms.Contains(new Room(pos.x, pos.y - 1)))
+        if(rooms.Contains(new Room(pos.x, pos.y - 1, false)))
         {
             adjacentRooms++;
         }
@@ -293,7 +293,7 @@ public class RandomLevelAlgorithm : MonoBehaviour
         // Solo cierra un camino si el número de posibilidades para avanzar es mayor de 1
         if (CheckIfValidPosition(pos) && (availablePositions.Count < 2 || !ClosePath(pos)))
         {
-            PlaceRoom(pos);
+            PlaceRoom(pos, false);
             AddAdjacentPositions(pos);
             insertedRoom = true;
         }
@@ -305,9 +305,9 @@ public class RandomLevelAlgorithm : MonoBehaviour
     /// <summary>
     /// Coloca una habitación en la posición pos y la conecta a sus adyacentes
     /// </summary>
-    private void PlaceRoom(Vector2Int pos)
+    private void PlaceRoom(Vector2Int pos, bool boss)
     {
-        Room room = new Room(pos);
+        Room room = new Room(pos, boss);
         ConnectRoomToAdjacent(ref room);
         rooms.Add(room);
     }
@@ -320,7 +320,7 @@ public class RandomLevelAlgorithm : MonoBehaviour
     {
         bool insertedRoom = false;
         int maxDistanceToCenter = 0;
-        Room mostDistantRoom = new Room(0, 0);
+        Room mostDistantRoom = rooms[0];
 
         // Busca la habitación más alejada de la inicial
         foreach(Room room in rooms)
@@ -336,16 +336,16 @@ public class RandomLevelAlgorithm : MonoBehaviour
         switch (roomBossEntrance)
         {
             case RoomBossEntrance.Up:
-                insertedRoom = PlaceRoomIfValidPos(mostDistantRoom.position + Vector2Int.down);
+                insertedRoom = PlaceRoomBoss(mostDistantRoom.position + Vector2Int.down);
                 break;
             case RoomBossEntrance.Down:
-                insertedRoom = PlaceRoomIfValidPos(mostDistantRoom.position + Vector2Int.up);
+                insertedRoom = PlaceRoomBoss(mostDistantRoom.position + Vector2Int.up);
                 break;
             case RoomBossEntrance.Left:
-                insertedRoom = PlaceRoomIfValidPos(mostDistantRoom.position + Vector2Int.right);
+                insertedRoom = PlaceRoomBoss(mostDistantRoom.position + Vector2Int.right);
                 break;
             case RoomBossEntrance.Right:
-                insertedRoom = PlaceRoomIfValidPos(mostDistantRoom.position + Vector2Int.left);
+                insertedRoom = PlaceRoomBoss(mostDistantRoom.position + Vector2Int.left);
                 break;
         }
 
@@ -354,14 +354,14 @@ public class RandomLevelAlgorithm : MonoBehaviour
     }
 
     /// <summary>
-    /// Coloca una habitación si pos es una posición válida
+    /// Coloca una habitación de boss si pos es una posición válida
     /// </summary>
     /// <returns>true si ha podido, false si no</returns>
-    private bool PlaceRoomIfValidPos(Vector2Int pos)
+    private bool PlaceRoomBoss(Vector2Int pos)
     {
         if (CheckIfValidPosition(pos))
         {
-            PlaceRoom(pos);
+            PlaceRoom(pos, true);
             return true;
         }
         else return false;
