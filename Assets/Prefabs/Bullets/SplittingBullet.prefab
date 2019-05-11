@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114601551365168386}
   - component: {fileID: 114816584004924302}
   - component: {fileID: 114174421125301846}
+  - component: {fileID: 95758611452347884}
   m_Layer: 13
   m_Name: SplittingBullet
   m_TagString: Untagged
@@ -77,7 +78,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.2090182, y: 0.0000017881393}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.25, y: 0.5}
@@ -88,8 +89,26 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.48}
+  m_Size: {x: 1.0580366, y: 0.6340165}
   m_EdgeRadius: 0
+--- !u!95 &95758611452347884
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1071065604295384}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61609145a43f1e24f837d4d4a7b6a4e2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114174421125301846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104,7 +123,7 @@ MonoBehaviour:
   generatedBulletPrefab: {fileID: 114601551365168386, guid: ea3a8e0ac88aff64d9a48f455bb945fb,
     type: 2}
   maxLifetime: 8
-  minLifetime: 2
+  minLifetime: 1
 --- !u!114 &114601551365168386
 MonoBehaviour:
   m_ObjectHideFlags: 1

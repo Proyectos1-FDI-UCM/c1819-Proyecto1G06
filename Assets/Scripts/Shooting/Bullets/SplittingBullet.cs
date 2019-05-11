@@ -10,6 +10,7 @@ public class SplittingBullet : MonoBehaviour {
 
     float lifetime;
     float curLifetime;
+    Animator anim;
 
     /// <summary>
     /// El tiempo de vida es aleatorio
@@ -17,6 +18,7 @@ public class SplittingBullet : MonoBehaviour {
     private void Awake()
     {
         lifetime = Random.Range(minLifetime, maxLifetime);
+        anim = GetComponent<Animator>();
     }
 
     /// <summary>
@@ -27,7 +29,7 @@ public class SplittingBullet : MonoBehaviour {
         curLifetime += Time.deltaTime;
         if(curLifetime >= lifetime)
         {
-            Split();
+            anim.SetTrigger("Split");
         }
     }
 
