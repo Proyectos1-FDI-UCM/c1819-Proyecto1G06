@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
 
-    public static PlayerHealth instance;
     public int baseMaxHealth = 4;
     public int absoluteMaxHealth = 10;
     public int absoluteminHealth = 0;
@@ -16,34 +15,38 @@ public class PlayerHealth : MonoBehaviour {
     public AudioClip damageClip, healClip, deathClip;
 
     AudioSource audioSource;
-    private Animator anim { get { return GameManager.instance.player.GetComponent<Animator>(); } }
+    private Animator anim;
     int curHealth, curMaxHealth;
 
     private void Awake()
     {
-        if(instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-            ResetHealth();
+        anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
 
-            GameManager.instance.onPlayerTookDamage += TakeDamage;
-            GameManager.instance.onPlayerRestoredHealth += RestoreHealth;
-        }
-        else Destroy(gameObject);
+        GameManager.instance.InitCurHealth(baseMaxHealth);
+        curHealth = baseMaxHealth;
+        curMaxHealth = baseMaxHealth;
+
+        GameManager.instance.onPlayerTookDamage += TakeDamage;
+        GameManager.instance.onPlayerRestoredHealth += RestoreHealth;
+        GameManager.instance.goingToLoadScene += GoingToLoadScene;
     }
 
-    public void OnSceneLoaded()
+    public void OnSceneLoaded(int curHealth)
     {
-        curHealth = curHealth - (curMaxHealth - baseMaxHealth);
-        curMaxHealth = baseMaxHealth;
-        if (GameManager.instance.ui != null)
-            GameManager.instance.ui.UpdateLives(curHealth, curMaxHealth);
+        this.curHealth = curHealth;
+    }
+
+    public void GoingToLoadScene()
+    {
+        GameManager.instance.playerCurHealth = curHealth;
+        GameManager.instance.onPlayerTookDamage -= TakeDamage;
+        GameManager.instance.onPlayerRestoredHealth -= RestoreHealth;
+        GameManager.instance.goingToLoadScene -= GoingToLoadScene;
     }
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         GameManager.instance.ui.UpdateLives(curHealth, curMaxHealth);
     }
 
@@ -81,7 +84,6 @@ public class PlayerHealth : MonoBehaviour {
 
             if (curHealth <= 0)
             {
-                curHealth = baseMaxHealth;
                 GameManager.instance.PlayerDied();
                 audioSource.PlayOneShot(deathClip);
             }
@@ -102,8 +104,8 @@ public class PlayerHealth : MonoBehaviour {
 
         if (curHealth <= 0)
         {
-            curHealth = baseMaxHealth;
             GameManager.instance.PlayerDied();
+            audioSource.PlayOneShot(deathClip);
         }
     }
 
@@ -117,7 +119,6 @@ public class PlayerHealth : MonoBehaviour {
             curMaxHealth = absoluteMaxHealth;
         else if (curMaxHealth <= absoluteminHealth)
         {
-            curMaxHealth = absoluteminHealth;
             GameManager.instance.PlayerDied();
         }
         GameManager.instance.ui.UpdateLives(curHealth, curMaxHealth);
@@ -131,14 +132,5 @@ public class PlayerHealth : MonoBehaviour {
     public int CurrentMaxHealth()
     {
         return curMaxHealth;
-    }
-
-    /// <summary>
-    /// Pone la vida máxima actual a la base y recupera toda la vida al jugador
-    /// </summary>
-    public void ResetHealth()
-    {
-        curHealth = baseMaxHealth;
-        curMaxHealth = baseMaxHealth;
     }
 }

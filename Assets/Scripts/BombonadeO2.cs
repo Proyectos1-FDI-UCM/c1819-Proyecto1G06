@@ -26,7 +26,7 @@ public class BombonadeO2 : MonoBehaviour {
     {
         if (interactable.interactable)
         {
-            PlayerHealth playerHealth = PlayerHealth.instance;
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
             if (playerHealth.CurrentHealth() != playerHealth.CurrentMaxHealth())
             {                
                 GameManager.instance.onPlayerRestoredHealth(amount);

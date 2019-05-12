@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public Transform bulletPool;
     public string activeScene { get { return SceneManager.GetActiveScene().name; } }
     public List<ItemData> spawnedItems;
+    int _playerCurHealth = 0;
+    public int playerCurHealth { get { return _playerCurHealth; } set { _playerCurHealth = value; } }
 
     public OnEffectChanged onEffectChanged;
     public OnWeaponChanged onWeaponChanged;
@@ -38,7 +40,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            SceneManager.sceneLoaded += OnSceneloaded;
+            SceneManager.sceneLoaded += OnSceneLoaded;
             spawnedItems = new List<ItemData>();
         }
         else Destroy(gameObject);
@@ -71,6 +73,14 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 
+    public void InitCurHealth(int amount)
+    {
+        if(playerCurHealth <= 0)
+        {
+            playerCurHealth = amount;
+        }
+    }
+
     public void PlayerDied()
     {
         LoadMenu();
@@ -79,13 +89,14 @@ public class GameManager : MonoBehaviour
     public void LoadMenu()
     {
         ItemManager.instance.DeleteItems();
-        PlayerHealth.instance.ResetHealth();
+        if(player != null) playerCurHealth = player.GetComponent<PlayerHealth>().baseMaxHealth;
+        spawnedItems = new List<ItemData>();
         LoadScene("Menu");
     }
 
-    public void OnSceneloaded(Scene scene, LoadSceneMode mode)
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(PlayerHealth.instance != null) PlayerHealth.instance.OnSceneLoaded();
-        if(ItemManager.instance != null) ItemManager.instance.OnSceneLoaded();
+        if (ItemManager.instance != null) ItemManager.instance.OnSceneLoaded();
+        if (player != null) player.GetComponent<PlayerHealth>().OnSceneLoaded(playerCurHealth);
     }
 }
