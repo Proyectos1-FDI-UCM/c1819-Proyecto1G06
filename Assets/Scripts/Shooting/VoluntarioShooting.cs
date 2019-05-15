@@ -6,6 +6,14 @@ public class VoluntarioShooting : MkIShooting
 {
     public BulletMovement voluntarioCounterBullet;
 
+    Animator anim;
+
+    public override void Awake()
+    {
+        base.Awake();
+        anim = GetComponent<Animator>();
+    }
+
     /// <summary>
     /// Dispara una bala
     /// </summary>
@@ -27,5 +35,10 @@ public class VoluntarioShooting : MkIShooting
         BulletMovement newBullet = Instantiate<BulletMovement>(voluntarioCounterBullet, shootingPoint.position, Quaternion.identity, bulletPool);
         newBullet.Rotate(transform.right);
         audioSource.PlayOneShot(shootClip);
+    }
+
+    public void CounterWeapon()
+    {
+        anim.SetTrigger("Counter");
     }
 }

@@ -7,12 +7,8 @@ public class VoluntarioController : EnemyController {
     public Vector2 lurkInterval = new Vector2(4, 6);    //Mínima y máxima distancia del Voluntario al jugador
     public float meleeDistance;
     public float meleeCooldown = 3;
-    public float stunCooldown = 3;
-    public float counterCooldown = 3;
 
     float meleeTimer;
-    float stunTimer;
-    float counterTimer;
     Animator anim;
     FollowDirection follow;
     VoluntarioShooting shooting;
@@ -26,8 +22,6 @@ public class VoluntarioController : EnemyController {
         anim = GetComponent<Animator>();
         shooting = transform.GetChild(0).GetComponent<VoluntarioShooting>();
         meleeTimer = meleeCooldown;
-        stunTimer = stunCooldown;
-        counterTimer = counterCooldown;
     }
 
     /// <summary>
@@ -66,8 +60,6 @@ public class VoluntarioController : EnemyController {
             avoidDir = Vector2.zero;
 
             Cooldown(ref meleeTimer);
-            Cooldown(ref stunTimer);
-            Cooldown(ref counterTimer);
 
             shooting.Cooldown();
             shooting.Shoot();
@@ -120,13 +112,14 @@ public class VoluntarioController : EnemyController {
 
     public bool BulletHit()
     {
-        if (shooting.GetShooting() && stunTimer <= 0)
+        if (shooting.GetShooting())
         {
-            stunTimer = stunCooldown;
             Stun();
-        } else if(counterTimer <= 0)
+        }
+        else if (!stunned)
         {
-            counterTimer = counterCooldown;
+            CounterWeapon();
+            ResetShootCooldown();
             anim.SetTrigger("Counterattack");
         }
         return stunned;
@@ -156,5 +149,10 @@ public class VoluntarioController : EnemyController {
     public void ResetShootCooldown()
     {
         shooting.ResetCooldown();
+    }
+
+    public void CounterWeapon()
+    {
+        shooting.CounterWeapon();
     }
 }
