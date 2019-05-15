@@ -18,6 +18,7 @@ public class Impresora3DController : EnemyController {
     {
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        spawnCooldown = spawnEvery/2 ;
     }
 
     private void Update()
