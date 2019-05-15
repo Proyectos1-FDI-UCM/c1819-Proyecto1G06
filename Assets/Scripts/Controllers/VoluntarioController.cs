@@ -112,7 +112,7 @@ public class VoluntarioController : EnemyController {
 
     public bool BulletHit()
     {
-        if (shooting.GetShooting())
+        if (shooting.GetShooting() && !stunned)
         {
             Stun();
         }
