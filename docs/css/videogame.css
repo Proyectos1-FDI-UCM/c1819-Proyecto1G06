@@ -22,7 +22,8 @@ body {
 -------------------------------------------------- */
 
 img.img-header {
-  max-height: 500px;
+  width: 81%;
+  height: auto;
 }
 
 
@@ -57,6 +58,19 @@ img.media-item {
   border-radius: 3px;
 }
 
+ul.creditos {
+  list-style-type: none;
+}
+
+ul.creditos > li:before {
+  content: "- ";
+  text-indent: -5px;
+}
+
+ul.creditos > li {
+  text-indent: -5px;
+}
+
 
 /* Featurettes
 ------------------------- */
@@ -81,7 +95,8 @@ img.media-item {
 
 footer p {
   font-size: 0.8rem;
-  margin-bottom: 0.5rem;
+  margin-top: -1.2rem;
+  padding-bottom: 1rem;
 }
 
 /* RESPONSIVE CSS
