@@ -6,7 +6,7 @@ public class MkIShooting : Shooting {
 
     public Transform body;
 
-    Animator anim;
+    protected Animator anim;
     protected AudioSource audioSource;
     public AudioClip shootClip;
     protected bool shooting = false;    //Indica si está disparando, evita que se activa varias veces el trigger

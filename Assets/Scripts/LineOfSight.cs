@@ -25,7 +25,7 @@ public class LineOfSight : MonoBehaviour {
     /// </summary>
     void Update ()
     {
-        col.Raycast(playerTransform.position - transform.position, sight, 100, LayerMask.GetMask("Player", "Environment")); //Los resultados están ordenados, solo devuelve el primer objeto
+        col.Raycast(playerTransform.position - transform.position, sight, 100, LayerMask.GetMask("Player", "Environment", "PlayerInmune")); //Los resultados están ordenados, solo devuelve el primer objeto
         controller.Sight(sight[0]);
     }
 }

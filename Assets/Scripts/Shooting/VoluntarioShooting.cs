@@ -6,12 +6,9 @@ public class VoluntarioShooting : MkIShooting
 {
     public BulletMovement voluntarioCounterBullet;
 
-    Animator anim;
-
     public override void Awake()
     {
         base.Awake();
-        anim = GetComponent<Animator>();
     }
 
     /// <summary>
