@@ -120,11 +120,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 66299405264451490, guid: 80ad7a914b594e14e9ba9e6c44111314,
-        type: 2}
-      propertyPath: m_ColliderPaths.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4679052770446876, guid: 80ad7a914b594e14e9ba9e6c44111314, type: 2}
       propertyPath: m_LocalPosition.x
       value: 210
@@ -157,23 +152,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 22
       objectReference: {fileID: 0}
-    - target: {fileID: 114034823362950338, guid: 80ad7a914b594e14e9ba9e6c44111314,
-        type: 2}
-      propertyPath: Amigo
-      value: 
-      objectReference: {fileID: 43943727}
-    - target: {fileID: 1372247432771504, guid: 80ad7a914b594e14e9ba9e6c44111314, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80ad7a914b594e14e9ba9e6c44111314, type: 2}
   m_IsPrefabAsset: 0
---- !u!4 &43943727 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4201874295653580, guid: 80ad7a914b594e14e9ba9e6c44111314,
-    type: 2}
-  m_PrefabInternal: {fileID: 43943726}
 --- !u!1001 &113603696
 Prefab:
   m_ObjectHideFlags: 0
@@ -2749,11 +2730,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 66326242801956242, guid: 01fcb9973eedbc74d8621e33b74d0177,
-        type: 2}
-      propertyPath: m_ColliderPaths.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4385032013859762, guid: 01fcb9973eedbc74d8621e33b74d0177, type: 2}
       propertyPath: m_LocalPosition.x
       value: 120
@@ -2786,23 +2762,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 19
       objectReference: {fileID: 0}
-    - target: {fileID: 114943018672087702, guid: 01fcb9973eedbc74d8621e33b74d0177,
-        type: 2}
-      propertyPath: Amigo
-      value: 
-      objectReference: {fileID: 2087285563}
-    - target: {fileID: 1597663472719006, guid: 01fcb9973eedbc74d8621e33b74d0177, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01fcb9973eedbc74d8621e33b74d0177, type: 2}
   m_IsPrefabAsset: 0
---- !u!4 &2087285563 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4119566116868772, guid: 01fcb9973eedbc74d8621e33b74d0177,
-    type: 2}
-  m_PrefabInternal: {fileID: 2087285562}
 --- !u!1001 &2130789907
 Prefab:
   m_ObjectHideFlags: 0
