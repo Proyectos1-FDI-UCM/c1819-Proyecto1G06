@@ -19,7 +19,7 @@ public class CompanionCompañeroDeAtaque : Shooting {
 
     protected virtual void OnTriggerStay2D(Collider2D collision)
     {
-        if(target == null && collision.GetComponent<EnemyHealth>() != null)
+        if(target == null && collision.GetComponent<EnemyHealth>() != null && collision.GetComponent<VoluntarioController>() == null)
         {
             target = collision.transform;
         }
