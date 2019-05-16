@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
 
+
     public int baseMaxHealth = 4;
     public int absoluteMaxHealth = 10;
     public int absoluteminHealth = 0;
@@ -65,6 +66,7 @@ public class PlayerHealth : MonoBehaviour {
             {
                 _invulnerability = 0f;
                 anim.SetLayerWeight(1, 0);
+                this.gameObject.layer = LayerMask.NameToLayer("Player");
             }
         }
     }
@@ -81,7 +83,7 @@ public class PlayerHealth : MonoBehaviour {
             curHealth--;
             GameManager.instance.ui.UpdateLives(curHealth, curMaxHealth);      //Hacer que el UIManager actualice la UI
             audioSource.PlayOneShot(damageClip);
-
+            this.gameObject.layer = LayerMask.NameToLayer("PlayerInmune");
             if (curHealth <= 0)
             {
                 GameManager.instance.PlayerDied();
